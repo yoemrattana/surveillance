@@ -1,6 +1,6 @@
-<h5>ធនធានធម្មជាតិនិងបរិសា្ថន</h5>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h4 class="text-primary fw-bold">ធនធានធម្មជាតិនិងបរិសា្ថន</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>បរិយាយ</th>
@@ -29,7 +29,7 @@
 </table>
 
 <br>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 37)">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>

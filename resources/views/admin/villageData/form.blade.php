@@ -1,49 +1,61 @@
 <div class="card">
-    <div class="card-header">
-        <h5>{{__('general.vill')}}</h5>
-        <button class="btn btn-primary gap-2 float-end mb-2" data-bind="click: () => view('list')"><span
-                class="fa fa-arrow-left"></span>{{__('general.back')}}</button>
+    <div class="card-header text-white bg-primary">
+        <h4>{{__('general.vill')}}</h4>
+        <!-- <button class="btn btn-primary gap-2 float-end mb-2" data-bind="click: () => view('list')"><span
+                class="fa fa-arrow-left"></span>{{__('general.back')}}</button> -->
     </div>
     <div class="card-body ">
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <label for="select6Basic" class="form-label">{{__('general.year')}}</label>
-                <select id="select6Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">2024</option>
-                    <option value="HI">2023</option>
-                </select>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="provinceFilter">{{__('general.prov')}}</label>
+                    <select class="form-select" id="provinceFilter">
+                        <option selected></option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <label for="select2Basic" class="form-label">{{__('general.prov')}}</label>
-                <select id="select2Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Banteay Mean Chey</option>
-                    <option value="HI">Siem Reap</option>
-                </select>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="districtFilter">{{__('general.dist')}}</label>
+                    <select id="districtFilter" class="form-select">
+                        <option value="AK">Dist 1</option>
+                        <option value="HI">Dist 2</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-md-3 mb-4">
-                <label for="select3Basic" class="form-label">{{__('general.dist')}}</label>
-                <select id="select3Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Dist 1</option>
-                    <option value="HI">Dist 2</option>
-                </select>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="communeFilter">{{__('general.comm')}}</label>
+                    <select id="communeFilter" class="form-select">
+                        <option value="AK">Comm 1</option>
+                        <option value="HI">Comm 2</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-md-3 mb-3">
-                <label for="select4Basic" class="form-label">{{__('general.comm')}}</label>
-                <select id="select4Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Comm 1</option>
-                    <option value="HI">Comm 2</option>
-                </select>
-            </div>
-            <div class="col-md-3 mb-3">
-                <label for="select5Basic" class="form-label">{{__('general.vill')}}</label>
-                <select id="select5Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                    <option value="AK">Vill 1</option>
-                    <option value="HI">Vill 2</option>
-                </select>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="villageFilter">{{__('general.vill')}}</label>
+                    <select id="villageFilter" class="form-select" data-allow-clear="true">
+                        <option value="AK">Vill 1</option>
+                        <option value="HI">Vill 2</option>
+                    </select>
+                </div>
             </div>
 
+        </div>
+        <div class="row mt-3 justify-content-center">
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="yearFilter">{{__('general.year')}}</label>
+                    <select id="yearFilter" class="form-select" data-allow-clear="true">
+                        <option value="AK">2024</option>
+                        <option value="HI">2023</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -52,7 +64,7 @@
 
 <div class="card">
     <div class="card-body table-responsive" data-bind="with:detailModel">
-        <table class="table table-bordered">
+        <table class="table table-bordered border border-1">
             <tbody data-bind="foreach: $data.filter(x => x.section() == 1 )">
             <tr>
                 <td data-bind="text: $index() + 1" class="col-num"></td>
@@ -75,7 +87,7 @@
         <br>
         @include('admin.villageData.female_education')
         <br>
-        @include('admin.villageData.school')<br>
+        @include('admin.villageData.school')
         <br>
         @include('admin.villageData.occupation')
         <br>

@@ -1,6 +1,6 @@
-<h5 class="text-center">ស្ថានភាពផ្នែកកសិកម្មនិងធនធាន</h5>
+<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែកកសិកម្មនិងធនធាន</h4>
 <h6>នៅក្នុងភូមិយើងខ្ញុំឆ្នាំនេះមាន៖</h6>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()=='10')">
     <!-- ko if: sort() >=90 && sort() <=95-->
     <tr>

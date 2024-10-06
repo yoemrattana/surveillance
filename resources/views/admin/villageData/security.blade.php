@@ -1,7 +1,7 @@
-<h5>ស្ថានភាពផ្នែករដ្ឋបាលនិងសន្តិសុខសង្គម</h5>
+<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែករដ្ឋបាលនិងសន្តិសុខសង្គម</h4>
 <p>នៅក្នុងឆ្នាំនេះ ភូមិយើងខ្ញុំមានបញ្ហាអសន្តិសុខសង្គមនិងទំនាស់នានាដែលកើតមានឡើងគួរអោយកត់សំគាល់ ដូចខាងក្រោម ៖</p>
 <h6>ករណីឃាតកម្ម ប្លន់ ចាប់ជំរិត លួច ទំនាស់ដីធ្លី (បើគ្មានបំពញេលខសូន្យ)</h6>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 38)">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>
@@ -18,9 +18,9 @@
 </table>
 
 <br>
-<h4>ករណីទំនាស់ផ្សេងៗ (បើគ្មានបំពញេលខសូន្យ)</h4>
+<h5>ករណីទំនាស់ផ្សេងៗ (បើគ្មានបំពញេលខសូន្យ)</h5>
 
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 39)">
     <tr>
         <!-- ko if: sort() == 201 -->
@@ -43,7 +43,7 @@
 
 <br>
 <p>ករណីអំពើហឹង្សា ការប្រើប្រាស់គ្រឿងញៀន (បើគ្មានបំពញេលខសូន្យ)</p>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 40)">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>

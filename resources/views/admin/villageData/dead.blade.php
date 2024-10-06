@@ -1,6 +1,6 @@
-<h4>ករណីមរណភាពែដលេកើតេឡើងក្នុងឆ្នាំ (បើគ្មានបំពេញលខសូន្យ)</h4>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h4 class="text-primary fw-bold">ករណីមរណភាពែដលេកើតេឡើងក្នុងឆ្នាំ (បើគ្មានបំពេញលខសូន្យ)</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
         <th rowspan="2">ចំនួនមរណភាពដែលមាន នៅក្នុងភូមិ</th>

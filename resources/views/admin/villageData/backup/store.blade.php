@@ -1,6 +1,6 @@
 <h4>ចំនួនទីតាំងលក់ទំនិញដែលស្ថិតនៅជុំវិញផ្សារឬនៅឆ្ងាយពីផ្សារខាងលើនៅក្នុងភូមិមាន៖</h4>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2"></th>
         <th rowspan="2">បរិយាយ</th>

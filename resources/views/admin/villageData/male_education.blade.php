@@ -1,21 +1,21 @@
-<h5>ស្ថិតិមនុស្សប្រុសនិងការអប់រំ</h5>
-<table class="tbl-data table table-bordered">
-    <thead class="text-center align-middle">
-    <tr>
-        <th rowspan="2" class="col-num">{{__('general.num')}}</th>
-        <th rowspan="2">{{__('general.agegroup')}}</th>
-        <th rowspan="2" class="col-2">{{__('general.number')}}</th>
-        <th colspan="4">{{__('general.general_school')}}</th>
-        <th rowspan="2">{{__('general.private_university')}}</th>
-        <th rowspan="2">{{__('general.specialize_school')}}</th>
-        <th rowspan="2">{{__('general.illiterate')}}</th>
-    </tr>
-    <tr>
-        <th>{{ __('general.kinderkathen')}}</th>
-        <th>{{ __('general.primary_school')}}</th>
-        <th>{{ __('general.secondary_school')}}</th>
-        <th>{{ __('general.high_school')}}</th>
-    </tr>
+<h4 class="fw-bold text-primary">ស្ថិតិមនុស្សប្រុសនិងការអប់រំ</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="text-center align-middle table-primary">
+        <tr>
+            <th rowspan="2" class="col-num">{{__('general.num')}}</th>
+            <th rowspan="2">{{__('general.agegroup')}}</th>
+            <th rowspan="2" class="col-2">{{__('general.number')}}</th>
+            <th colspan="4">{{__('general.general_school')}}</th>
+            <th rowspan="2">{{__('general.private_university')}}</th>
+            <th rowspan="2">{{__('general.specialize_school')}}</th>
+            <th rowspan="2">{{__('general.illiterate')}}</th>
+        </tr>
+        <tr>
+            <th>{{ __('general.kinderkathen')}}</th>
+            <th>{{ __('general.primary_school')}}</th>
+            <th>{{ __('general.secondary_school')}}</th>
+            <th>{{ __('general.high_school')}}</th>
+        </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 2))">
     <tr>
@@ -24,7 +24,9 @@
         <td>
             <div class="input-group">
                 <input data-bind="value: fields[0].value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
+                <div class="input-group-append">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
             </div>
         </td>
         <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'kindergarden')}">

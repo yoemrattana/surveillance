@@ -1,7 +1,7 @@
 <h6>គ្រឿងយន្តកសិកម្ម (បើគ្មានបំពេញលេខសូន្យ)</h6>
 
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -38,8 +38,8 @@
 <br>
 <h5>រថយន្តដឹកទំនិញនិងដឹកអ្នកដំណើរ (បើគ្មានបំពេញលេខសូន្យ)</h5>
 
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -75,8 +75,8 @@
 
 <br>
 <h6>ម៉ូតូនិងកង់ (បើគ្មានបំពេញលេខសូន្យ)</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -110,8 +110,8 @@
 
 <br>
 <h6>ទូកែចវ-អ៊ុំ (បើគ្មានបំពញេលខសូន្យ)</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -148,8 +148,8 @@
 
 <br>
 <h6>ទូកម៉ាស៊ីន-កាណូត សំរាប់នេសាទ ដឹកអ្នកដំណើរ និងដឹកទំនិញ (បើគ្មានបំពេញលេខសូន្យ)</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -185,7 +185,7 @@
 <p>សំគាល់ ៖ ចំនួនមធ្យោបាយដឹកជញ្ជូនតាមប្រភេទនីមួយៗអាចច្រើនជាង ឬស្មើចំនួនគ្រួសារ</p>
 <br>
 <h6>ចំងាយជាមធ្យមពីចំណុចកណ្តាលភូមិទៅសាលាឃុំ/សង្កាត់ សាលាក្រុង/ស្រុក/ខណ្ឌ័ និងសាលា ខេត្ត/រាជធានី</h6>
-<table class="tbl-data table table-bordered" data-bind="foreach: $data.filter( r => r.section() == 16)">
+<table class="tbl-data table table-bordered border border-1 mt-3" data-bind="foreach: $data.filter( r => r.section() == 16)">
     <tr>
         <td data-bind="text: sort" class="col-num"></td>
         <td data-bind="text: name_attribute"></td>
@@ -202,8 +202,8 @@
 <!-- 17 -->
 <br>
 <h6 class="text-center">ការចិញ្ចឹមសត្វនិងវាវីវប្បកម្ម (បើគ្មានសូមដាក់លខសូន្យ)</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.vehicle')}}</th>
@@ -234,7 +234,7 @@
 </table>
 <br>
 <p>សំគាល់៖ ការរាប់យកចំនួនបរិមាណសត្វចិញ្ចឹម គឺរាប់យកសត្វដែលមាននៅពេលស្រង់ទិន្នន័យតែប៉ុណ្ណោះ</p>
-<table>
+<table class="table table-bordered border border-1 mt-3">
     <tr>
         <td>១).គោឬក្របី រាប់យកពីកូនគោឬក្របីអាយុ១ខួបឡើងទៅ</td>
         <td>២).ជ្រូក រាប់យកកូនជ្រូកបានចាក់វ៉ាក់សាំងការពាររួច </td>
@@ -252,8 +252,8 @@
 <br>
 
 <!-- 18-->
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.fishery')}}</th>

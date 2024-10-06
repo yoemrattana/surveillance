@@ -7,9 +7,7 @@
             <!-- /Left Text -->
             <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
                 <div class="w-100 d-flex justify-content-center">
-                    <img src="../../assets/img/logo/logo.jpg" class="img-fluid"
-                         alt="Login image" width="400" data-app-dark-img="illustrations/boy-with-rocket-dark.png"
-                         data-app-light-img="illustrations/boy-with-rocket-light.html">
+                    Dashboard.....
                 </div>
             </div>
             <!-- /Left Text -->
@@ -24,8 +22,11 @@
                                 flex-wrap
                                 align-content-center">
                         <a href="#" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
+                                <img width="130" src="../../assets/img/logo/logo_1.png" alt="">
+                            </span>
                             <span class="app-brand-logo demo">
-                                <img width="100" src="../../assets/img/logo/logo2.jpg" alt="">
+                                <img width="100" src="../../assets/img/logo/logo_2.png" alt="">
                             </span>
                         </a>
                     </div>

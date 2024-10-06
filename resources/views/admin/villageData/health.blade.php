@@ -1,6 +1,6 @@
-<h5 class="text-center">ស្ថានភាពផ្នែកសុខភាពនិងអនាម័យ</h5>
+<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែកសុខភាពនិងអនាម័យ</h4>
 <h6>នៅក្នុងភូមិយើងខ្ញុំមាន ៖</h6>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 21)">
     <tr>
         <td data-bind="text: sort" class="col-num"></td>
@@ -31,9 +31,9 @@
 <p>សំគាល់ ៖ ប្រសិនបើ មណ្ឌលសុខភាពមានទីតាំងនៅក្នុងភូមិ ចំងាយគឺ សូន្យ គ.ម</p>
 <br>
 
-<h6>នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖ ៖</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h4 class="text-primary fw-bold">នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖ </h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>បរិយាយ</th>
@@ -83,8 +83,8 @@
     </tbody>
 </table>
 <br>
-<h4>នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖</h4>
-<table class="tbl-data table table-bordered">
+<h4 class="text-primary fw-bold">នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 23)">
     <tr>
         <td class="col-num">
@@ -105,9 +105,9 @@
 </table>
 
 <br>
-<h3>ស្ថានភាពនៃការប្រើប្រាស់ទឹកក្នុងភូមិ</h3>
-<h4> តាមការរាប់ជាក់ស្ដែងក្នុងឆ្នាំនេះ ប្រភពទឹកប្រើប្រាស់ នៅក្នុងភូមិយើងខ្ញុំមាន ៖</h4>
-<table class="tbl-data table table-bordered">
+<h4 class="text-primary fw-bold">ស្ថានភាពនៃការប្រើប្រាស់ទឹកក្នុងភូមិ</h4>
+<h5> តាមការរាប់ជាក់ស្ដែងក្នុងឆ្នាំនេះ ប្រភពទឹកប្រើប្រាស់ នៅក្នុងភូមិយើងខ្ញុំមាន ៖</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 24))">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>
@@ -138,8 +138,8 @@
 <br>
 <p>សំគាល់ ៖ ផលបូកចំនួនគ្រួសារដែលប្រើប្រាស់ប្រភពទឹកខាងលើនេះ ត្រូវស្មើចំនួនគ្រួសារសរុបក្នុងភូមិ ។</p>
 <br>
-<h4>អានាម័យនៃការទទួលទានទឹក</h4>
-<table class="tbl-data table table-bordered">
+<h4 class="text-primary fw-bold">អានាម័យនៃការទទួលទានទឹក</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 25)">
     <tr>
         <td class="col-num" >
@@ -160,9 +160,9 @@
 </table>
 <br>
 <p><b>សំគាល់៖</b> ផលបូកចំនួនគ្រួសារដែលប្រើប្រាស់ទឹកសំរាប់ទទួលទានខាងលើនេះ ត្រូវតូចជាង ឬស្មើចំនួនគ្រួសារសរុបក្នុងភូមិ។ ចំពោះករណីគ្រួសារណាដែលអនុវត្តលើសពី១ រាប់យកតែវិធីណាដែលប្រើញឹកញាប់ ឬសំខាន់ជាងគេ ។</p>
-<h4>ចំងាយប្រភពទឹកប្រើប្រាស់ទាំងរដូវប្រាំងនិងវស្សា</h4>
+<h4 class="text-primary fw-bold">ចំងាយប្រភពទឹកប្រើប្រាស់ទាំងរដូវប្រាំងនិងវស្សា</h4>
 <br>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 26)">
     <tr>
         <td class="col-num">
@@ -181,8 +181,8 @@
 </table>
 
 <br>
-<h4>តាមការរាប់ជាក់ស្ដែងរបស់យើងខ្ញុំ ក្នុងឆ្នាំនេះក្នុងភូមិទាំងមូលមាន ៖</h4>
-<table class="tbl-data table table-bordered">
+<h4 class="text-primary fw-bold">តាមការរាប់ជាក់ស្ដែងរបស់យើងខ្ញុំ ក្នុងឆ្នាំនេះក្នុងភូមិទាំងមូលមាន ៖</h4>
+<table class="tbl-data table table-borderedb order border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 27)">
     <tr>
         <td class="col-num">

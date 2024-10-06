@@ -1,8 +1,8 @@
-<h5 class="text-center">ស្ថិតិលំនៅស្ថាន</h5>
+<h4 class="text-primary fw-bold">ស្ថិតិលំនៅស្ថាន</h4>
 <h6>នៅក្នុងឆ្នាំនេះ ផ្ទះដែលជាលំនៅស្ថានរបស់ប្រជាជននៅក្នុងភូមិយើង មានដូចខាងក្រោម ៖</h6>
 
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
         <th rowspan="2">ប្រភេទផ្ទះ</th>
@@ -89,9 +89,9 @@
 <p>សំគាល់: ចំនួនផ្ទះតាមប្រភេទផ្ទរនិមួយៗ អាចតិចជាង ឬស្មើចំនួនគ្រួសារ ។ ចំណែកផលបូកសរុបចំនួនគ្រួសារត្រូវស្មើចំនួន
     គ្រួសារសរុបដែលរស់នៅក្នុងភូមិ ។</p>
 <br>
-<h6>ចំនួនទីតាំងសិប្បកម្មផលិតកម្មដែលមាននៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)៖</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h5>ចំនួនទីតាំងសិប្បកម្មផលិតកម្មដែលមាននៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)៖</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>ផ្ទះប្រក់សង្កសី</th>

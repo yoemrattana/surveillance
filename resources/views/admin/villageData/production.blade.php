@@ -1,7 +1,7 @@
-<h5 class="text-center">ផ្នែកផលិតកម្ម និងសេវាកម្ម</h5>
+<h4 class="text-primary fw-bold">ផ្នែកផលិតកម្ម និងសេវាកម្ម</h4>
 <h6>ចំនួនទីតាំងសិប្បកម្មផលិតកម្មដែលមាននៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)៖</h6>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
         <th rowspan="2">បរិយាយ</th>
@@ -46,8 +46,8 @@
 
 <br>
 
-<h5>ការធ្វើអាជីវកម្មផ្នែកសេវាកម្មដែលមានទីតាំងនៅក្នុងភូមិ (បើគ្មានសូមបំពេញលសេខសូន្យ)</h5>
-<table class="tbl-data table table-bordered">
+<h4 class="text-primary fw-bold">ការធ្វើអាជីវកម្មផ្នែកសេវាកម្មដែលមានទីតាំងនៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()=='7-2')">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>

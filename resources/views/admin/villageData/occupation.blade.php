@@ -1,9 +1,9 @@
-<h5 class="text-center">{{__('village.occupation')}}</h5>
+<h4 class="fw-bold text-primary">{{__('village.occupation')}}</h4>
 <p>ការកត់ត្រាស្ថិតិការងារជាមុខរបរនេះ សំដៅយកចំនួនមនុស្សមានអាយុពី១៨ឆ្នាំឡើង ដែលមានមុខរបរចំបង ( មុខរបរ
     ស្នលទី១) និងមុខរបរបន្ទាប់បន្សំ(ទី២) ដែលជាប្រភពចំណូលសំខាន់ក្នុងការទ្រទ្រង់ជីវភាពគ្រួសារ ។
 </p>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr>
         <th rowspan="2" class="col-num"></th>
         <th class="align-middle text-center" rowspan="2">{{__('village.description')}}</th>
@@ -18,16 +18,16 @@
 
     <tbody data-bind="foreach: $root.groupLevel3($data.filter( r => r.section() == 5))">
     <tr data-bind="visible: $index()==0">
-        <td colspan="5">{{__('មុខរបរធ្វើស្រែ(បើគ្មានបំពេញសូន្យ)')}}</td>
+        <td colspan="5"><h4>{{__('មុខរបរធ្វើស្រែ(បើគ្មានបំពេញសូន្យ)')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==4">
-        <td colspan="5">{{__('មុខរបរនេសាទ ចិញ្ចឹមសត្វ អនុផលព្រៃឈើ(បើគ្មានបំពេញសូន្យ)')}}</td>
+        <td colspan="5"><h4>{{__('មុខរបរនេសាទ ចិញ្ចឹមសត្វ អនុផលព្រៃឈើ(បើគ្មានបំពេញសូន្យ)')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==7">
-        <td colspan="5">{{__('មុខរបរធ្វើសិប្បកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</td>
+        <td colspan="5"><h4>{{__('មុខរបរធ្វើសិប្បកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==15">
-        <td colspan="5">{{__('មុខរបរសេវាកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</td>
+        <td colspan="5"><h4>{{__('មុខរបរសេវាកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</h4></td>
     </tr>
     <tr>
         <td rowspan="2" data-bind="text: sort"></td>
@@ -74,8 +74,8 @@
 
 <br>
 
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.description')}}</th>

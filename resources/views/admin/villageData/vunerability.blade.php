@@ -1,6 +1,6 @@
-<h5>ក្រុមជនងាយរងគ្រោះឬកំពុងជួបការលំបាក</h5>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h4 class="text-primary fw-bold">ក្រុមជនងាយរងគ្រោះឬកំពុងជួបការលំបាក</h4>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
         <th rowspan="2">បរិយាយ</th>
@@ -42,7 +42,7 @@
     </tbody>
 </table>
 <br>
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1">
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 29))">
     <tr>
         <td class="text-center align-middle col-num" data-bind="text: sort"></td>
@@ -77,8 +77,8 @@
 </table>
 
 <br>
-<h3>មេរោគេអដស៏និងជម្ងឺអដស៏</h3>
-<table class="tbl-data table table-bordered">
+<h5>មេរោគេអដស៏និងជម្ងឺអដស៏</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()==30)">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>
@@ -95,8 +95,8 @@
 </table>
 
 <br>
-<h3>កុមារឬក្មេងកំព្រាឳពុកម្តាយអាយុក្រោម១៨ឆ្នាំ (បើគ្មានបំពេញលេខសូន្យ) ៖</h3>
-<table class="tbl-data table table-bordered">
+<h5>កុមារឬក្មេងកំព្រាឳពុកម្តាយអាយុក្រោម១៨ឆ្នាំ (បើគ្មានបំពេញលេខសូន្យ) ៖</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()==31)">
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>
@@ -112,9 +112,9 @@
     </tbody>
 </table>
 <br>
-<h3>ការចាប់រំលោភនិងជួញដូរ (បើគ្មានបំពញេលខសូន្យ) ៖</h3>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h5>ការចាប់រំលោភនិងជួញដូរ (បើគ្មានបំពញេលខសូន្យ) ៖</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle col-num">
         <th rowspan="2"></th>
         <th rowspan="2">បរិយាយ</th>
@@ -161,9 +161,9 @@
 </table>
 <br>
 
-<h3>ចំនួនជនពិការដែលមាននៅក្នុងភូមិ (បើគ្មានបំពេញលេខសូន្យ) ៖</h3>
-<table class="tbl-data table table-bordered">
-    <thead>
+<h5>ចំនួនជនពិការដែលមាននៅក្នុងភូមិ (បើគ្មានបំពេញលេខសូន្យ) ៖</h5>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.description')}}</th>
@@ -201,7 +201,7 @@
 </table>
 <br>
 
-<table class="tbl-data table table-bordered">
+<table class="tbl-data table table-bordered border border-1">
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 34))">
     <tr>
         <td data-bind="text: sort" class="col-num"></td>
@@ -227,8 +227,8 @@
 </table>
 
 <br>
-<table class="tbl-data table table-bordered">
-    <thead>
+<table class="tbl-data table table-bordered border border-1 mt-3">
+    <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.description')}}</th>
