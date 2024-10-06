@@ -1,4 +1,4 @@
-<h4 class="fw-bold text-primary">ទីតាំងសាលារៀននានាធៀបនឹងចំនុចកណ្តាលភូមិ</h4>
+<h4 class="fw-bold text-primary">{{__('village.category_school_location')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x =>x.section() == 4)">
     <tr>
@@ -15,4 +15,4 @@
     </tbody>
 </table>
 <br>
-<p>ប្រសិនបើទីតាំងសាលារៀន(បឋមសិក្សា អនុវិទ្យាល័យ វិទ្យាល័យ)មាននៅក្នុងភូមិគឺកត់យកចំងាយសូន្យគ.ម ។ ចំពោះសាលា បឋមសិក្សានិងអនុវិទ្យាល័យ ឬអនុវិទ្យាល័យនិងវិទ្យាល័យនៅជាមួយគ្នា គឺមានចំងាយដូចគ្នា ។</p>
+<p>{{__('village.school_note')}}</p>

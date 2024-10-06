@@ -1,4 +1,4 @@
-<h4 class="fw-bold text-primary">ស្ថិតិមនុស្សប្រុសនិងការអប់រំ</h4>
+<h4 class="fw-bold text-primary">{{__('village.category_male_statistics')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="text-center align-middle table-primary">
         <tr>

@@ -1,6 +1,6 @@
 <h4 class="fw-bold text-primary">{{__('village.occupation')}}</h4>
-<p>ការកត់ត្រាស្ថិតិការងារជាមុខរបរនេះ សំដៅយកចំនួនមនុស្សមានអាយុពី១៨ឆ្នាំឡើង ដែលមានមុខរបរចំបង ( មុខរបរ
-    ស្នលទី១) និងមុខរបរបន្ទាប់បន្សំ(ទី២) ដែលជាប្រភពចំណូលសំខាន់ក្នុងការទ្រទ្រង់ជីវភាពគ្រួសារ ។
+<p>
+  {{__('village.occupation_subtitle')}}
 </p>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
@@ -10,7 +10,7 @@
         <th class="text-center" colspan="3">{{__('village.pop_from_18age')}}</th>
     </tr>
     <tr>
-        <th class="text-center">{{__('village.sex')}}</th>
+        <th class="text-center col-1">{{__('village.sex')}}</th>
         <th class="text-center col-2">{{__('village.main_work')}}</th>
         <th class="text-center col-2">{{__('village.secondary_work')}}</th>
     </tr>
@@ -18,26 +18,26 @@
 
     <tbody data-bind="foreach: $root.groupLevel3($data.filter( r => r.section() == 5))">
     <tr data-bind="visible: $index()==0">
-        <td colspan="5"><h4>{{__('មុខរបរធ្វើស្រែ(បើគ្មានបំពេញសូន្យ)')}}</h4></td>
+        <td colspan="5"><h4>{{__('village.rice_farming')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==4">
-        <td colspan="5"><h4>{{__('មុខរបរនេសាទ ចិញ្ចឹមសត្វ អនុផលព្រៃឈើ(បើគ្មានបំពេញសូន្យ)')}}</h4></td>
+        <td colspan="5"><h4>{{__('village.fishing')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==7">
-        <td colspan="5"><h4>{{__('មុខរបរធ្វើសិប្បកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</h4></td>
+        <td colspan="5"><h4>{{__('village.craftwork')}}</h4></td>
     </tr>
     <tr data-bind="visible: $index()==15">
-        <td colspan="5"><h4>{{__('មុខរបរសេវាកម្ម(បើគ្មានបំពេញលេខសូន្យ)')}}</h4></td>
+        <td colspan="5"><h4>{{__('village.service')}}</h4></td>
     </tr>
     <tr>
         <td rowspan="2" data-bind="text: sort"></td>
         <td rowspan="2" data-bind="text: label"></td>
-        <td>ប្រុស</td>
+        <td class="text-center">{{__('general.male')}}</td>
         <td>
             <div class="input-group">
                 <input data-bind="value: $root.getField2($index() ,fields, 'M1').value" type="text"
                        class="form-control">
-                <span class="input-group-text">នាក់</span>
+                <span class="input-group-text">{{__('general.person')}}</span>
             </div>
         </td>
         <td data-bind="css: {cellx: !$root.getField2($index() ,fields, 'M2')}">
@@ -45,18 +45,18 @@
             <div class="input-group">
                 <input data-bind="value: $root.getField2($index() ,fields, 'M2').value" type="text"
                        class="form-control">
-                <span class="input-group-text">នាក់</span>
+                <span class="input-group-text">{{__('general.person')}}</span>
             </div>
             <!-- /ko -->
         </td>
     </tr>
     <tr>
-        <td>ស្រី</td>
+        <td class="text-center">{{__('general.female')}}</td>
         <td>
             <div class="input-group">
                 <input data-bind="value: $root.getField2($index() ,fields, 'F1').value" type="text"
                        class="form-control">
-                <span class="input-group-text">នាក់</span>
+                <span class="input-group-text">{{__('general.person')}}</span>
             </div>
         </td>
         <td data-bind="css: {cellx: !$root.getField2($index() ,fields, 'F2')}">
@@ -64,7 +64,7 @@
             <div class="input-group">
                 <input data-bind="value: $root.getField2($index() ,fields, 'F2').value" type="text"
                        class="form-control">
-                <span class="input-group-text">នាក់</span>
+                <span class="input-group-text">{{__('general.person')}}</span>
             </div>
             <!-- /ko -->
         </td>
