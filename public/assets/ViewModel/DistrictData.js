@@ -147,7 +147,7 @@ function viewModel() {
             master,
             tables: JSON.stringify(tables)
         };
-
+        console.log(submit)
         app.ajax('/admin/district-data/save', submit).done(function (model) {
             if (master.id == 0) {
                 self.listModel.push(model);

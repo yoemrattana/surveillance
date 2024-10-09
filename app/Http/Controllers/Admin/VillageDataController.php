@@ -11,6 +11,8 @@ use App\Models\Module;
 use App\Helper\Reply;
 use App\Models\Attribute;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Database\Query\JoinClause;
 
 class VillageDataController extends Controller
 {
@@ -22,6 +24,27 @@ class VillageDataController extends Controller
     public function index()
     {
         return view('admin/villageData/index');
+    }
+
+    public function search(Request $request){
+        $village_data = DB::table('village_data')
+                        ->where('code_village', $request->vl_code)
+                        ->where('year', $request->year)
+                        ->first();
+        if($village_data){
+            $village_data->attributes = DB::table('attributes')
+                                ->leftJoin('village_value', function (JoinClause $join) use ($village_data) {
+                                    $join->on('attributes.id', '=', 'village_value.attribute_id')
+                                         ->where('village_value.parent_id', '=', $village_data->id);
+                                })
+                                ->select('attributes.*', 'village_value.value')
+                                ->get();
+        }else{
+            $village_data = [];
+            $village_data['attributes'] = DB::table('attributes')->get();
+        }
+
+        return Reply::dataOnly($village_data);
     }
 
     public function getAttributes()
@@ -69,5 +92,34 @@ class VillageDataController extends Controller
         ];
 
         return Reply::dataOnly($data);
+    }
+    public function save(Request $request)
+    {
+        $master = $request->master;
+        $village_attributes = json_decode($request->village_attributes, true);
+        $data['attributes'] = Attribute::all();
+
+        $id = $master['id'];
+
+        if ($id == 0) {
+            $id = DB::table('village_data')->insertGetId($master);
+        } else {
+            DB::table('village_data')->where('id', $id)->update($master);
+        }
+
+        Log::info('******************* This is an info log message.'.$master['id']);
+
+        DB::table('village_value')->where('parent_id', $id)->delete();
+        foreach ($village_attributes as $attribute) {
+            if(isset($attribute['value'])){
+                $attribute['parent_id'] = $id;
+                Log::info($attribute);     
+                DB::table('village_value')->insert($attribute);
+            }
+
+            // Log::info('Attribute '.$attribute['attribute_id']);
+            // echo "value: " . $attribute['value'] . ", attribute: " . $attribute['code_attribute'] . "\n";
+        }
+        return response()->json(['message' => 'Form submitted successfully!']);
     }
 }

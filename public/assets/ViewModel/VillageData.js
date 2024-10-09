@@ -18,7 +18,7 @@ function setField(model) {
         sort: ko.observable(model?.sort),
         section: ko.observable(model?.section),
         group: ko.observable(model?.group),
-        id_attribute: ko.observable(model?.id_attribute),
+        id_attribute: ko.observable(model?.id),
         name_attribute: ko.observable(local.in('kh', '') ? model?.name_attribute_khmer : model?.name_attribute),
         code_attribute: ko.observable(model?.code_attribute),
         value: ko.observable(model?.value),
@@ -31,6 +31,9 @@ function viewModel() {
     self.listModel = ko.observableArray();
     self.detailModel = ko.observable();
     self.view = ko.observable('detail');
+    self.lang = ko.observable($('.changeLang').val());
+    self.successMessage = ko.observable();
+    self.errorMessage = ko.observable();
 
     self.pvList = ko.observableArray();
     self.dsList = ko.observableArray();
@@ -41,7 +44,7 @@ function viewModel() {
     self.ds = ko.observable();
     self.cm = ko.observable();
     self.vl = ko.observable();
-
+    self.year = ko.observable();
     ko.validation.init({
         registerExtenders: true,
         messagesOnModified: true,
@@ -59,7 +62,6 @@ function viewModel() {
     var place = null;
     let id = 0
     app.ajax('/admin/village-data/get-data/'+id).done(function (rs) {
-        console.log(rs.master)
         place = rs.place;
         self.masterModel(rs.master)
         self.pvList(place.pv);
@@ -86,21 +88,74 @@ function viewModel() {
             return;
         }
 
-        let model = app.unko(self.role())
+        var master = newModel().applyData(app.unko(self.masterModel()));
+        if (master.id == 0) {
+            master.created_at = moment().sqlformat();
+        } else {
+            master.updated_at = moment().sqlformat();
+        }
 
-        app.ajax('/admin/role/store', {submit: model}).done(function (id) {
+        master.code_village = self.vl()
+        master.year = self.year()
+        master.phone_village = 85512999999
+        master.commune_leader = 'N/A'
+        master.phone_commune = 85512999999
 
-        })
+        var formData = ko.toJSON(self.detailModel().map(item => ({
+                                        attribute_id: item.id_attribute,
+                                        value: item.value
+                                    }))
+                         );
+        console.log()
+        var params = {
+            master,
+            village_attributes: formData
+        };
+
+        console.log(params);
+
+        app.ajax('/admin/village-data/save', params).done(function (response) {
+            console.log('++++++++++++ save +++++++++++++');
+            console.log(response);
+            self.successMessage(response.message);
+            app.showToast();
+        });
     }
 
     self.edit = (model) => {
         self.view('detail');
     }
 
-    self.pv.subscribe(function (code) {
-        self.odList(code == null ? [] : place.od.filter(r => r.pvcode == code));
-    });
+    self.loadData = () => {
+        if(self.vl() && self.year()){
+            let params = `vl_code=${self.vl()}&year=${self.year()}`
+            app.ajax('/admin/village-data/search?'+params).done(function (response) {
+                self.masterModel(response);
+                self.detailModel(response.attributes.map(r => setField(r)));
+            });
+        }        
+    }
 
+    self.pv.subscribe(function (code) {
+        self.dsList(code == null ? [] : place.ds.filter(r => r.pvcode == code));
+    });
+    self.ds.subscribe(function (code) {
+        self.cmList(code == null ? [] : place.cm.filter(r => r.dscode == code));
+    });
+    self.cm.subscribe(function (code) {
+        self.vlList(code == null ? [] : place.vl.filter(r => r.cmcode == code));
+    });
+    self.vl.subscribe(function (code) {
+        if(code != null){
+            self.loadData();
+        }
+        
+    });
+    self.year.subscribe(function (year) {
+        if(year != null){
+            self.loadData();
+        }
+    });
     self.groupLevel1 = (data) => {
         let rs =  _.chain(data)
             .groupBy(x => x.group())
@@ -198,4 +253,15 @@ function viewModel() {
         }
         return false
     }
+}
+
+function newModel() {
+    return {
+        id: 0,
+        code_village: null,
+        year: '',
+        phone_village: 85512999999,
+        commune_leader: 'N/A',
+        phone_commune: 85512999999,
+    };
 }

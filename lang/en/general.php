@@ -3,6 +3,7 @@
 return [
     'add' => 'Add',
     'action' => 'Action',
+    'save' => 'Save',
     'edit' => 'Edit',
     'delete' => 'Delete',
     'prov' => 'Province',

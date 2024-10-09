@@ -13,6 +13,20 @@ var app = new function () {
 	// self.hideWait = function () {
 	// 	$('#modalWait').modal('hide');
 	// };
+	self.showAlert = function() {
+		window.setTimeout(function() {
+		    $(".custom-alert").fadeTo(500, 0).slideUp(500, function(){
+		        $(this).remove(); 
+		    });
+		}, 4000);
+	}
+	self.showToast = function() {
+        const toastEl = $('.toast');
+        const toast = new bootstrap.Toast(toastEl, {
+            delay: 3000 // Duration in milliseconds before the toast hides
+        });
+        toast.show();
+    };
 
 	self.showLoader = function () {
 		let modal = new bootstrap.Modal('#loader');   
