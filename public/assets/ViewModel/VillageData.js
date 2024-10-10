@@ -106,13 +106,10 @@ function viewModel() {
                                         value: item.value
                                     }))
                          );
-        console.log()
         var params = {
             master,
             village_attributes: formData
         };
-
-        console.log(params);
 
         app.ajax('/admin/village-data/save', params).done(function (response) {
             console.log('++++++++++++ save +++++++++++++');

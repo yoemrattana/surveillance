@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::any('/district-data', [DistrictDataController::class, 'index'])->name('district-data');
             Route::any('/district-data/getdata', [DistrictDataController::class, 'getdata']);
             Route::any('/district-data/getdetail', [DistrictDataController::class, 'getdetail']);
+            Route::any('/district-data/search', [DistrictDataController::class, 'search']);
             Route::post('/district-data/save', [DistrictDataController::class, 'save']);
             Route::post('/district-data/delete', [DistrictDataController::class, 'delete']);
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Helper\Reply;
 
 class DistrictDataController extends Controller
 {
@@ -18,11 +19,29 @@ class DistrictDataController extends Controller
         return view('admin/districtData/index');
     }
 
+    public function search(Request $request){
+        $district_data = DB::table('district_parent')
+                        ->where('ds_code', $request->ds_code)
+                        ->first();
+        if($district_data){
+            $tables = [1, '2a', '2b', 3, 4, 5, '6a', '6b', 7, 8];
+            foreach ($tables as $num) {
+                $name = 'district_' . $num;
+                $detail = DB::table($name)->where('parent_id', $district_data->id)->get();
+                $district_data->attributes[$name] = $detail;
+            }
+        }else{
+            $district_data = ['recorded_by' => '', 'phone' => ''];
+            $district_data['attributes'] = [] ;
+        }
+
+        return Reply::dataOnly($district_data);
+    }
+
     public function getdata($id = 0)
     {
         $where = $id == 0 ? [] : ['id' => $id];
         $list = DB::table('district_parent')->where($where)->get()->toArray();
-
         if ($id == 0) {
             return [
                 'list' => $list,
@@ -30,7 +49,7 @@ class DistrictDataController extends Controller
                 'place' => [
                     'pv' => DB::table('provinces')->get(),
                     'ds' => DB::table('districts')->get(),
-                ]
+                ],
             ];
         }
 
@@ -70,7 +89,8 @@ class DistrictDataController extends Controller
             DB::table($name)->insert($tables[$name]);
         }
 
-        return $this->getdata($id);
+        // return $this->getdata($id);
+        return response()->json(['message' => 'Form submitted successfully!']);
     }
 
     public function delete(Request $request)

@@ -1,19 +1,30 @@
 function viewModel() {
     var self = this;
 
-    self.view = ko.observable('list');
+    self.view = ko.observable('detail');
     self.listModel = ko.observableArray();
     self.questions = ko.observableArray();
     self.lang = ko.observable($('.changeLang').val());
     self.tableDetails = ko.observable();
     self.masterModel = ko.observable();
+    self.detailModel = ko.observable();
+
+    self.pvList = ko.observableArray();
+    self.dsList = ko.observableArray();
+
+    self.pv_code = ko.observable();
+    self.ds_code = ko.observable();
+    self.year = ko.observable();
+    self.successMessage = ko.observable();
 
     var place = null;
 
     app.ajax('/admin/district-data/getdata').done(function (rs) {
         place = rs.place;
+        self.pvList(place.pv);
         self.listModel(rs.list);
         self.questions(rs.questions);
+        self.tableDetails(rs.attributes);
     });
 
     function prepare(nums, answers, tblname) {
@@ -24,7 +35,7 @@ function viewModel() {
             var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
             model.q_id = q.id;
 
-            if (self.tableDetails()) {
+            if (self.tableDetails() && self.tableDetails()[tblname]) {
                 var found = self.tableDetails()[tblname].find(r => r.q_id == q.id);
                 answers.forEach(key => model[key] = found[key]);
             }
@@ -45,6 +56,22 @@ function viewModel() {
             phone: ''
         };
     }
+
+    self.pv_code.subscribe(function (code) {
+        self.dsList(code == null ? [] : place.ds.filter(r => r.pvcode == code));
+    });
+
+    self.ds_code.subscribe(function (code) {
+        if(code != null){
+            self.loadData();
+        }
+        
+    });
+    self.year.subscribe(function (year) {
+        if(year != null){
+            self.loadData();
+        }
+    });
 
     self.showNew = function () {
         self.showEdit(newModel());
@@ -70,6 +97,16 @@ function viewModel() {
             });
         }
     };
+
+    self.loadData = () => {
+        if(self.ds_code() && self.year()){
+            let params = `ds_code=${self.ds_code()}&year=${self.year()}`
+            app.ajax('/admin/district-data/search?'+params).done(function (response) {
+                self.masterModel(response);
+                self.tableDetails(response['attributes']);
+            });
+        }        
+    }
 
     self.district_1 = ko.pureComputed(() => {
         var nums = [1, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3];
@@ -148,14 +185,9 @@ function viewModel() {
             tables: JSON.stringify(tables)
         };
         console.log(submit)
-        app.ajax('/admin/district-data/save', submit).done(function (model) {
-            if (master.id == 0) {
-                self.listModel.push(model);
-            } else {
-                var old = self.listModel().find(r => r.id == model.id);
-                self.listModel.replace(old, model);
-            }
-            self.back();
+        app.ajax('/admin/district-data/save', submit).done(function (response) {
+            self.successMessage(response.message);
+            app.showToast();
         });
     };
 

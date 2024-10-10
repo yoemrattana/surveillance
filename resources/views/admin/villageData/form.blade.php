@@ -1,6 +1,5 @@
 <div class="position-fixed top-0 end-0" style="z-index: 11">
-  <div class="toast align-items-center text-white bg-info bg-gradient border-0 hide" 
-                role="alert" aria-live="assertive" aria-atomic="true" >
+  <div class="toast align-items-center text-white bg-info bg-gradient border-0 hide" role="alert" aria-live="assertive" aria-atomic="true" >
     <div class="toast-body">
       <p data-bind="text: successMessage"></p>
     </div>
@@ -96,7 +95,7 @@
             {{__('general.save')}}
         </button>
     </div>
-    <div class="card-body table-responsive" data-bind="with:detailModel">
+    <div class="card-body" data-bind="with:detailModel">
         <form id="villageForm">
             <table class="table table-bordered border border-1 mt-3">
                 <tbody data-bind="foreach: $data.filter(x => x.section() == 1 )">
