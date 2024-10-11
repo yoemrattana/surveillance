@@ -1,42 +1,20 @@
 function viewModel() {
     var self = this;
 
+    self.view = ko.observable('list');
+    self.listModel = ko.observableArray();
     self.questions = ko.observableArray();
     self.lang = ko.observable($('.changeLang').val());
     self.tableDetails = ko.observable();
-    self.pv = ko.observable();
-    self.ds = ko.observable();
-    self.year = ko.observable(moment().year());
-    self.pvList = ko.observableArray();
+    self.masterModel = ko.observable();
 
     var place = null;
-    var masterId = 0;
 
-    self.year.subscribe(getDetail);
-    self.ds.subscribe(getDetail);
-
-    app.ajax('/admin/district-data/getdata').done(function (rs) {
+    app.ajax('/admin/commune-data/getdata').done(function (rs) {
         place = rs.place;
-
-        self.pvList(place.pv);
-        self.pv('03');
-        self.ds('0302');
-
+        self.listModel(rs.list);
         self.questions(rs.questions);
     });
-
-    function getDetail () {
-        if(self.ds() == null) return;
-
-        var submit = { 
-            year: self.year(),
-            ds_code: self.ds()
-         };
-        app.ajax('/admin/district-data/getdetail', submit).done(function (rs) {
-            self.tableDetails(rs.detail);
-            masterId = rs.id;
-        });
-    };
 
     function prepare(nums, answers, tblname) {
         if (self.questions().length == 0) return [];
@@ -47,8 +25,8 @@ function viewModel() {
             model.q_id = q.id;
 
             if (self.tableDetails()) {
-                var found = self.tableDetails()[tblname].find(r => r.q_id == q.id);
-                answers.forEach(key => model[key] = found[key]);
+                var found = self.tableDetails()[tblname]?.find(r => r.q_id == q.id);
+                found && answers.forEach(key => model[key] = found[key]);
             }
 
             model.no = () => no;
@@ -59,94 +37,133 @@ function viewModel() {
         });
     }
 
-    self.dsList = function () {
-        var pv = self.pv();
-        return place == null ? [] : place.ds.filter(r => r.pvcode == pv);
+    function newModel() {
+        return {
+            id: 0,
+            ds_code: null,
+            cm_code: null,
+            recorded_by: '',
+            phone: ''
+        };
     }
 
-    self.district_1 = ko.pureComputed(() => {
-        var nums = [1, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3];
+    self.showNew = function () {
+        self.showEdit(newModel());
+    };
+
+    self.showEdit = function (master) {
+        master = app.ko(master);
+
+        master.pv_code = ko.observable(master.ds_code()?.substr(0, 2));
+        master.pvList = place.pv;
+        master.dsList = () => place.ds.filter(r => r.pvcode == master.pv_code());
+
+        if (master.id() == 0) {
+            self.masterModel(master);
+            self.tableDetails(null);
+            self.view('detail');
+        } else {
+            var submit = { id: master.id() };
+            app.ajax('/admin/commune-data/getdetail', submit).done(function (rs) {
+                self.masterModel(master);
+                self.tableDetails(rs);
+                self.view('detail');
+            });
+        }
+    };
+
+    self.commune_1 = ko.pureComputed(() => {
+        var nums = [1, 2,];
         var answers = ['total', 'female'];
-        return prepare(nums, answers, 'district_1');
+        return prepare(nums, answers, 'commune_1');
     });
 
-    self.district_2a = ko.pureComputed(() => {
-        var nums = [4, 5, 6, 7, 8, 9, 10, 10.1, 10.2, 11, 12, 13, 14, 15, 16];
-        var answer = ['staff_total', 'staff_female', 'chief_male', 'chief_female', 'vice_male', 'vice_female'];
-        return prepare(nums, answer, 'district_2a');
+    self.commune_2 = ko.pureComputed(() => {
+        var nums = [3, 4, 5, 6, 7, 8, 8.1, 8.2, 9, 9.1, 9.2, 10,];
+        var answers = ['place', 'qty', 'ha'];
+        return prepare(nums, answers, 'commune_2');
     });
 
-    self.district_2b = ko.pureComputed(() => {
-        var nums = Array.range(17, 21);
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_2b');
+    self.commune_3 = ko.pureComputed(() => {
+        var nums = [11, 12, 13,];
+        var answer = ['ha', 'ton/ha'];
+        return prepare(nums, answer, 'commune_3');
     });
 
-    self.district_3 = ko.pureComputed(() => {
-        var nums = [22, 23];
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_3');
+    self.commune_4 = ko.pureComputed(() => {
+        var nums = [14, 15, 16, 17, 18,];
+        var answer = ['ha', 'ha', 'ha', 'ton/ha', 'ha'];
+        return prepare(nums, answer, 'commune_4');
     });
 
-    self.district_4 = ko.pureComputed(() => {
-        var nums = Array.range(24, 28);
-        var answer = ['a_total', 'a_female', 'b_total', 'b_female'];
-        return prepare(nums, answer, 'district_4');
-    });
 
-    self.district_5 = ko.pureComputed(() => {
-        var nums = [29, 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, '29.10'];
-        var answer = ['agent', 'income'];
-        return prepare(nums, answer, 'district_5');
-    });
+    // self.district_2b = ko.pureComputed(() => {
+    //     var nums = Array.range(17, 21);
+    //     var answer = ['qty'];
+    //     return prepare(nums, answer, 'district_2b');
+    // });
 
-    self.district_6a = ko.pureComputed(() => {
-        var nums = Array.range(30, 35).reduce((arr, r) => arr.concat(r + 0.1, r + 0.2, r + 0.3, r + 0.4), []);
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_6a');
-    });
+    // self.district_3 = ko.pureComputed(() => {
+    //     var nums = [22, 23];
+    //     var answer = ['qty'];
+    //     return prepare(nums, answer, 'district_3');
+    // });
 
-    self.district_6b = ko.pureComputed(() => {
-        var nums = [36, 37];
-        var answer = ['qty', 'total', 'female'];
-        return prepare(nums, answer, 'district_6b');
-    });
+    // self.district_4 = ko.pureComputed(() => {
+    //     var nums = Array.range(24, 28);
+    //     var answer = ['a_total', 'a_female', 'b_total', 'b_female'];
+    //     return prepare(nums, answer, 'district_4');
+    // });
 
-    self.district_7 = ko.pureComputed(() => {
-        var nums = Array.range(38, 42);
-        var answer = ['qty1', 'qty2'];
-        return prepare(nums, answer, 'district_7');
-    });
+    // self.district_5 = ko.pureComputed(() => {
+    //     var nums = [29, 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, '29.10'];
+    //     var answer = ['agent', 'income'];
+    //     return prepare(nums, answer, 'district_5');
+    // });
 
-    self.district_8 = ko.pureComputed(() => {
-        var nums = Array.range(43, 46);
-        var answer = ['qty', 'total', 'female'];
-        return prepare(nums, answer, 'district_8');
-    });
+    // self.district_6a = ko.pureComputed(() => {
+    //     var nums = Array.range(30, 35).reduce((arr, r) => arr.concat(r + 0.1, r + 0.2, r + 0.3, r + 0.4), []);
+    //     var answer = ['qty'];
+    //     return prepare(nums, answer, 'district_6a');
+    // });
+
+    // self.district_6b = ko.pureComputed(() => {
+    //     var nums = [36, 37];
+    //     var answer = ['qty', 'total', 'female'];
+    //     return prepare(nums, answer, 'district_6b');
+    // });
+
+    // self.district_7 = ko.pureComputed(() => {
+    //     var nums = Array.range(38, 42);
+    //     var answer = ['qty1', 'qty2'];
+    //     return prepare(nums, answer, 'district_7');
+    // });
+
+    // self.district_8 = ko.pureComputed(() => {
+    //     var nums = Array.range(43, 46);
+    //     var answer = ['qty', 'total', 'female'];
+    //     return prepare(nums, answer, 'district_8');
+    // });
 
     self.save = function () {
-        var master = {
-            id: masterId,
-            year: self.year(),
-            ds_code: self.ds()
-        };
-
-        if (masterId == 0) {
+        var master = newModel().applyData(app.unko(self.masterModel()));
+        if (master.id == 0) {
             master.created_by = 'admin';
         } else {
             master.updated_by = 'admin';
             master.updated_on = moment().sqlformat();
         }
 
-        var arr = [1, '2a', '2b', 3, 4, 5, '6a', '6b', 7, 8];
-        var tables = arr.reduce((obj, k) => (obj['district_' + k] = self['district_' + k]()) && obj, {});
+        var arr = [1, 2];
+        var arr = [1];
+        var tables = arr.reduce((obj, k) => (obj['commune_' + k] = self['commune_' + k]()) && obj, {});
 
         var submit = {
             master,
             tables: JSON.stringify(tables)
         };
 
-        app.ajax('/admin/district-data/save', submit).done(function (model) {
+        app.ajax('/admin/commune-data/save', submit).done(function (model) {
             if (master.id == 0) {
                 self.listModel.push(model);
             } else {
@@ -155,6 +172,30 @@ function viewModel() {
             }
             self.back();
         });
+    };
+
+    self.showDelete = function (model) {
+        var submit = { id: model.id };
+        app.ajax('/admin/commune-data/delete', submit).done(function () {
+            self.listModel.remove(model);
+        });
+    };
+
+    self.back = function () {
+        self.view('list');
+    };
+
+    self.getPvName = function (code) {
+        var pvcode = place.ds.find(r => r.code == code).pvcode;
+        return place.pv.find(r => r.code == pvcode)[self.lang() == 'en' ? 'name' : 'namek'];
+    };
+
+    self.getDsName = function (code) {
+        return place.ds.find(r => r.code == code)[self.lang() == 'en' ? 'name' : 'namek'];
+    };
+
+    self.getCmName = function (code) {
+        return place.cm.find(r => r.code == code)[self.lang() == 'en' ? 'name' : 'namek'];
     };
 
     function changeLang() {
@@ -200,7 +241,8 @@ function viewModel() {
             ['ត្រលប់', 'Back'],
             ['កែប្រែ', 'Edit'],
             ['លុប', 'Delete'],
-            ['ឆ្នាំ', 'Year'],
+            ['ហ.ត', 'ha'],
+            ['តោន/ហ.ត', 'ton/ha']
         ];
 
         $('.container-fluid *').each(function () {
@@ -211,6 +253,11 @@ function viewModel() {
         });
     }
     changeLang();
+
+    $('.changeLang').off().change(function () {
+        self.lang(this.value);
+        changeLang();
+    });
 }
 
 $(document).on('keydown', 'input[type=number]', function (event) {

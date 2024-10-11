@@ -19,7 +19,7 @@
         <hr>
 
         <form id="myform" data-bind="submit: save">
-            <h2 class="pt-2 text-center">ទិន្នន័យថ្នាក់ស្រុក</h2>
+            <h2 class="pt-2 text-center">ទិន្នន័យថ្នាក់ឃុំ</h2>
 
             <div class="row g-2 my-5" data-bind="with: masterModel">
                 <div class="col-auto">
@@ -48,6 +48,18 @@
                 </div>
                 <div class="col-auto">
                     <div class="input-group">
+                        <span class="input-group-text">ឃុំ/សង្កាត់</span>
+                        <select class="form-select"
+                            data-bind="value: cm_code, 
+                                    options: dsList().sortasc($root.lang() == 'en' ? 'name' : 'namek'),
+                                    optionsValue: 'code',
+                                    optionsText: $root.lang() == 'en' ? 'name' : 'namek',
+                                    optionsCaption: ''"
+                            required></select>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
                         <span class="input-group-text">កត់ត្រាដោយ</span>
                         <input type="text" class="form-control" data-bind="value: recorded_by" required />
                     </div>
@@ -62,8 +74,8 @@
 
 
             <div class="fs-5" data-bind="visible: lang() == 'kh'">
-                ដោយទិន្នន័យមួយចំនួនមានការពាក់ព័ន្ធជាមួយឃុំជាច្រើន ក្នុងស្រុក នោះបើសិនជាអោយឃុំនីមួយៗស្រង់ទិន្នន័យទាំងនោះ
-                គឺនឹងមានភាពស្ទួន ហេតុនេះតម្រូវឱ្យមានការកត់ត្រាស្ថិតិទាំងនោះនៅ ថ្នាក់ស្រុកវិញ។ ទិន្នន័យទាំងនោះមាន៖
+                ដោយទិន្នន័យមួយចំនួនមានការពាក់ព័ន្ធជាមួយភូមិជាច្រើនក្នុងឃុំសង្កាត់ បើសិនអោយភូមិនីមួយៗស្រង់ ទិន្នន័យនោះនឹងមានភាពស្ទួន 
+                ហេតុនេះនាំឱ្យមានការកត់ត្រាស្ថិតិទាំងនោះនៅថ្នាក់ឃុំ-សង្កាត់វិញ ទិន្នន័យទាំងនោះមាន ៖
             </div>
             <div class="fs-5" data-bind="visible: lang() == 'en'">
                 Since some of the data is relevant to many communes in the district, if each commune has to extract that
@@ -73,12 +85,12 @@
             </div>
             <br />
 
-            <h4>១. សមាសភាពរដ្ឋបាលក្នុងស្រុក</h4>
+            {{-- <h4>១. សមាសភាពរដ្ឋបាលក្នុងស្រុក</h4> --}}
             <table class="table table-bordered">
-                <tbody data-bind="foreach: district_1">
+                <tbody data-bind="foreach: commune_1">
                     <tr>
                         <td data-bind="text: no(), visible: group() == null"></td>
-                        <td data-bind="text: group(), visible: group() != null && no() == '2.1'" rowspan="5"></td>
+                        {{-- <td data-bind="text: group(), visible: group() != null && no() == '2.1'" rowspan="5"></td> --}}
 
                         <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
                         <td>
@@ -100,7 +112,152 @@
             </table>
             <br />
 
-            <h4>២. សមាសភាពមន្ត្រីការិយាល័យជំនាញក្នុងស្រុក (មន្ត្រីក្របខណ្ឌ)</h4>
+            {{-- <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_2">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table> --}}
+
+
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_2">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && (no() == '8.1' || no() == '9.1')" rowspan="2"></td>
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+
+
+                        <!-- ko if: no().in(3,4) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                        <!-- ko if: no().in(5) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: qty" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        
+                        <!-- /ko -->
+						<!-- ko if: no().in(6,7,8,8.1,8.2,9,9.1,9.2,10) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហ.ត</span>
+                            </div>
+                        </td>
+                        
+                        <!-- /ko -->
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+
+            <table class="table table-bordered">
+    <tbody data-bind="foreach: commune_3">
+        <tr>
+            <td data-bind="text: no()"></td>
+            <td data-bind="text: question()"></td>
+
+            <!-- ko if: no() == 11 -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">មាន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if: no() == 12 -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">មាន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">តោន/ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if: no() == 13 -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">មាន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+        </tr>
+    </tbody>
+</table>
+<br />
+
+<table class="table table-bordered">
+    <tbody data-bind="foreach: commune_4">
+        <tr>
+            <td data-bind="text: no(), visible: group() == null"></td>
+            <td data-bind="text: group(), visible: group() != null && (no() == '14' || no() == '15')" rowspan="3"></td>
+            <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+
+            <!-- ko if: no().in(14,15,16) -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">ចំនួន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+            <!-- ko if: no() == 17 -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">ចំនួន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">តោន/ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+             
+            <!-- ko if: no() == 18 -->
+            <td>
+                <div class="input-group">
+                    <span class="input-group-text">ចំនួន</span>
+                    <input type="number" class="form-control" data-bind="value: ha" required />
+                    <span class="input-group-text">ហ.ត</span>
+                </div>
+            </td>
+            <!-- /ko -->
+        </tr>
+    </tbody>
+</table>
+
+
+            {{-- <h4>២. សមាសភាពមន្ត្រីការិយាល័យជំនាញក្នុងស្រុក (មន្ត្រីក្របខណ្ឌ)</h4>
             <table class="table table-bordered">
                 <thead class="text-center">
                     <tr>
@@ -408,7 +565,7 @@
                         <!-- /ko -->
                     </tr>
                 </tbody>
-            </table>
+            </table> --}}
 
         </form>
     </div>

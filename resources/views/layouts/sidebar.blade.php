@@ -22,6 +22,12 @@
              <div class="text-truncate" data-i18n="Email">Dashboard</div>
           </a>
        </li>
+       <li class="menu-item {{ request()->is('admin/commune-data') ? 'active' : '' }}">
+          <a href="{{ route('admin.commune-data') }}" class="menu-link">
+             <i class="menu-icon tf-icons bx bx-chat"></i>
+             <div class="text-truncate" data-i18n="Chat">Commune</div>
+          </a>
+       </li>
        <li class="menu-item {{ request()->is('admin/district-data') ? 'active' : '' }}">
           <a href="{{ route('admin.district-data') }}" class="menu-link">
              <i class="menu-icon tf-icons bx bx-chat"></i>
@@ -34,6 +40,7 @@
              <div class="text-truncate" data-i18n="Chat">Village</div>
           </a>
        </li>
+      
        {{-- <li class="menu-item">
           <a href="app-calendar.html" class="menu-link">
              <i class="menu-icon tf-icons bx bx-calendar"></i>

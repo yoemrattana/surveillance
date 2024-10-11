@@ -7,11 +7,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Yoem Rattana" />
     <meta name="keywords" content="Yoem Rattana" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/fonts/boxicons.css') }}">
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}">
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/fonts/flag-icons.css') }}">
-    <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/css/rtl/core.css') }}">
+    <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/css/rtl/core.css?v1') }}">
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/css/rtl/theme-default.css') }}">
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/css/demo.css') }}">
     <link type="text/css" rel="stylesheet" media="all" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}">
@@ -23,17 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
-        .kantumruy-pro {
-          font-family: "Kantumruy Pro", sans-serif;
-          font-optical-sizing: auto;
-          font-weight: normal;
-          font-style: normal;
-          font-size: 1.125rem;
-          line-height: 1.5;
-          color: #3b3b3b;
-        }
         .inline-spacing {display: flex}
         .input-error {
           border-color: tomato;
@@ -41,6 +31,9 @@
         }
         .message-error {
           color:tomato;
+        }
+        body {
+          font-family: Arial, Hanuman !important;
         }
         button {width: max-content}
         .cellx {
@@ -71,6 +64,7 @@
 
         .col-num {width: 20px}
 
+        h5{font-family: 'khmer os muol light';}
         table {border: 1px !important;}
         thead {background: gainsboro}
     </style>
@@ -98,14 +92,12 @@
     <script>
         var local = '<?php echo session()->get('locale') ?>';
     </script>
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @vite('resources/css/app.css')
 </head>
 
 <body>
 
       <!-- Layout wrapper -->
-<div class="layout-wrapper layout-content-navbar kantumruy-pro">
+<div class="layout-wrapper layout-content-navbar  ">
     <!-- Layout container -->
     <div class="layout-container">
       @include('layouts.sidebar')

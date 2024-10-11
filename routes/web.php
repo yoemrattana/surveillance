@@ -8,6 +8,8 @@ use  App\Http\Controllers\LangController;
 use  App\Http\Controllers\Admin\UserController;
 use  App\Http\Controllers\Admin\VillageDataController;
 use  App\Http\Controllers\Admin\DistrictDataController;
+use App\Http\Controllers\Admin\CommuneDataController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +22,7 @@ use  App\Http\Controllers\Admin\DistrictDataController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -41,6 +43,16 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/village-data', [VillageDataController::class, 'index'])->name('village-data');
             Route::get('/village-data/get-attributes', [VillageDataController::class, 'getAttributes'])->name('village-data.get-attributes');
             Route::get('/village-data/get-data/{id}', [VillageDataController::class, 'getData'])->name('village-data.get-data');
+
+            // Route::get('/khom-data', [KhomDataController::class, 'index'])->name('khom-data');
+            // Route::get('/khom-data/get-attributes', [KhomDataController::class, 'getAttributes'])->name('khom-data.get-attributes');
+            // Route::get('/khom-data/get-data/{id}', [KhomDataController::class, 'getData'])->name('khom-data.get-data');
+
+            Route::any('/commune-data', [CommuneDataController::class, 'index'])->name('commune-data');
+            Route::any('/commune-data/getdata', [CommuneDataController::class, 'getdata']);
+            Route::any('/commune-data/getdetail', [CommuneDataController::class, 'getdetail']);
+            Route::post('/commune-data/save', [CommuneDataController::class, 'save']);
+            Route::post('/commune-data/delete', [CommuneDataController::class, 'delete']);
 
             Route::any('/district-data', [DistrictDataController::class, 'index'])->name('district-data');
             Route::any('/district-data/getdata', [DistrictDataController::class, 'getdata']);

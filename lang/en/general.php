@@ -23,5 +23,5 @@ return [
     'high_school'=> 'High School',
     'back'=> 'Back',
     'year'=> 'Year',
-
+    'title' => 'Commune Database',
 ];

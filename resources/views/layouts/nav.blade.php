@@ -5,6 +5,7 @@
        </a>
     </div>
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+      <div class="fs-2 fw-bold text-primary">{{__('general.title')}}</div>
        <ul class="navbar-nav flex-row align-items-center ms-auto">
           <!-- Language -->
           {{-- <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
@@ -26,7 +27,7 @@
           </li> --}}
           <!-- /Language -->
           <div class="col-md-6">
-            <select class="form-control changeLang">
+            <select class="form-select changeLang">
                 <option value="kh" {{ session()->get('locale') == 'kh' ? 'selected' : '' }}>Khmer</option>
                 <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
             </select>

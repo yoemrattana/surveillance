@@ -18,35 +18,36 @@ class DistrictDataController extends Controller
         return view('admin/districtData/index');
     }
 
-    public function getdata($id = 0)
+    public function getdata()
     {
-        $where = $id == 0 ? [] : ['id' => $id];
-        $list = DB::table('district_parent')->where($where)->get()->toArray();
-
-        if ($id == 0) {
-            return [
-                'list' => $list,
-                'questions' => DB::table('district_question')->get(),
-                'place' => [
-                    'pv' => DB::table('provinces')->get(),
-                    'ds' => DB::table('districts')->get(),
-                ]
-            ];
-        }
-
-        return $list[0];
+        return [
+            'questions' => DB::table('district_question')->get(),
+            'place' => [
+                'pv' => DB::table('provinces')->get(),
+                'ds' => DB::table('districts')->get(),
+            ]
+        ];
     }
 
     public function getdetail(Request $request)
     {
+        $id = DB::table('district_parent')->where($request->all())->first()?->id;
+        if ($id == null) {
+            return [
+                'detail' => null,
+                'id' => 0
+            ];
+        }
+        
         $tables = [1, '2a', '2b', 3, 4, 5, '6a', '6b', 7, 8];
-
         foreach ($tables as $num) {
             $name = 'district_' . $num;
-            $rs[$name] = DB::table($name)->where('parent_id', $request->id)->get();
+            $detail[$name] = DB::table($name)->where('parent_id', $id)->get();
         }
-
-        return $rs;
+        return [
+            'detail' => $detail,
+            'id' => $id
+        ];
     }
 
     public function save(Request $request)
@@ -69,8 +70,6 @@ class DistrictDataController extends Controller
             DB::table($name)->where('parent_id', $id)->delete();
             DB::table($name)->insert($tables[$name]);
         }
-
-        return $this->getdata($id);
     }
 
     public function delete(Request $request)
