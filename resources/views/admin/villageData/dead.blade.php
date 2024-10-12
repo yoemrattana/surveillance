@@ -1,18 +1,18 @@
-<h4 class="text-primary fw-bold">ករណីមរណភាពែដលេកើតេឡើងក្នុងឆ្នាំ (បើគ្មានបំពេញលខសូន្យ)</h4>
+<h4 class="text-primary fw-bold">{{__('village.dead')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
-        <th rowspan="2">ចំនួនមរណភាពដែលមាន នៅក្នុងភូមិ</th>
-        <th class="col-2" colspan="3">អាយុក្រោម១៨ឆ្នាំ</th>
-        <th colspan="2">អាយុ១៨ឆ្នាំឡើង</th>
+        <th rowspan="2">{{__('village.dead_num')}}</th>
+        <th class="col-2" colspan="3">{{__('village.under_18')}}</th>
+        <th colspan="2">{{__('village.over_18')}}</th>
     </tr>
     <tr class="text-center align-middle">
-        <th class="col-2">សរុប</th>
-        <th class="col-2">ស្រី</th>
-        <th class="col-2">ក្នុងនោះអាយុ ក្រោម៥ឆ្នាំ</th>
-        <th class="col-2">សរុប</th>
-        <th class="col-2">ស្រី</th>
+        <th class="col-2">{{__('general.total')}}</th>
+        <th class="col-2">{{__('general.female')}}</th>
+        <th class="col-2">{{__('village.under_5_case')}}</th>
+        <th class="col-2">{{__('general.total')}}</th>
+        <th class="col-2">{{__('general.female')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 41))">

@@ -1,22 +1,22 @@
-<h4 class="text-primary fw-bold">ផ្នែកផលិតកម្ម និងសេវាកម្ម</h4>
-<h6>ចំនួនទីតាំងសិប្បកម្មផលិតកម្មដែលមាននៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)៖</h6>
+<h4 class="text-primary fw-bold">{{__('village.category_production')}}</h4>
+<h6>{{__('village.num_of_production_craft')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
-        <th rowspan="2" class="col-num"></th>
-        <th rowspan="2">បរិយាយ</th>
-        <th class="col-2" rowspan="2">ចំនួនទីតាំង</th>
-        <th colspan="2">ចំនួនអ្នកធ្វើការងារ <br> (ម្ចាស់សិប្បកម្មនិងកម្មករ)</th>
+        <th rowspan="2"></th>
+        <th rowspan="2">{{__('village.description')}}</th>
+        <th class="col-2" rowspan="2">{{__('village.num_of_location')}}</th>
+        <th colspan="2">{!!__('village.num_of_craft_owner_worker') !!}</th>
     </tr>
     <tr class="text-center align-middle">
-        <th class="col-2">សរុប</th>
-        <th class="col-2">ស្រី</th>
+        <th class="col-2">{{__('general.total')}}</th>
+        <th class="col-2">{{__('general.female')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 7))">
     <tr>
-        <!-- ko if: label == 'សរុបចំនួនទីតាំងម៉ាស៊ីនកិនស្រូវមធ្យមនិងធំ' -->
-        <td rowspan="3" class="text-center align-middle" data-bind="text: sort"></td>
+        <!-- ko if: (sort == 55 && $index() == 0) -->
+            <td rowspan="3" class="text-center align-middle" data-bind="text: sort"></td>
         <!-- /ko -->
         <!-- ko ifnot: sort == 55 -->
         <td class="text-center align-middle" data-bind="text: sort"></td>
@@ -46,7 +46,7 @@
 
 <br>
 
-<h4 class="text-primary fw-bold">ការធ្វើអាជីវកម្មផ្នែកសេវាកម្មដែលមានទីតាំងនៅក្នុងភូមិ (បើគ្មានសូមបំពេញលេខសូន្យ)</h4>
+<h4 class="text-primary fw-bold">{{__('village.service_business_located')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()=='7-2')">
     <tr>

@@ -1,11 +1,11 @@
-<h4 class="text-primary fw-bold">ធនធានធម្មជាតិនិងបរិសា្ថន</h4>
+<h4 class="text-primary fw-bold">{{__('village.natural_resource')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
-        <th>បរិយាយ</th>
-        <th class="col-2">ចំនួនគ្រួសារ</th>
-        <th>ចំនួនមនុស្ស</th>
+        <th>{{__('general.description')}}</th>
+        <th class="col-2">{{__('general.num_family')}}</th>
+        <th>{{__('general.num_person')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 36))">
@@ -45,4 +45,4 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់ ចំនួនគ្រួសារដែលទទួលនូវការបំពុលបរិស្ថាន គឺសំដៅទៅលើគ្រួសារមួយចំនួន ដែលរស់នៅជាប់ ឬក្បែរកន្លែង ឧស្សាហកម្ម សិប្បកម្ម ឬទីកន្លែងចាក់សំរាម.. ។ល។</p>
+<p>{{__('village.natural_resource_note')}}</p>

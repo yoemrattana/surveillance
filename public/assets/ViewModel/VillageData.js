@@ -160,6 +160,7 @@ function viewModel() {
                 return {
                     sort: _.get(_.find(v, 'sort'), 'sort')(),
                     label: _.get(_.find(v, 'name_attribute'), 'name_attribute')(),
+                    code_attribute: _.get(_.find(v, 'code_attribute'), 'code_attribute')(),
                     fields: v
                 }
             }).sortBy(x => Number(x.sort)).value()

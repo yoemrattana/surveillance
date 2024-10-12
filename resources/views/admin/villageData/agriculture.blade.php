@@ -1,5 +1,5 @@
-<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែកកសិកម្មនិងធនធាន</h4>
-<h6>នៅក្នុងភូមិយើងខ្ញុំឆ្នាំនេះមាន៖</h6>
+<h4 class="text-primary fw-bold">{{__('village.status_agricultural_resource')}}</h4>
+<h6>{{__('village.status_agricultural_note')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()=='10')">
     <!-- ko if: sort() >=90 && sort() <=95-->
@@ -27,7 +27,7 @@
         <td>
             <div class="input-group">
                 <input data-bind="value: value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">តោន/ហិកតា</span>
+                <span class="input-group-text">{{__('general.ton')}}</span>
             </div>
         </td>
     </tr>
@@ -36,24 +36,23 @@
     <!-- ko if: sort() == 98 && code_attribute() == 'max' -->
     <tr>
         <td rowspan="2" class="text-center col-num" data-bind="text: sort"></td>
-        <td>ក្នុងឆ្នាំនេះតំលៃស្រូវលក់ចេញក្នុង១គីឡូក្រាម</td>
+        <td rowspan="2">{{__('village.farm_rice_price')}}</td>
         <td>
             <div class="input-group">
-                <span class="input-group-text">មានតម្លៃខ្ពាស់បំផុត</span>
+                <span class="input-group-text">{{__('village.max_rice_price')}}</span>
                 <input data-bind="value: value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">រៀល</span>
+                <span class="input-group-text">{{__('general.riel')}}</span>
             </div>
         </td>
     </tr>
     <!-- /ko -->
     <!-- ko if: sort() == 98 && code_attribute() == 'min'-->
     <tr>
-        <td>ក្នុងឆ្នាំនេះតំលៃស្រូវលក់ចេញក្នុង១គីឡូក្រាម</td>
         <td>
             <div class="input-group">
-                <span class="input-group-text">មានតម្លៃទាបបំផុត</span>
+                <span class="input-group-text">{{__('village.min_rice_price')}}</span>
                 <input data-bind="value: value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">រៀល</span>
+                <span class="input-group-text">{{__('general.rield')}}</span>
             </div>
         </td>
     </tr>
@@ -79,7 +78,7 @@
 
     <!-- ko if: sort().in(101) -->
     <tr class="no-border">
-        <td class="no-border" colspan="3">ក្នុងភូមិយើងខ្ញុំចំនួនគ្រួសារក្នុងស្ថិតិខាងលើដែលនិយមប្រើប្រាស់ជីគីមីនិងថ្នាំគីមីសំលាប់សត្វល្អិត សំរាប់ការដំាដុះក្នុងឆ្នាំនេះមាន ៖</td>
+        <td class="no-border" colspan="3">{{__('village.chemical_use')}}</td>
     </tr>
     <tr>
         <td class="text-center col-num" data-bind="text: sort"></td>
@@ -109,5 +108,5 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់ ៖ ចំពោះគ្រួសារណាដែលប្រើជីលើសពី១ មានន័យថាជីគីមីក៏ប្រើ ជីសរីរាង្គក៏ប្រើ ក្នុងករណីនេះ សូមកត់ត្រាការប្រើប្រាស់ជីប្រភេទណាមួយដែលប្រើញឹកញាប់ជាងគេ ម្យ៉ាងទៀតផលបូកបន្ទាត់លេខ (103+104) ត្រូវតូចជាងឬស្មើចំនួនគ្រួសារសរុបក្នុងភូមិ។ ការកត់ត្រាដូចគ្នានេះដែរ ចំពោះគ្រួសារ ដែលបើ ប្រាស់ថ្នាំសំលាប់សត្វល្អិតឬស្ម ។
+<p>{{__('village.agriculture_note')}}
 </p>

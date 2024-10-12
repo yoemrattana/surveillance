@@ -1,15 +1,15 @@
-<h4 class="text-primary fw-bold">ក្រុមជនងាយរងគ្រោះឬកំពុងជួបការលំបាក</h4>
+<h4 class="text-primary fw-bold">{{__('village.vunerability_group')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
         <th rowspan="2" class="col-num"></th>
-        <th rowspan="2">បរិយាយ</th>
-        <th class="col-2" rowspan="2">ចំនួនគ្រួសារ</th>
-        <th colspan="2">កុមារអាយុក្រោម១៨ឆ្នាំ</th>
+        <th rowspan="2">{{__('general.description')}}</th>
+        <th class="col-2" rowspan="2">{{__('general.num_family')}}</th>
+        <th colspan="2">{{__('village.children_under_18')}}</th>
     </tr>
     <tr class="text-center align-middle">
-        <th class="col-2">សរុប</th>
-        <th class="col-2">ស្រី</th>
+        <th class="col-2">{{__('general.total')}}</th>
+        <th class="col-2">{{__('general.female')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 28))">
@@ -77,7 +77,7 @@
 </table>
 
 <br>
-<h5>មេរោគេអដស៏និងជម្ងឺអដស៏</h5>
+<h5>{{__('village.hiv')}}</h5>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()==30)">
     <tr>
@@ -95,7 +95,7 @@
 </table>
 
 <br>
-<h5>កុមារឬក្មេងកំព្រាឳពុកម្តាយអាយុក្រោម១៨ឆ្នាំ (បើគ្មានបំពេញលេខសូន្យ) ៖</h5>
+<h5>{{__('village.orphan')}}</h5>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(x => x.section()==31)">
     <tr>
@@ -112,16 +112,16 @@
     </tbody>
 </table>
 <br>
-<h5>ការចាប់រំលោភនិងជួញដូរ (បើគ្មានបំពញេលខសូន្យ) ៖</h5>
+<h5>{{__('village.trafficking')}}</h5>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle col-num">
         <th rowspan="2"></th>
-        <th rowspan="2">បរិយាយ</th>
-        <th>ភេទ</th>
-        <th class="col-2">ក្រោម១៨ឆ្នាំ</th>
-        <th class="col-2">អាយុ១៨ឆ្នាំឡើង</th>
-        <th class="col-2">សរុប</th>
+        <th rowspan="2">{{__('general.description')}}</th>
+        <th>{{__('general.gender')}}</th>
+        <th class="col-2">{{__('village.under_18')}}</th>
+        <th class="col-2">{{__('village.over_18')}}</th>
+        <th class="col-2">{{__('general.total')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 32))">
@@ -161,7 +161,7 @@
 </table>
 <br>
 
-<h5>ចំនួនជនពិការដែលមាននៅក្នុងភូមិ (បើគ្មានបំពេញលេខសូន្យ) ៖</h5>
+<h5>{{__('village.disabled_people')}}</h5>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
@@ -177,7 +177,7 @@
             <td data-bind="text: sort" class="col-1"></td>
             <!-- /ko -->
             <!-- ko if: sort == '186.1'-->
-            <td rowspan="4" class="col-1">ក្នុងនោះ</td>
+            <td rowspan="4" class="col-1">{{__('village.in_that')}}</td>
             <!-- /ko -->
             <td data-bind="text: label"></td>
             <td>
