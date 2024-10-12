@@ -18,20 +18,19 @@
                     <div class="d-flex
                                 flex-column
                                 bd-highlight
-                                mb-5
                                 flex-wrap
                                 align-content-center">
-                        <a href="#" class="app-brand-link gap-2">
-                        <span class="app-brand-logo demo">
-                                <img width="130" src="../../assets/img/logo/logo_1.png" alt="">
-                            </span>
+                        <a href="#" class="app-brand-link">
                             <span class="app-brand-logo demo">
-                                <img width="100" src="../../assets/img/logo/logo_2.png" alt="">
-                            </span>
+                                <img width="180" src="../../assets/img/logo/logo_1.png" alt="">
+                            </span>  
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2">Welcome to CDB! 👋</h4>
+                    <h4 class="mb-2">
+                        <img width="50" src="../../assets/img/logo/logo_2.png" alt="">
+                        Welcome to CDB
+                    </h4>
                     <p class="mb-4">Please sign-in to your account and start the adventure</p>
                     <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}">
                         @csrf

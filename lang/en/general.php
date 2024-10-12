@@ -47,4 +47,5 @@ return [
     'kg' => 'Kg',
     'ton' => 'Ton',
     'riel' => 'Riel',
+    'save_successfully' => 'Form submitted successfully',
 ];
