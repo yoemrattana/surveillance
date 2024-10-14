@@ -48,5 +48,5 @@
    @include('admin.villageData.form')
 </div>
 
-<script src="{{ asset('/assets/ViewModel/VillageData.js') }}"></script>
+{!! latestJs('/assets/ViewModel/VillageData.js') !!}
 @endsection
