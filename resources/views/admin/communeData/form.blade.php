@@ -237,7 +237,7 @@
             <td>
                 <div class="input-group">
                     <span class="input-group-text">ចំនួន</span>
-                    <input type="number" class="form-control" data-bind="value: ton/ha" required />
+                    <input type="number" class="form-control" data-bind="value: ha" required />
                     <span class="input-group-text">តោន/ហ.ត</span>
                 </div>
             </td>
