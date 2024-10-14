@@ -43,6 +43,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/village-data', [VillageDataController::class, 'index'])->name('village-data');
             Route::get('/village-data/get-attributes', [VillageDataController::class, 'getAttributes'])->name('village-data.get-attributes');
             Route::get('/village-data/get-data/{id}', [VillageDataController::class, 'getData'])->name('village-data.get-data');
+            Route::get('/village-data/search', [VillageDataController::class, 'search'])->name('village-data.search');
+            Route::post('/village-data/save', [VillageDataController::class, 'save']);
+            Route::post('/village-data/delete', [VillageDataController::class, 'delete']);
 
             // Route::get('/khom-data', [KhomDataController::class, 'index'])->name('khom-data');
             // Route::get('/khom-data/get-attributes', [KhomDataController::class, 'getAttributes'])->name('khom-data.get-attributes');
@@ -57,6 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::any('/district-data', [DistrictDataController::class, 'index'])->name('district-data');
             Route::any('/district-data/getdata', [DistrictDataController::class, 'getdata']);
             Route::any('/district-data/getdetail', [DistrictDataController::class, 'getdetail']);
+            Route::any('/district-data/search', [DistrictDataController::class, 'search']);
             Route::post('/district-data/save', [DistrictDataController::class, 'save']);
             Route::post('/district-data/delete', [DistrictDataController::class, 'delete']);
         }

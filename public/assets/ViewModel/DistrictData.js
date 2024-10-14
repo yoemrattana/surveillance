@@ -23,6 +23,7 @@ function viewModel() {
         self.ds('0302');
 
         self.questions(rs.questions);
+        self.tableDetails(rs.attributes);
     });
 
     function getDetail () {
@@ -46,7 +47,7 @@ function viewModel() {
             var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
             model.q_id = q.id;
 
-            if (self.tableDetails()) {
+            if (self.tableDetails() && self.tableDetails()[tblname]) {
                 var found = self.tableDetails()[tblname].find(r => r.q_id == q.id);
                 answers.forEach(key => model[key] = found[key]);
             }
@@ -145,15 +146,10 @@ function viewModel() {
             master,
             tables: JSON.stringify(tables)
         };
-
-        app.ajax('/admin/district-data/save', submit).done(function (model) {
-            if (master.id == 0) {
-                self.listModel.push(model);
-            } else {
-                var old = self.listModel().find(r => r.id == model.id);
-                self.listModel.replace(old, model);
-            }
-            self.back();
+        console.log(submit)
+        app.ajax('/admin/district-data/save', submit).done(function (response) {
+            self.successMessage(response.message);
+            app.showToast();
         });
     };
 

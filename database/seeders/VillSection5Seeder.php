@@ -21,7 +21,7 @@ class VillSection5Seeder extends Seeder
     private function setAttr() {
         return [
             [
-                "name_attribute"       => "",
+                "name_attribute"       => "# of people whose occupation is rice farming or upland rice",
                 "name_attribute_khmer" => "ចំនួនមនុស្សមានមុខរបរធ្វើស្រូវស្រ ឬធ្វើស្រូវចំការ",
                 "code_attribute"       => "M1",
                 "group"                => "32",
@@ -31,7 +31,7 @@ class VillSection5Seeder extends Seeder
                 "category"             => "មុខរបរធ្វើស្រែ"
             ],
             [
-                "name_attribute"       => "",
+                "name_attribute"       => "# of people who occupation is cultivating long-term crops",
                 "name_attribute_khmer" => "ចំនួនមនុស្សមានមុខរបរធ្វើស្រូវស្រ ឬធ្វើស្រូវចំការ",
                 "code_attribute"       => "M2",
                 "group"                => "32",
@@ -41,7 +41,7 @@ class VillSection5Seeder extends Seeder
                 "category"             => "មុខរបរធ្វើស្រែ"
             ],
             [
-                "name_attribute"       => "",
+                "name_attribute"       => "# of people who occupation is cultivating short-term crops",
                 "name_attribute_khmer" => "ចំនួនមនុស្សមានមុខរបរធ្វើស្រូវស្រ ឬធ្វើស្រូវចំការ",
                 "code_attribute"       => "F1",
                 "group"                => "32",
@@ -51,7 +51,7 @@ class VillSection5Seeder extends Seeder
                 "category"             => "មុខរបរធ្វើស្រែ"
             ],
             [
-                "name_attribute"       => "",
+                "name_attribute"       => "# of people who occupation is cultivating poeple_with_crop_vegetable",
                 "name_attribute_khmer" => "ចំនួនមនុស្សមានមុខរបរធ្វើស្រូវស្រ ឬធ្វើស្រូវចំការ",
                 "code_attribute"       => "F2",
                 "group"                => "32",
@@ -863,5 +863,3 @@ class VillSection5Seeder extends Seeder
         ];
     }
 }
-
-

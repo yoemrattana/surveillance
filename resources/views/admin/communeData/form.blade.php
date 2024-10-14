@@ -4,19 +4,70 @@
     }
 </style>
 
+<div class="position-fixed top-0 end-0" style="z-index: 11">
+  <div class="toast align-items-center text-white bg-info bg-gradient border-0 hide" role="alert" aria-live="assertive" aria-atomic="true" >
+    <div class="toast-body">
+      <p data-bind="text: successMessage"></p>
+    </div>
+  </div>
+</div>
+
+
 <div class="card">
+    <div class="card-header text-white bg-primary">
+        <span class="fs-3">{{__('general.dist')}}</span>
+    </div>
     <div class="card-body">
-        <div class="d-flex justify-content-end gap-1">
-            <button class="btn btn-primary gap-2" form="myform">
-                <span class="fa fa-save"></span>
-                <span>រក្សាទុក</span>
-            </button>
-            <button class="btn btn-primary gap-2" data-bind="click: back">
-                <span class="fa fa-arrow-left"></span>
-                <span>ត្រលប់</span>
-            </button>
+        <div class="row mt-3" >
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text fs-5">ខេត្ត</span>
+                    <select class="form-select"
+                        data-bind="value: pv_code, 
+                                options: pvList,
+                                optionsValue: 'code',
+                                optionsText: $root.lang() == 'en' ? 'name' : 'namek',
+                                optionsCaption: ''"
+                        required></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <span class="input-group-text fs-5">ស្រុក</span>
+                    <select class="form-select"
+                        data-bind="value: ds_code, 
+                                options: dsList(),
+                                optionsValue: 'code',
+                                optionsText: $root.lang() == 'en' ? 'name' : 'namek',
+                                optionsCaption: ''"
+                        required></select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group">
+                    <label class="input-group-text fs-5" for="yearFilter">{{__('general.year')}}</label>
+                    <select id="yearFilter" class="form-select" data-allow-clear="true" data-bind="value: year">
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <hr>
+    </div>
+</div>
+<br/>
+<div class="card">
+    <div class="card-header">
+        <button class="btn btn-primary gap-2 float-end" form="districtForm" data-bind="click: save">
+            <span class="fa fa-save"></span>
+            {{__('general.save')}}
+        </button>
+    </div>
+    <div class="card-body">
+        <form id="districtForm">
 
         <form id="myform" data-bind="submit: save">
             <h2 class="pt-2 text-center">ទិន្នន័យថ្នាក់ឃុំ</h2>
@@ -64,9 +115,9 @@
                         <input type="text" class="form-control" data-bind="value: recorded_by" required />
                     </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-md-3">
                     <div class="input-group">
-                        <span class="input-group-text">លេខទូរស័ព្ទ</span>
+                        <span class="input-group-text fs-5">លេខទូរស័ព្ទ</span>
                         <input type="number" class="form-control" data-bind="value: phone" required />
                     </div>
                 </div>
