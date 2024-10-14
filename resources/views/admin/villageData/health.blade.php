@@ -123,10 +123,10 @@
             <!-- ko if: $root.getField2($index() ,fields, 'well')-->
             <div class="input-group">
                 <!-- ko if: sort != 162 -->
-                <span class="input-group-text">{{__('village.num_well')}}</span>
+                <span class="input-group-text">{{__('village.well')}}</span>
                 <!-- /ko -->
                 <!-- ko if: sort == 162 -->
-                <span class="input-group-text">{{__('village.num_pond')}}</span>
+                <span class="input-group-text">{{__('village.pond')}}</span>
                 <!-- /ko -->
                 <input data-bind="value: $root.getField2($index() ,fields, 'well').value" type="number" class="form-control" placeholder="......">
             </div>
