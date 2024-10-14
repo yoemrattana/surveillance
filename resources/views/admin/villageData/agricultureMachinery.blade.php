@@ -1,4 +1,4 @@
-<h6>គ្រឿងយន្តកសិកម្ម (បើគ្មានបំពេញលេខសូន្យ)</h6>
+<h6>{{__('village.machinery')}}</h6>
 
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
@@ -34,9 +34,9 @@
 
 </table>
 <br>
-<p>រាប់តាមភាពជាក់ស្តែងនៅក្នុងភូមិយើងខ្ញុំឆ្នាំនេះ ចំនួនគ្រួសារនិងចំនួនមធ្យោបាយដឹកជញ្ជូនមានដូចខាងក្រោម៖</p>
+<p>{{__('village.machinery_note')}}</p>
 <br>
-<h5>រថយន្តដឹកទំនិញនិងដឹកអ្នកដំណើរ (បើគ្មានបំពេញលេខសូន្យ)</h5>
+<h5>{{__('village.car_transport')}}</h5>
 
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
@@ -74,7 +74,7 @@
 </table>
 
 <br>
-<h6>ម៉ូតូនិងកង់ (បើគ្មានបំពេញលេខសូន្យ)</h6>
+<h6>{{__('village.moto_bicycle')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
@@ -109,7 +109,7 @@
 </table>
 
 <br>
-<h6>ទូកែចវ-អ៊ុំ (បើគ្មានបំពញេលខសូន្យ)</h6>
+<h6>{{__('village.boat')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
@@ -147,7 +147,7 @@
 </table>
 
 <br>
-<h6>ទូកម៉ាស៊ីន-កាណូត សំរាប់នេសាទ ដឹកអ្នកដំណើរ និងដឹកទំនិញ (បើគ្មានបំពេញលេខសូន្យ)</h6>
+<h6>{{__('village.motor_boat')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
@@ -182,9 +182,9 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់ ៖ ចំនួនមធ្យោបាយដឹកជញ្ជូនតាមប្រភេទនីមួយៗអាចច្រើនជាង ឬស្មើចំនួនគ្រួសារ</p>
+<p>{{__('village.transportation_note')}}</p>
 <br>
-<h6>ចំងាយជាមធ្យមពីចំណុចកណ្តាលភូមិទៅសាលាឃុំ/សង្កាត់ សាលាក្រុង/ស្រុក/ខណ្ឌ័ និងសាលា ខេត្ត/រាជធានី</h6>
+<h6>{{__('village.average_distance_from_village_commune')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3" data-bind="foreach: $data.filter( r => r.section() == 16)">
     <tr>
         <td data-bind="text: sort" class="col-num"></td>
@@ -201,7 +201,7 @@
 
 <!-- 17 -->
 <br>
-<h6 class="text-center">ការចិញ្ចឹមសត្វនិងវាវីវប្បកម្ម (បើគ្មានសូមដាក់លខសូន្យ)</h6>
+<h6 class="text-center">{{__('village.livestock_raising')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
@@ -233,19 +233,19 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់៖ ការរាប់យកចំនួនបរិមាណសត្វចិញ្ចឹម គឺរាប់យកសត្វដែលមាននៅពេលស្រង់ទិន្នន័យតែប៉ុណ្ណោះ</p>
+<p>{{__('village.livestock_note')}}</p>
 <table class="table table-bordered border border-1 mt-3">
     <tr>
-        <td>១).គោឬក្របី រាប់យកពីកូនគោឬក្របីអាយុ១ខួបឡើងទៅ</td>
-        <td>២).ជ្រូក រាប់យកកូនជ្រូកបានចាក់វ៉ាក់សាំងការពាររួច </td>
+        <td>{{__('village.count_cow_note')}}</td>
+        <td>{{__('village.count_pig_note')}}</td>
     </tr>
     <tr>
-        <td>៣).មាន់ រាប់យកមាន់មានទម្ងន់០, ៨គីឡូ(៨ខាំ ឡើងទៅ </td>
-        <td>៤).ទា រាប់យកពីទាទម្ងន់១គីឡូឡើងទៅ </td>
+        <td>{{__('village.count_chicken_note')}} </td>
+        <td>{{__('village.count_duck_note')}}</td>
     </tr>
     <tr>
-        <td>៥).ពពែ រាប់យកទាំងអស់ </td>
-        <td>៦).ក្រពើ រាប់យកទាំងអស់ </td>
+        <td>{{__('village.count_goat_note')}}</td>
+        <td>{{__('village.count_crocodie_note')}}</td>
     </tr>
 </table>
 
@@ -257,8 +257,8 @@
     <tr class="text-center align-middle">
         <th class="col-num"></th>
         <th>{{__('general.fishery')}}</th>
-        <th class="col-2">{{__('ចំនួនគ្រួសារចិញ្ចឹម')}}</th>
-        <th class="col-2">{{__('សរុបបរិមាណទទួលផល')}}</th>
+        <th class="col-2">{{__('village.num_of_family_foster')}}</th>
+        <th class="col-2">{{__('village.total_benefit')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 18))">

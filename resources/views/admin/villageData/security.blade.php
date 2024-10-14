@@ -1,6 +1,6 @@
-<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែករដ្ឋបាលនិងសន្តិសុខសង្គម</h4>
-<p>នៅក្នុងឆ្នាំនេះ ភូមិយើងខ្ញុំមានបញ្ហាអសន្តិសុខសង្គមនិងទំនាស់នានាដែលកើតមានឡើងគួរអោយកត់សំគាល់ ដូចខាងក្រោម ៖</p>
-<h6>ករណីឃាតកម្ម ប្លន់ ចាប់ជំរិត លួច ទំនាស់ដីធ្លី (បើគ្មានបំពញេលខសូន្យ)</h6>
+<h4 class="text-primary fw-bold">{{__('village.security')}}</h4>
+<p>{{__('village.security_note_1')}}</p>
+<h6>{{__('village.security_note_2')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 38)">
     <tr>
@@ -18,7 +18,7 @@
 </table>
 
 <br>
-<h5>ករណីទំនាស់ផ្សេងៗ (បើគ្មានបំពញេលខសូន្យ)</h5>
+<h5>{{__('village.security_note_3')}}</h5>
 
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 39)">
@@ -27,7 +27,7 @@
         <td class="text-center col-num" data-bind="text: sort"></td>
         <!-- /ko -->
         <!-- ko if: sort() == '201.1' -->
-        <td rowspan="2" class="text-center">ក្នុងនោះ</td>
+        <td rowspan="2" class="text-center">{{__('village.in_that')}}</td>
         <!-- /ko -->
         <td data-bind="text:name_attribute"></td>
         <td>
@@ -42,7 +42,7 @@
 </table>
 
 <br>
-<p>ករណីអំពើហឹង្សា ការប្រើប្រាស់គ្រឿងញៀន (បើគ្មានបំពញេលខសូន្យ)</p>
+<p>{{__('village.security_note_4')}}</p>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 40)">
     <tr>

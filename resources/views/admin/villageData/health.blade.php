@@ -1,5 +1,5 @@
-<h4 class="text-primary fw-bold">ស្ថានភាពផ្នែកសុខភាពនិងអនាម័យ</h4>
-<h6>នៅក្នុងភូមិយើងខ្ញុំមាន ៖</h6>
+<h4 class="text-primary fw-bold">{{__('village.health')}}</h4>
+<h6>{{__('village.health_note_1')}}</h6>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter( r => r.section() == 21)">
     <tr>
@@ -28,19 +28,19 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់ ៖ ប្រសិនបើ មណ្ឌលសុខភាពមានទីតាំងនៅក្នុងភូមិ ចំងាយគឺ សូន្យ គ.ម</p>
+<p>{{__('village.health_note_2')}}</p>
 <br>
 
-<h4 class="text-primary fw-bold">នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖ </h4>
+<h4 class="text-primary fw-bold">{{__('village.health_note_3')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <thead class="table-primary">
     <tr class="text-center align-middle">
         <th class="col-num"></th>
-        <th>បរិយាយ</th>
-        <th class="col-2">ចំនួនស្ត្រីបាន សំរាលកូន</th>
-        <th class="col-2">ចំនួនទារក បានកើត</th>
-        <th class="col-2">ចំនួនស្រ្តីបាន ស្លាប់ ក្រោយសំ រាលកូន ក្នុងចន្លោះ0- ១ខែ</th>
-        <th class="col-2">ចំនួនទារកបាន ស្លាប់ក្នងចន្លោះ0- ១ខែ</th>
+        <th>{{__('general.description')}}</th>
+        <th class="col-2">{{__('village.num_deliveried_mother')}}</th>
+        <th class="col-2">{{__('village.num_new_born')}}</th>
+        <th class="col-2">{{__('village.num_mother_die_after_deliveried')}}</th>
+        <th class="col-2">{{__('village.infant_die')}}</th>
     </tr>
     </thead>
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 22))">
@@ -83,7 +83,7 @@
     </tbody>
 </table>
 <br>
-<h4 class="text-primary fw-bold">នៅក្នុងឆ្នាំនេះ ក្នុងភូមិយើងខ្ញុំមានស្ត្រីសំរាលកូនដូចខាងក្រោម ៖</h4>
+<h4 class="text-primary fw-bold">{{__('village.health_note_4')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 23)">
     <tr>
@@ -105,8 +105,8 @@
 </table>
 
 <br>
-<h4 class="text-primary fw-bold">ស្ថានភាពនៃការប្រើប្រាស់ទឹកក្នុងភូមិ</h4>
-<h5> តាមការរាប់ជាក់ស្ដែងក្នុងឆ្នាំនេះ ប្រភពទឹកប្រើប្រាស់ នៅក្នុងភូមិយើងខ្ញុំមាន ៖</h5>
+<h4 class="text-primary fw-bold">{{__('village.water_status')}}</h4>
+<h5> {{__('village.water_sanitation_note')}}</h5>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 24))">
     <tr>
@@ -123,10 +123,10 @@
             <!-- ko if: $root.getField2($index() ,fields, 'well')-->
             <div class="input-group">
                 <!-- ko if: sort != 162 -->
-                <span class="input-group-text">{{__('ចំនួនអណ្តូង')}}</span>
+                <span class="input-group-text">{{__('village.well')}}</span>
                 <!-- /ko -->
                 <!-- ko if: sort == 162 -->
-                <span class="input-group-text">{{__('ចំនួនស្រះទឹក')}}</span>
+                <span class="input-group-text">{{__('village.pond')}}</span>
                 <!-- /ko -->
                 <input data-bind="value: $root.getField2($index() ,fields, 'well').value" type="number" class="form-control" placeholder="......">
             </div>
@@ -136,9 +136,9 @@
     </tbody>
 </table>
 <br>
-<p>សំគាល់ ៖ ផលបូកចំនួនគ្រួសារដែលប្រើប្រាស់ប្រភពទឹកខាងលើនេះ ត្រូវស្មើចំនួនគ្រួសារសរុបក្នុងភូមិ ។</p>
+<p>{{__('village.health_note_5')}}</p>
 <br>
-<h4 class="text-primary fw-bold">អានាម័យនៃការទទួលទានទឹក</h4>
+<h4 class="text-primary fw-bold">{{__('village.drinking_water')}}</h4>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 25)">
     <tr>
@@ -159,8 +159,8 @@
     </tbody>
 </table>
 <br>
-<p><b>សំគាល់៖</b> ផលបូកចំនួនគ្រួសារដែលប្រើប្រាស់ទឹកសំរាប់ទទួលទានខាងលើនេះ ត្រូវតូចជាង ឬស្មើចំនួនគ្រួសារសរុបក្នុងភូមិ។ ចំពោះករណីគ្រួសារណាដែលអនុវត្តលើសពី១ រាប់យកតែវិធីណាដែលប្រើញឹកញាប់ ឬសំខាន់ជាងគេ ។</p>
-<h4 class="text-primary fw-bold">ចំងាយប្រភពទឹកប្រើប្រាស់ទាំងរដូវប្រាំងនិងវស្សា</h4>
+<p><b>{!!__('village.health_note_6') !!}</b></p>
+<h4 class="text-primary fw-bold">{{__('village.distance_to_water_source')}}</h4>
 <br>
 <table class="tbl-data table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 26)">
@@ -181,7 +181,7 @@
 </table>
 
 <br>
-<h4 class="text-primary fw-bold">តាមការរាប់ជាក់ស្ដែងរបស់យើងខ្ញុំ ក្នុងឆ្នាំនេះក្នុងភូមិទាំងមូលមាន ៖</h4>
+<h4 class="text-primary fw-bold">{{__('village.water_source_note')}}</h4>
 <table class="tbl-data table table-borderedb order border-1 mt-3">
     <tbody data-bind="foreach: $data.filter(r=>r.section() == 27)">
     <tr>
