@@ -25,8 +25,8 @@ function viewModel() {
             model.q_id = q.id;
 
             if (self.tableDetails()) {
-                var found = self.tableDetails()[tblname]?.find(r => r.q_id == q.id);
-                found && answers.forEach(key => model[key] = found[key]);
+                var found = self.tableDetails()[tblname].find(r => r.q_id == q.id);
+                answers.forEach(key => model[key] = found[key]);
             }
 
             model.no = () => no;
@@ -86,14 +86,80 @@ function viewModel() {
 
     self.commune_3 = ko.pureComputed(() => {
         var nums = [11, 12, 13,];
-        var answer = ['ha', 'ton/ha'];
+        var answer = ['ha'];
         return prepare(nums, answer, 'commune_3');
     });
 
     self.commune_4 = ko.pureComputed(() => {
         var nums = [14, 15, 16, 17, 18,];
-        var answer = ['ha', 'ha', 'ha', 'ton/ha', 'ha'];
+        var answer = ['ha', 'ton'];
         return prepare(nums, answer, 'commune_4');
+    });
+
+    self.commune_5 = ko.pureComputed(() => {
+        var nums = [19, 20, 21, 22, 23,];
+        var answer = ['ha', 'ton'];
+        return prepare(nums, answer, 'commune_5');
+    });
+
+    self.commune_6 = ko.pureComputed(() => {
+        var nums = [24,25,26];
+        var answer = ['ha', 'ton'];
+        return prepare(nums, answer, 'commune_6');
+    });
+
+    self.commune_7 = ko.pureComputed(() => {
+        var nums = [27,28,29];
+        var answer = ['ha', 'ton'];
+        return prepare(nums, answer, 'commune_7');
+    });
+
+    self.commune_8 = ko.pureComputed(() => {
+        var nums = [30,31,32,33,34,35,36,37];
+        var answer = ['ha', 'ton'];
+        return prepare(nums, answer, 'commune_8');
+    });
+
+    self.commune_9 = ko.pureComputed(() => {
+        var nums = [38,39,40,41,42,43,44,45,46,47,48];
+        var answer = ['ha', 'ton', 'tons'];
+        return prepare(nums, answer, 'commune_9');
+    });
+
+    self.commune_10 = ko.pureComputed(() => {
+        var nums = [49,50,51,51.1,51.2,51.3,51.4,51.5,51.6,51.7];
+        var answer = ['meter'];
+        return prepare(nums, answer, 'commune_10');
+    });
+
+    self.commune_11 = ko.pureComputed(() => {
+        var nums = [52,53,54];
+        var answer = ['place', 'amount'];
+        return prepare(nums, answer, 'commune_11');
+    });
+
+    self.commune_12 = ko.pureComputed(() => {
+        var nums = [55,56,57];
+        var answer = ['place', 'amount'];
+        return prepare(nums, answer, 'commune_12');
+    });
+
+    self.commune_13 = ko.pureComputed(() => {
+        var nums = [58,59,60,61,62,63];
+        var answer = ['place', 'room', 'classes', 'people'];
+        return prepare(nums, answer, 'commune_13');
+    });
+
+    self.commune_14 = ko.pureComputed(() => {
+        var nums = [64,65,66,67,68,69];
+        var answer = ['place', 'room', 'classes', 'people'];
+        return prepare(nums, answer, 'commune_14');
+    });
+    
+    self.commune_15 = ko.pureComputed(() => {
+        var nums = [70,70.1,70.2,70.3,71,71.1,71.2];
+        var answer = ['school', 'boytoilet', 'girltoilet'];
+        return prepare(nums, answer, 'commune_15');
     });
 
 
@@ -209,6 +275,9 @@ function viewModel() {
             ['មាន', 'Have'],
             ['ចំនួនបុគ្គល', 'Number of staffs'],
             ['ប្រធាន', 'Chief'],
+            ['សាលា', 'School'],
+            ['ចំនួនបន្ទប់បង្គន់សរុប', 'boytoilet'],
+            ['ចំនួនបន្ទប់បង្គន់សំរាប់សិស្សសី', 'girltoilet'],
             ['អុនប្រធាន', 'Vice chief'],
             ['រៀល', 'Riel'],
             ['អង្គការ', 'Organization'],
@@ -242,7 +311,14 @@ function viewModel() {
             ['កែប្រែ', 'Edit'],
             ['លុប', 'Delete'],
             ['ហ.ត', 'ha'],
-            ['តោន/ហ.ត', 'ton/ha']
+            ['តោន/ហ.ត', 'tons'],
+            ['តោន', 'ton'],
+            ['ម៉ែត្រ', 'Meter'],
+            ['ខ្សែ', 'Line'],
+            ['ស្រូវប្រាំង', 'rice paddy'],
+            ['បន្ទប់', 'room'],
+            ['ថ្នាក់', 'classes']
+
         ];
 
         $('.container-fluid *').each(function () {

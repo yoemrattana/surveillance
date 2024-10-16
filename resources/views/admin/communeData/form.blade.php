@@ -176,86 +176,724 @@
                 </tbody>
             </table>
             <br />
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_3">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <td>
+                            <!-- ko if: no().in(11,12,13) -->
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហ.ត</span>
+                            </div>
+                       <!-- /ko -->
+                        
+                    </tr>
+                </tbody>
+            </table> 
+
+            <br />
 
             <table class="table table-bordered">
-    <tbody data-bind="foreach: commune_3">
-        <tr>
-            <td data-bind="text: no()"></td>
-            <td data-bind="text: question()"></td>
+                <tbody data-bind="foreach: commune_4">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
 
-            <!-- ko if: no() == 11 -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">មាន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
 
-            <!-- ko if: no() == 12 -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">មាន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">តោន/ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(14,15,16,18) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហ.ត</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(17) -->
+                        <td>
+                            
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន/ហ.ត</span>
+                            </div>
+                            
+                        </td>
+                        <!-- /ko -->
+                        
+                    </tr>
+                </tbody>
+            </table>
+            
+            <br />
 
-            <!-- ko if: no() == 13 -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">មាន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
-        </tr>
-    </tbody>
-</table>
-<br />
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_5">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
 
-<table class="table table-bordered">
-    <tbody data-bind="foreach: commune_4">
-        <tr>
-            <td data-bind="text: no(), visible: group() == null"></td>
-            <td data-bind="text: group(), visible: group() != null && (no() == '14' || no() == '15')" rowspan="3"></td>
-            <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
 
-            <!-- ko if: no().in(14,15,16) -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">ចំនួន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
-            <!-- ko if: no() == 17 -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">ចំនួន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">តោន/ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
-             
-            <!-- ko if: no() == 18 -->
-            <td>
-                <div class="input-group">
-                    <span class="input-group-text">ចំនួន</span>
-                    <input type="number" class="form-control" data-bind="value: ha" required />
-                    <span class="input-group-text">ហ.ត</span>
-                </div>
-            </td>
-            <!-- /ko -->
-        </tr>
-    </tbody>
-</table>
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(19,20,21,23) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហ.ត</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(22) -->
+                        <td>
+                            
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន/ហ.ត</span>
+                            </div>
+                            
+                        </td>
+                        <!-- /ko -->
+                         
+                    </tr>
+                </tbody>
+            </table> 
 
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_6">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(24,26) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                            
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                            
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(25) -->
+                        <td>
+                            
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន/ហ.ត</span>
+                            </div>
+                            
+                        </td>
+                        <td>
+                            
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន/ហ.ត</span>
+                            </div>
+                            
+                        </td>
+                        <!-- /ko -->
+                         
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+            
+            <table class="table table-bordered">
+            <thead class="text-center">
+                    <tr>
+                        <th rowspan="2">rice paddy</th>
+                    </tr>
+            </thead>
+
+            <table class="table table-bordered">
+            <tr>
+
+            </tr>
+                <tbody data-bind="foreach: commune_7">
+                    <tr>
+                        
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        
+                        <!-- ko if: no().in(27,28,29) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ចំនួន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_8">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(30,31,32,33,34,35,36,37) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហិកតា</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_9">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(38,39,40,41,42,43,44,45,46,47,48) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text"></span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហិកតា</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text"></span>
+                                <input type="number" class="form-control" data-bind="value: ha" required />
+                                <span class="input-group-text">ហិកតា</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text"></span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text"></span>
+                                <input type="number" class="form-control" data-bind="value: ton" required />
+                                <span class="input-group-text">តោន</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_10">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && (no() == '51.1')" rowspan="7"></td>
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+
+                         <!-- ko if: no().in(49,50,51) -->
+                         <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: meter" required />
+                                <span class="input-group-text">ម៉ែត្រ</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                        <!-- ko if: no().in(51.1,51.2,51.3,51.4,51.5,51.6,51.7) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: meter" required />
+                                <span class="input-group-text">ម៉ែត្រ</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_11">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(52) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(53,54) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: amount" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_12">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(55) -->
+                        <td colspan = "2">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(56,57) -->
+                         
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: amount" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: amount" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_13">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(58) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(59) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: room" required />
+                                <span class="input-group-text">បន្ទប់</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: room" required />
+                                <span class="input-group-text">បន្ទប់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(60) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: classes" required />
+                                <span class="input-group-text">ថ្នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: classes" required />
+                                <span class="input-group-text">ថ្នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(61) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                         <!-- ko if: no().in(62) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                         <!-- ko if: no().in(63) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_14">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && no() == '8.1'" rowspan="2"></td>
+
+
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+                        <!-- ko if: no().in(64) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: place" required />
+                                <span class="input-group-text">កន្លែង</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(65) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: room" required />
+                                <span class="input-group-text">បន្ទប់</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: room" required />
+                                <span class="input-group-text">បន្ទប់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(66) -->
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: classes" required />
+                                <span class="input-group-text">ថ្នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "5">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: classes" required />
+                                <span class="input-group-text">ថ្នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: no().in(67) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                         <!-- ko if: no().in(68) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                         <!-- ko if: no().in(69) -->
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">ស្រី</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <td colspan = "3">
+                            <div class="input-group">
+                                <span class="input-group-text">សរុប</span>
+                                <input type="number" class="form-control" data-bind="value: people" required />
+                                <span class="input-group-text">នាក់</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+
+            <table class="table table-bordered">
+                <tbody data-bind="foreach: commune_15">
+                    <tr>
+                        <td data-bind="text: no(), visible: group() == null"></td>
+                        <td data-bind="text: group(), visible: group() != null && (no() == '70.1'|| no() == '71.1')" rowspan="3"></td>
+                        <td data-bind="text: group() == null ? question() : no() + ' ' + question()"></td>
+
+                         <!-- ko if: no().in(70,70.1,70.2,70.3,71) -->
+                         <td colspan="2">
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: school" required />
+                                <span class="input-group-text">សាលា</span>
+                            </div>
+                        </td>
+                        <!-- /ko -->
+                         
+
+                        <!-- ko if: no().in(71.1,71.2) -->
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: boytoilet" required />
+                                <span class="input-group-text">ចំនួនបន្ទប់បង្គន់សរុប</span>
+                            </div>
+                           
+                        </td>
+                        <td>
+                            <div class="input-group">
+                                <span class="input-group-text">មាន</span>
+                                <input type="number" class="form-control" data-bind="value: girltoilet" required />
+                                <span class="input-group-text">ចំនួនបន្ទប់បង្គន់សំរាប់សិស្សសី</span>
+                            </div>
+                            
+                        </td>
+                        <!-- /ko -->
+
+                    </tr>
+                </tbody>
+            </table>
 
             {{-- <h4>២. សមាសភាពមន្ត្រីការិយាល័យជំនាញក្នុងស្រុក (មន្ត្រីក្របខណ្ឌ)</h4>
             <table class="table table-bordered">
@@ -303,6 +941,7 @@
                     </tr>
                 </tbody>
             </table>
+
             <br />
 
             <table class="table table-bordered">
