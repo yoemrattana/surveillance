@@ -1,7 +1,7 @@
 <!-- preschool -->
+<h5>{{__('commune.secondary_school')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
-    {{__('commune.secondary_school')}}
-    <tr>
+    <tr class="table-primary">
         <th></th>
         <th></th>
         <th colspan="2">{{__('commune.public_secondary_school')}}</th>

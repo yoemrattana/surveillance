@@ -1,7 +1,7 @@
-{{__('commune.natural_resource')}}
+<h5>{{__('commune.natural_resource')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
     <thead>
-        <tr>
+        <tr class="table-primary">
             <th colspan="2">{{__('commune.community_type')}}</th>
             <th>{{__('commune.num_community')}}</th>
             <th>{{__('commune.community_land')}}</th>

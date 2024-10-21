@@ -45,7 +45,7 @@
 
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
-        <tr>
+        <tr class="table-primary">
             <th colspan="2">{{__('commune.intensive_rice_crop')}}</th>
             <th>{{__('commune.first')}}</th>
             <th>{{__('commune.second')}}</th>
