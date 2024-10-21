@@ -179,8 +179,8 @@ no,group_en,group_kh,sub_group_en,sub_group_kh,question_en,question_kh,unit_en,u
 113.1,# of deaths due to the explosion of national remnants of society,ចំនួនអ្នកស្លាប់ដោយសារផ្ទុះសំណល់ជាតិផ្ទះសល់ពីសង្គម,,,over 18 years old,អាយុ១៨ឆ្នាំឡើង,pers,នាក់
 114,,,,,Suspected area of mines/ERW,ចំនួនផ្ទៃដីសង្ស័យមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,h.a,ហ.ត
 115,,,,,Area of mines/ERW,ចំនួនផ្ទៃដីមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គម,h.a,ហ.ត
-116,,,,,:This year, area of mine clearance and unexploded weapons:,នៅក្នុងឆ្នាំនេះ ចំនួនផ្ទៃដីដែលបានសំអាតមីននិង សំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,h.a,ហ.ត
-117,,,,,:This year, number of families received mine clearance land and unexploded weapons:,ក្នុងនោះ ចំនួនគ្រួសារទទួលបានដីសំអាតមីននិងសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,families,គ្រួសារ
+116,,,,,This year area of mine clearance and unexploded weapons,នៅក្នុងឆ្នាំនេះ ចំនួនផ្ទៃដីដែលបានសំអាតមីននិង សំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,h.a,ហ.ត
+117,,,,,This year number of families received mine clearance land and unexploded weapons,ក្នុងនោះ ចំនួនគ្រួសារទទួលបានដីសំអាតមីននិងសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,families,គ្រួសារ
 118,,,,,# of health officer's activities in commune/sangkat,តើបុគ្គលិកសុខាភិបាលបានចុះមកធ្វើសកម្មភាពប៉ុន្មានដងក្នុងរយៈពេល១២ខ កន្លងមកក្នុងឃុំសង្កាត់ ?(អប់រំណែនាំអំពីសុខភាព ចាក់ថ្នាំបង្កា.....។ល។,times,ដង
 119,,,,,# of village health volunteer working in commune/sangkat,តើមានអ្នកស្ម័គ្រចិត្តផ្នែកសុខភាពភូមិប៉ុន្មាននាក់ បំរើការងារនៅក្នុងឃុំសង្កាត់ ?,families,គ្រួសារ
 120,,,,,Does the commune issue a letter to prevent open defecation free?,តើឃុំមានចេញដីការក្នុងការទប់ស្កាត់ការបន្ទោរបង់ពាសវាលពាសកាលដែរឬទេ? សំគាល់ ៖ លេខ ១ = មាន ចំណែកលេខ ០ = គ្មាន,,

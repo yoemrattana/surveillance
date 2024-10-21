@@ -8,10 +8,7 @@
 
 <div class="card">
     <div class="card-header text-white bg-primary">
-        <span class="fs-3">{{__('general.village_form')}}</span>
-
-        <!-- <button class="btn btn-primary gap-2 float-end mb-2" data-bind="click: () => view('list')"><span
-                class="fa fa-arrow-left"></span>{{__('general.back')}}</button> -->
+        <h4 class="m-0 text-white">{{__('general.village_form')}}</h4>
     </div>
     <div class="card-body ">
         <div class="row mt-3">

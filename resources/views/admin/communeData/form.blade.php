@@ -13,7 +13,7 @@
 
 <div class="card">
     <div class="card-header text-white bg-primary">
-        <span class="fs-3">{{__('general.commune_form')}}</span>
+        <h4 class="m-0 text-white">{{__('general.commune_form')}}</h4>
     </div>
     <div class="card-body ">
         <div class="row mt-3">

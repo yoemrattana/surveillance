@@ -1,4 +1,4 @@
-{{__('commune.disaster')}}
+<h5>{{__('commune.disaster')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(0,10) -->
@@ -55,7 +55,7 @@
     </tbody>
 </table>
 <br/>
-{{__('commune.mine_disaster')}}
+<h5>{{__('commune.mine_disaster')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(17,29) -->

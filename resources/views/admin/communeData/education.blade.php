@@ -1,6 +1,6 @@
+<h5>{{__('commune.home_based_training')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
-    {{__('commune.home_based_training')}}
-    <tr>
+    <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
         <th>{{__('commune.home_based_teaching')}}</th>
     </tr>
@@ -18,9 +18,9 @@
     <!-- /ko -->
 </table>
 <br/>
+<h5>{{__('commune.community_preschool_training')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
-    {{__('commune.community_preschool_training')}}
-    <tr>
+    <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
         <th colspan="2">{{__('commune.community_preschool')}}</th>
     </tr>

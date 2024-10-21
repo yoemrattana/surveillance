@@ -1,4 +1,4 @@
-{{__('commune.water_sanitation_primary_school')}}
+<h5>{{__('commune.water_sanitation_primary_school')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
 	<tbody>
     <!-- ko foreach: commune_education().slice(30, 35) -->
