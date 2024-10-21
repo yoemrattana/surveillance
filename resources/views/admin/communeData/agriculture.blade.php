@@ -47,8 +47,8 @@
     <tbody>
         <tr>
             <th colspan="2">{{__('commune.intensive_rice_crop')}}</th>
-            <th>AAA{{__('commune.first')}}</th>
-            <th>BBBs{{__('commune.second')}}</th>
+            <th>{{__('commune.first')}}</th>
+            <th>{{__('commune.second')}}</th>
         </tr>
         <!-- ko foreach: new Array(24,25,26) -->
             <tr>
