@@ -74,7 +74,7 @@ function viewModel() {
             ds: ko.observable(),
             cm: ko.observable(),
             vl: ko.observable(),
-            year: ko.observable()
+            year: ko.observable(),
         }
     }
 

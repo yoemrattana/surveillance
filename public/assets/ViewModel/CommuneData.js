@@ -1,20 +1,58 @@
+function newModel() {
+    return {
+        id: 0,
+        ds_code: null,
+        cm_code: null,
+        year: '',
+        recorded_by: '',
+        phone: '',
+    };
+}
+
+function setField(model) {
+    return {
+        no: ko.observable(model?.no),
+        group: ko.observable(model?.group),
+        sub_group: ko.observable(model?.sub_group),
+        group: ko.observable(model?.group),
+        id: ko.observable(model?.id),
+        name: ko.observable(local.in('kh', '') ? model?.name_attribute_khmer : model?.name_attribute),
+        value: ko.observable(model?.value),
+    }
+}
+
 function viewModel() {
     var self = this;
-
-    self.view = ko.observable('list');
     self.listModel = ko.observableArray();
-    self.questions = ko.observableArray();
-    self.lang = ko.observable($('.changeLang').val());
     self.tableDetails = ko.observable();
     self.masterModel = ko.observable();
+    self.view = ko.observable('detail');
+    self.questions = ko.observableArray();
+    self.lang = ko.observable($('.changeLang').val());
+    self.pvList = ko.observableArray();
+    self.dsList = ko.observableArray();
+    self.cmList = ko.observableArray();
+    self.vlList = ko.observableArray();
+    self.pv = ko.observable();
+    self.ds = ko.observable();
+    self.cm = ko.observable();
+    self.vl = ko.observable();
+    self.year = ko.observable();
+    self.recorded_by = ko.observable();
+    self.phone = ko.observable();
+    self.successMessage = ko.observable();
 
     var place = null;
 
     app.ajax('/admin/commune-data/getdata').done(function (rs) {
         place = rs.place;
-        self.listModel(rs.list);
+        self.masterModel(rs.master)
         self.questions(rs.questions);
+        self.pvList(place.pv);
+        // self.tableDetails({commune_base_profile: rs.questions});
     });
+
+
 
     function prepare(nums, answers, tblname) {
         if (self.questions().length == 0) return [];
@@ -22,128 +60,102 @@ function viewModel() {
             var q = self.questions().find(r => r.no == no);
 
             var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
-            model.q_id = q.id;
+            model.commune_question_id = q.id;
 
-            if (self.tableDetails()) {
-                var found = self.tableDetails()[tblname]?.find(r => r.q_id == q.id);
-                found && answers.forEach(key => model[key] = found[key]);
+            if (self.tableDetails() && self.tableDetails()[tblname]) {
+                var found = self.tableDetails()[tblname]?.find(r => r.commune_question_id == q.id);
+                found && answers.forEach(key => model[key] = (found[key] || 0));
             }
 
             model.no = () => no;
             model.group = () => self.lang() == 'en' ? q.group_en : q.group_kh;
+            model.sub_group = () => self.lang() == 'en' ? q.sub_group_en : q.sub_group_kh;
             model.question = () => self.lang() == 'en' ? q.question_en : q.question_kh;
-
+            model.unit = () => self.lang() == 'en' ? q.unit_en : q.unit_kh;
             return model;
         });
-    }
-
-    function newModel() {
-        return {
-            id: 0,
-            ds_code: null,
-            cm_code: null,
-            recorded_by: '',
-            phone: ''
-        };
     }
 
     self.showNew = function () {
         self.showEdit(newModel());
     };
 
-    self.showEdit = function (master) {
-        master = app.ko(master);
-
-        master.pv_code = ko.observable(master.ds_code()?.substr(0, 2));
-        master.pvList = place.pv;
-        master.dsList = () => place.ds.filter(r => r.pvcode == master.pv_code());
-
-        if (master.id() == 0) {
-            self.masterModel(master);
-            self.tableDetails(null);
-            self.view('detail');
-        } else {
-            var submit = { id: master.id() };
-            app.ajax('/admin/commune-data/getdetail', submit).done(function (rs) {
-                self.masterModel(master);
-                self.tableDetails(rs);
-                self.view('detail');
-            });
+    self.pv.subscribe(function (code) {
+        self.dsList(code == null ? [] : place.ds.filter(r => r.pvcode == code));
+    });
+    self.ds.subscribe(function (code) {
+        self.cmList(code == null ? [] : place.cm.filter(r => r.dscode == code));
+    });
+    self.cm.subscribe(function (code) {
+        if(code != null){
+            self.loadData();
         }
-    };
+    });
+    self.year.subscribe(function (year) {
+        if(year != null){
+            self.loadData();
+        }
+    });
 
-    self.commune_1 = ko.pureComputed(() => {
-        var nums = [1, 2,];
+    self.commune_base_profile = ko.pureComputed(() => {
+        var nums = [1, 2, 3, 4, 5, 6, 7, 8, '8.1', '8.2', 9, '9.1', '9.2', 10, 11, 12, 13];
         var answers = ['total', 'female'];
-        return prepare(nums, answers, 'commune_1');
+        return prepare(nums, answers, 'commune_base_profile');
     });
 
-    self.commune_2 = ko.pureComputed(() => {
-        var nums = [3, 4, 5, 6, 7, 8, 8.1, 8.2, 9, 9.1, 9.2, 10,];
-        var answers = ['place', 'qty', 'ha'];
-        return prepare(nums, answers, 'commune_2');
+    self.commune_agriculture = ko.pureComputed(() => {
+        var nums = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, '24.a', 25, '25.a', 26, '26.a', 27, 28, 29];
+        var answers = ['total'];
+        return prepare(nums, answers, 'commune_agriculture');
     });
 
-    self.commune_3 = ko.pureComputed(() => {
-        var nums = [11, 12, 13,];
-        var answer = ['ha', 'ton/ha'];
-        return prepare(nums, answer, 'commune_3');
+    self.commune_production = ko.pureComputed(() => {
+        var nums = [30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
+        var answer = ['es_land_growed', 'land_production', 'avg_production_in_ha', 'es_production'];
+        return prepare(nums, answer, 'commune_production');
     });
 
-    self.commune_4 = ko.pureComputed(() => {
-        var nums = [14, 15, 16, 17, 18,];
-        var answer = ['ha', 'ha', 'ha', 'ton/ha', 'ha'];
-        return prepare(nums, answer, 'commune_4');
+    self.commune_transportation = ko.pureComputed(() => {
+        var nums = [49, 50, 51, "51.1", "51.2", "51.3", "51.4", "51.5", "51.6", "51.7"];
+        var answer = ['total'];
+        return prepare(nums, answer, 'commune_transportation');
+    });
+    self.commune_education = ko.pureComputed(() => {
+        var nums = [52, 53, 54, 55, 56, 57, 58, "58.a", 59, "59.a", 60, "60.a", 
+                    61, "61.a", 62, "62.a", 63, "63.a", 64, "64.a", 65, "65.a", 
+                    66, "66.a", 67, "67.a", 68, "68.a", 69, "69.a",
+                    70, '70.1', '70.2', '70.3', 71, '71.1', '71.2',
+                    72, '72.a', 73, '73.a', 74, '74.a', 75, '75.a', 76, '76.a', 77, '77.a',
+                    78, '78.1', '78.2', '78.3', 79, '79.1', '79.2',
+                    80, '80.a', 81, '81.a', 82, '82.a', 83, '83.a', 84, '84.a', 85, '85.a',
+                    86, '86.1', '86.2', '86.3', 87, '87.1', '87.2'];
+        var answer = ['total', 'female'];
+        return prepare(nums, answer, 'commune_education');
+    });
+    self.commune_natural_resource = ko.pureComputed(() => {
+        var nums = [90, 91, 92, 93, 94];
+        var answer = ['num_community', 'community_land', 'num_family'];
+        return prepare(nums, answer, 'commune_natural_resource');
+    });    
+    self.commune_disaster = ko.pureComputed(() => {
+        var nums = [95, '95.1', '95.2',96, 97, 98, 99, 100, 101, 102, '103.1', '103.2', '103.3',   
+                    104, 105, 106, 107, 108, 109, '109.1', 110, '110.1', 111, 112, '112.1', 113, '113.1',
+                    114, 115, 116, 117, 118, 119, 120, 121, 122, 123];
+        var answer = ['total'];
+        return prepare(nums, answer, 'commune_disaster');
     });
 
-
-    // self.district_2b = ko.pureComputed(() => {
-    //     var nums = Array.range(17, 21);
-    //     var answer = ['qty'];
-    //     return prepare(nums, answer, 'district_2b');
-    // });
-
-    // self.district_3 = ko.pureComputed(() => {
-    //     var nums = [22, 23];
-    //     var answer = ['qty'];
-    //     return prepare(nums, answer, 'district_3');
-    // });
-
-    // self.district_4 = ko.pureComputed(() => {
-    //     var nums = Array.range(24, 28);
-    //     var answer = ['a_total', 'a_female', 'b_total', 'b_female'];
-    //     return prepare(nums, answer, 'district_4');
-    // });
-
-    // self.district_5 = ko.pureComputed(() => {
-    //     var nums = [29, 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, '29.10'];
-    //     var answer = ['agent', 'income'];
-    //     return prepare(nums, answer, 'district_5');
-    // });
-
-    // self.district_6a = ko.pureComputed(() => {
-    //     var nums = Array.range(30, 35).reduce((arr, r) => arr.concat(r + 0.1, r + 0.2, r + 0.3, r + 0.4), []);
-    //     var answer = ['qty'];
-    //     return prepare(nums, answer, 'district_6a');
-    // });
-
-    // self.district_6b = ko.pureComputed(() => {
-    //     var nums = [36, 37];
-    //     var answer = ['qty', 'total', 'female'];
-    //     return prepare(nums, answer, 'district_6b');
-    // });
-
-    // self.district_7 = ko.pureComputed(() => {
-    //     var nums = Array.range(38, 42);
-    //     var answer = ['qty1', 'qty2'];
-    //     return prepare(nums, answer, 'district_7');
-    // });
-
-    // self.district_8 = ko.pureComputed(() => {
-    //     var nums = Array.range(43, 46);
-    //     var answer = ['qty', 'total', 'female'];
-    //     return prepare(nums, answer, 'district_8');
-    // });
+    self.loadData = () => {
+        if(self.cm() && self.year()){
+            let params = `cm_code=${self.cm()}&year=${self.year()}`
+            app.ajax('/admin/commune-data/search?'+params).done(function (response) {
+                self.recorded_by(response.recorded_by)  ;
+                self.phone(response.phone)  ;
+                self.masterModel(response);
+                self.tableDetails(response.detail);
+            });
+        }        
+    }
 
     self.save = function () {
         var master = newModel().applyData(app.unko(self.masterModel()));
@@ -154,23 +166,30 @@ function viewModel() {
             master.updated_on = moment().sqlformat();
         }
 
-        var arr = [1, 2];
-        var arr = [1];
-        var tables = arr.reduce((obj, k) => (obj['commune_' + k] = self['commune_' + k]()) && obj, {});
+        master.ds_code = self.ds()
+        master.cm_code = self.cm()
+        master.year = self.year()
+        master.recorded_by = self.recorded_by()
+        master.phone = self.phone()
 
-        var submit = {
+        var tables = {'commune_base_profile': self.commune_base_profile(),
+                      'commune_agriculture': self.commune_agriculture(),
+                      'commune_production': self.commune_production(), 
+                      'commune_transportation': self.commune_transportation(),
+                      'commune_education': self.commune_education(), 
+                      'commune_natural_resource': self.commune_natural_resource(),
+                      'commune_disaster': self.commune_disaster()
+                    }
+
+        var params = {
             master,
             tables: JSON.stringify(tables)
         };
-
-        app.ajax('/admin/commune-data/save', submit).done(function (model) {
-            if (master.id == 0) {
-                self.listModel.push(model);
-            } else {
-                var old = self.listModel().find(r => r.id == model.id);
-                self.listModel.replace(old, model);
-            }
-            self.back();
+        app.ajax('/admin/commune-data/save', params).done(function (response) {
+            console.log('++++++++++++ save +++++++++++++');
+            console.log(response);
+            self.successMessage(response.message);
+            app.showToast();
         });
     };
 
@@ -183,6 +202,10 @@ function viewModel() {
 
     self.back = function () {
         self.view('list');
+    };
+
+    self.getQuestionByNo = function(questions, no){
+        return questions.filter(function(i){return i.no() == no})[0]
     };
 
     self.getPvName = function (code) {
@@ -257,6 +280,7 @@ function viewModel() {
     $('.changeLang').off().change(function () {
         self.lang(this.value);
         changeLang();
+        ko.refreshView();
     });
 }
 

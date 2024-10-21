@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Helper\Reply;
 
 class CommuneDataController extends Controller
 {
@@ -22,9 +23,16 @@ class CommuneDataController extends Controller
     {
         $where = $id == 0 ? [] : ['id' => $id];
         $list = DB::table('commune_parent')->where($where)->get()->toArray();
-
+        $master = [
+            'id'             => 0,
+            'year'           => '',
+            'cm_code'   => '',
+            'recorded_by'  => '',
+            'phone' => '',
+        ];
         if ($id == 0) {
             return [
+                'master' => $master,
                 'list' => $list,
                 'questions' => DB::table('commune_question')->get(),
                 'place' => [
@@ -65,13 +73,39 @@ class CommuneDataController extends Controller
 
         foreach (array_keys($tables) as $name) {
             foreach ($tables[$name] as &$value) {
-                $value['parent_id'] = $id;
+                $value['commune_parent_id'] = $id;
             }
-            DB::table($name)->where('parent_id', $id)->delete();
+            DB::table($name)->where('commune_parent_id', $id)->delete();
             DB::table($name)->insert($tables[$name]);
         }
 
-        return $this->getdata($id);
+        return response()->json(['message' => ('general.save_success')]);
+    }
+
+    public function search(Request $request){
+        $commune_parent = DB::table('commune_parent')
+                        ->where('cm_code', $request->cm_code)
+                        ->where('year', $request->year)
+                        ->first();
+        $detail = [];
+        if($commune_parent){
+            $tables = ['commune_base_profile', 'commune_agriculture', 'commune_production',
+                      'commune_transportation', 'commune_education', 'commune_natural_resource',
+                      'commune_disaster'
+                      ];
+            foreach ($tables as $table) {
+                $detail[$table] = DB::table($table)->where('commune_parent_id', $commune_parent->id)->get();
+            }
+            $commune_parent->detail = $detail;
+            $commune_parent->questions = DB::table('commune_question')->get();
+        }else{
+            $commune_parent = [];
+            $commune_parent['detail'] = [];
+            $commune_parent['questions'] = DB::table('commune_question')->get();
+        }      
+
+
+        return Reply::dataOnly($commune_parent);
     }
 
     public function delete(Request $request)

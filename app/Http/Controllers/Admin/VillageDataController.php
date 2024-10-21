@@ -120,6 +120,6 @@ class VillageDataController extends Controller
             // Log::info('Attribute '.$attribute['attribute_id']);
             // echo "value: " . $attribute['value'] . ", attribute: " . $attribute['code_attribute'] . "\n";
         }
-        return response()->json(['message' => 'Form submitted successfully!']);
+        return response()->json(['message' => ('general.save_success')]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'commune_form' => 'Commune Form',
     'add' => 'Add',
     'action' => 'Action',
     'save' => 'Save',
@@ -45,4 +46,5 @@ return [
     'ton' => 'Ton',
     'riel' => 'Riel',
     'title' => 'Commune Database',
+    'save_success' => 'Form successfully save',
 ];

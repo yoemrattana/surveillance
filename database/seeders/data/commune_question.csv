@@ -1,0 +1,189 @@
+no,group_en,group_kh,sub_group_en,sub_group_kh,question_en,question_kh,unit_en,unit_kh
+1,,,,,# of Commune Councilors,ចំនួនសមាជិកក្រុមប្រឹក្សាឃុំសង្កាត់,pers,នាក់
+2,,,,,# of Village Chiefs,ចំនួនមេភូមិ,pers,នាក់
+3,,,,,# of Microfinance institutions,ចំនួនទីតាំងមីក្រូហិរញ្ញវត្ថុ,locations,កន្លែង
+4,,,,,# of Banks,ចំនួនធនាគារ,locations,កន្លែង
+5,,,,,# of loans recorded by the commune register,ចំនួនមនុស្សបានខ្ចីលុយពីមីក្រូហិរញ្ញវត្ថុនិងធនាគារ (កត់ត្រាតឃុំសង្កាត់បានដឹង),pers,នាក់
+6,,,,,Total area of land of Commune/Sangkat,ទំហំផ្ទៃដីឃុំសង្កាត់សរុប,h.a,ហ.ត
+7,,,,,Area of residence land,ផ្ទៃដីលំនៅដ្ឋាន,h.a,ហ.ត
+8,,,,,Area of residence land,ផ្ទៃដីធ្វើស្រែ,h.a,ហ.ត
+8.1,Where,ក្នុងនោះ,,,Area of dry season rice land,ផ្ទៃដីធ្វើស្រែប្រាំង,h.a,ហ.ត
+8.2,,,,,Area of wet season nee land,ផ្ទៃដីធ្វើស្រែវស្សា,h.a,ហ.ត
+9,,,,,Area of crops land,ផ្ទៃដីធ្វើចំការ,h.a,ហ.ត
+9.1,Where,ក្នុងនោះ,,,Area of short term crops land,ផ្ទៃដីធ្វើចំការរយៈពេលខ្លី,h.a,ហ.ត
+9.2,Where,ក្នុងនោះ,,,Area of long term crops land (strategic crops),ផ្ទៃដីធ្វើចំការរយៈពេលវែង(ដំណាំយុទ្ធសាស្ត),h.a,ហ.ត
+10,,,,,Area of others land (forestry land pond land. ),ផ្ទៃដីផ្សេងៗ(ដីព្រៃ បឹង ....),h.a,ហ.ត
+11,Salt Production,ការងារផលិតអំបិល,,,Total area of salt marsh,សរុបផ្ទៃដីសផលិតអំបិល,h.a,ហ.ត
+12,Salt Production,ការងារផលិតអំបិល,,,Average of salt yield per hectar,ទិន្នផលអំបិលជាមធ្យមក្នុងមួយហិកតា,ton/h.a,តោន/ហ.ត
+13,Salt Production,ការងារផលិតអំបិល,,,Toal of salt yield in current year,បរិមាណផលិតផលអំបិលក្នុងឆ្នាំ,h.a,ហ.ត
+14,Dry Rice,ស្រូវប្រាំង,,,Total dry-season rice land in the commune (as line 8.1),សរុបផ្ទៃដីស្រូវប្រាំងក្នុងឃុំ (ដូចបន្ទាត់លេខ 8.1),h.a,ហ.ត
+15,Dry Rice,ស្រូវប្រាំង,,,Area of full-irrigated dry-season rice,ផ្ទៃដីស្រែប្រាំងទទួលបានទឹកពីប្រព័ន្ឋស្រោចស្រព,h.a,ហ.ត
+16,Dry Rice,ស្រូវប្រាំង,,,Cultivated dry-season rice land,ផ្ទៃដីដែលបានដាំដុះស្រូវប្រាំងជាក់ស្តែង,h.a,ហ.ត
+17,Dry Rice,ស្រូវប្រាំង,,,Average of rice production per hectare in the dry-season,ទិន្នផលស្រូវប្រាំងជាមធ្យមក្នុងមួយហិកតា,ton/h.a,តោន/ហ.ត
+18,Dry Rice,ស្រូវប្រាំង,,,Total rice production in dry-season (estimated in a year),សរុបបរិមាណផលិតផលស្រូវប្រាំង (ប៉ាន់ស្មានក្នុងឆ្នាំ),h.a,ហ.ត
+19,Wet Rice,ស្រូវវស្សា,,,Total wet-season rice land in the commune (os line 8.2),សរុបផ្ទៃដីស្រូវវស្សាក្នុងឃុំ (ដូចបន្ទាត់លេខ 8. 2 ),h.a,ហ.ត
+20,Wet Rice,ស្រូវវស្សា,,,Area of irrigated wet-season rice land,ផ្ទៃដីស្រែវស្សាទទួលបានទឹកពីប្រព័ន្ឋស្រោចស្រព,h.a,ហ.ត
+21,Wet Rice,ស្រូវវស្សា,,,Area of cultivated wet-season nee,ផ្ទៃដីដែលបានដាំដុះស្រូវវស្សាជាក់ស្ដែង,h.a,ហ.ត
+22,Wet Rice,ស្រូវវស្សា,,,Average wet-season rice yield (metric ton per hectare),ទិន្នផលស្រូវវស្សាជាមធ្យមក្នុងមួយហិកតា,ton/h.a,តោន/ហ.ត
+23,Wet Rice,ស្រូវវស្សា,,,Total rice production in wet-season (estimation),សរុបបរិមាណផលិតផលស្រូវវស្សា (ប៉ាន់ស្មានក្នុងឆ្នាំ),h.a,ហ.ត
+24,Intensive rice crop,ស្រូវបង្កើនរដូវ,First time,លើកទី១,Total area of intensive rice cultivation,សរុបផ្ទៃដីដែលបានដាំដុះជាក់ស្ដែង,h.a,ហ.ត
+24.a,Intensive rice crop,ស្រូវបង្កើនរដូវ,Second time,លើកទី២,Total area of intensive rice cultivation,សរុបផ្ទៃដីដែលបានដាំដុះជាក់ស្ដែង,h.a,ហ.ត
+25,Intensive rice crop,ស្រូវបង្កើនរដូវ,First time,លើកទី១,Average intensive rice yield,ទិន្នផលស្រូវជាមធ្យមក្នុងមួយហិកតា,ton/h.a,តោន/ហ.ត
+25.a,Intensive rice crop,ស្រូវបង្កើនរដូវ,Second time,លើកទី២,Average intensive rice yield,ទិន្នផលស្រូវជាមធ្យមក្នុងមួយហិកតា,ton/h.a,តោន/ហ.ត
+26,Intensive rice crop,ស្រូវបង្កើនរដូវ,First time,លើកទី១,Total of rice production (estimation),"សរុបបរិមាណផលិតផលស្រូវ(ប៉ាន់ស្មានក្នុងឆ្នាំ)",h.a,ហ.ត
+26.a,Intensive rice crop,ស្រូវបង្កើនរដូវ,Second time,លើកទី២,Total of rice production (estimation),"សរុបបរិមាណផលិតផលស្រូវ(ប៉ាន់ស្មានក្នុងឆ្នាំ)",h.a,ហ.ត
+27,Upland Rice,ស្រូវចំការ,,,Total of actual upland rice crop,សរុបផ្ទៃដីស្រូវចំការដែលបានដាំដុះជាក់ស្តែង,h.a,ហ.ត
+28,Upland Rice,ស្រូវចំការ,,,Average upland rice yield,ទិន្នផលស្រូវជាមធ្យមក្នងមួយហិកតា,ton/h.a,តោន/ហ.ត
+29,Upland Rice,ស្រូវចំការ,,,Total of upland rice production (estimation),សរុបបរិមាណផលិតផលស្រូវចំការ (ប៉ាន់ស្មានក្នុងឆ្នាំ),h.a,ហ.ត
+30,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Com,ពោត,h.a,ហ.ត
+31,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Soya bean,សណ្តែកសៀង,h.a,ហ.ត
+32,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Mungbean,សណ្តែកបាយ,h.a,ហ.ត
+33,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Peanut,សណ្តែកដី,h.a,ហ.ត
+34,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Cassava,ដំឡូងមី,h.a,ហ.ត
+35,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Sweet potatoes,ដំឡូងជ្វា,h.a,ហ.ត
+36,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Sesame,ល្ង,h.a,ហ.ត
+37,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),Sugarcane,អំពៅ,h.a,ហ.ត
+38,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Rubber,កៅស៊ូ,h.a,ហ.ត
+39,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Coconut oil,ដូងប្រេង,h.a,ហ.ត
+40,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Pepper,ម្រេច,h.a,ហ.ត
+41,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Cashew,ស្វាយចន្ទី,h.a,ហ.ត
+42,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Mango,ស្វាយ,h.a,ហ.ត
+43,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Durian,ធុរេន,h.a,ហ.ត
+44,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Rambutan,សាម៉ាវ,h.a,ហ.ត
+45,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Mangosteen,មង្ឃុត,h.a,ហ.ត
+46,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Dragon fruit,ស្រកានាគ,h.a,ហ.ត
+47,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Pailin Lorigan (T aghan),មៀនប៉ៃលិន(តាង៉ែន),h.a,ហ.ត
+48,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,Pursat Orange,ក្រូចពោធិសាត់,h.a,ហ.ត
+49,,,,,Length of road across the commune (under national control),ប្រវែងផ្លូវជាតិដែលឆ្លងកាត់ឃុំសង្កាត់ (ផ្លូវដែលស្ថិតក្រោមការគ្រប់គ្រងថ្នាក់ជាតិ) ,meters,ម៉ែត្រ
+50,,,,,Length of CPDMKs' road across the commune (under CPDMKs control),ប្រវែងផ្លូវខេត្តរាជធានីឬក្រុងស្រុកខណ្ឌដែលឆ្លងកាត់ឃុំសង្កាត់ (ផ្លូវដែលស្ថិតក្រោមការគ្រប់គ្រងថ្នាក់ខេត្តរាជធានី ឬ​ ក្រុងស្រុកខណ្ឌ),meters,ម៉ែត្រ
+51,Number of lines and length of roads available in Commune ផ្លូវ (Roads under the maintenance of the commune / sangkat),ចំនួនខ្សែនិងប្រវែងផ្លូវដែលមាននៅក្នុងឃុំសង្កត់ (ផ្លូវដែលស្ថិតនៅការគ្រប់គ្រង ថែទាំរបស់ឃុំសង្កាត់),,,# of line and length of road across the commune (under control by commune/sangkat),ខ្សែ,lines,ខ្សែ
+51.1,Where,ក្នុងនោះ,Type of Road,ប្រភេទផ្លូវបេទីមីណឹ,Bituminous Rood,ប្រភេទផ្លូវបេទីមីណឹ,meters,ម៉ែត្រ
+51.2,Where,ក្នុងនោះ,,,DBST,ប្រភេទផ្លូវ DBST,meters,ម៉ែត្រ
+51.3,Where,ក្នុងនោះ,,,MAKADAM,ប្រភេទផ្លូវ MAKADAM,meters,ម៉ែត្រ
+51.4,Where,ក្នុងនោះ,,,Concrete Road,ប្រភេទផ្លូវចាក់បេតុង,meters,ម៉ែត្រ
+51.5,Where,ក្នុងនោះ,,,Laterite road,ប្រភេទផ្លូវ ក្រាលគ្រួសក្រហម ខ្សាច់ភ្នំ,meters,ម៉ែត្រ
+51.6,Where,ក្នុងនោះ,,,Constructed earth road,ប្រភេទផ្លូវ ដីសរ(ផ្លូវលើកដីសររួច),meters,ម៉ែត្រ
+51.7,Where,ក្នុងនោះ,,,Un-constructed earth road,ប្រភេទផ្លូវលំធម្មតា,meters,ម៉ែត្រ
+52,Education,ផ្នែកអប់រំ,,,# of play-school house in the commune/sangkats,ចំនួនកន្លែងឬទីតាំង,locations,កន្លែង
+53,Education,ផ្នែកអប់រំ,,,# of teacher (mother) tor play-school house,ចំនួនគ្រូ(ម៉ែបង្គោល)បានចូលរួម,pers,នាក់
+54,Education,ផ្នែកអប់រំ,,,# of children in the play-school house,ចំនួនក្មេងៗដែលបានចូលរួម,pers,នាក់
+55,Number of location,ចំនួនកន្លងឬទីតាំង,,,# of community pre-schools in the commune/sangkats,ចំនួនកន្លងឬទីតាំង,locations/classes,កន្លែង/ថ្នាក់
+56,Number of student,ចំនួនសិស្សរៀន,,,# of students attending in pre-schools community,ចំនួនសិស្សរៀន,pers,នាក់
+57,Number of teacher,ចំនួនគ្រូបង្រៀន,,,# of teachers teaching in the pre-school community,ចំនួនគ្រូបង្រៀន,pers,នាក់
+58,# school,ចំនួនសាលា,Public Preschool,សាលាមត្តេយ្យរដ្,# of schools,ចំនួនសាលា,locations,កន្លែង
+58.a,# school,ចំនួនសាលា,Private Preschool,សាលាមត្តេយ្យឯកជន,# of schools,ចំនួនសាលា,locations,កន្លែង
+59,# room,ចំនួនបន្ទប់,Public Preschool,សាលាមត្តេយ្យរដ្,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+59.a,# room,ចំនួនបន្ទប់,Private Preschool,សាលាមត្តេយ្យឯកជន,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+60,# class,ចំនួនថ្នាក់,Public Preschool,សាលាមត្តេយ្យរដ្,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+60.a,# class,ចំនួនថ្នាក់,Private Preschool,សាលាមត្តេយ្យឯកជន,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+61,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public Preschool,សាលាមត្តេយ្យរដ្,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+61.a,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+62,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public Preschool,សាលាមត្តេយ្យរដ្,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+62.a,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+63,# teacher,ចំនួនគ្រូបង្រៀន,Public Preschool,សាលាមត្តេយ្យរដ្,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+63.a,# teacher,ចំនួនគ្រូបង្រៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+64,# school,ចំនួនសាលា,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of schools,ចំនួនសាលា,locations,កន្លែង
+64.a,# school,ចំនួនសាលា,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of schools,ចំនួនសាលា,locations,កន្លែង
+65,# room,ចំនួនបន្ទប់,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+65.a,# room,ចំនួនបន្ទប់,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+66,# class,ចំនួនថ្នាក់,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+66.a,# class,ចំនួនថ្នាក់,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+67,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+67.a,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+68,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+68.a,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+69,# teacher,ចំនួនគ្រូបង្រៀន,Public Primary School,សាលាបឋមសិក្សារដ្ឋ,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+69.a,# teacher,ចំនួនគ្រូបង្រៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+70,,,,,# of school having access to clean water,ចំនួនសាលាមានទឹកស្អាតប្រើប្រាស់,schools,សាលា
+70.1,Where,ក្នុងនោះ,,,Tab Water,សាលាមានទឹកម៉ាស៊ីនប្រើប្រាស់,schools,សាលា
+70.2,Where,ក្នុងនោះ,,,Drilled Wells,សាលាមានទឹកអណ្តូងខួងប្រើប្រាស់,schools,សាលា
+70.3,Where,ក្នុងនោះ,,,Dug wells with protected,សាលាមានទឹកអណ្តូងជីកមានការការពារ,schools,សាលា
+71,,,,,# of schools having access to lavatory,ចំនួនសាលាមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,schools,សាលា
+71.1,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+71.2,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+72,# school,ចំនួនសាលា,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of schools,ចំនួនសាលា,locations,កន្លែង
+72.a,# school,ចំនួនសាលា,Private Secondary School,អនុវិទ្យាឯកជន,# of schools,ចំនួនសាលា,locations,កន្លែង
+73,# room,ចំនួនបន្ទប់,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+73.a,# room,ចំនួនបន្ទប់,Private Secondary School,អនុវិទ្យាឯកជន,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+74,# class,ចំនួនថ្នាក់,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+74.a,# class,ចំនួនថ្នាក់,Private Secondary School,អនុវិទ្យាឯកជន,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+75,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+75.a,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Secondary School,អនុវិទ្យាឯកជន,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+76,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+76.a,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Secondary School,អនុវិទ្យាឯកជន,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+77,# teacher,ចំនួនគ្រូបង្រៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+77.a,# teacher,ចំនួនគ្រូបង្រៀន,Private Secondary School,អនុវិទ្យាឯកជន,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+78,,,,,# of school having access to clean water,ចំនួនអនុវិទ្យាល័យមានទឹកស្អាតប្រើប្រាស់,schools,សាលា
+78.1,Where,ក្នុងនោះ,,,Tab Water,អនុវិទ្យាល័យមានទឹកម៉ាស៊ីនប្រើប្រាស់,schools,សាលា
+78.2,Where,ក្នុងនោះ,,,Drilled Wells,អនុវិទ្យាល័យមានទឹកអណ្តូងខួងប្រើប្រាស់,schools,សាលា
+78.3,Where,ក្នុងនោះ,,,Dug wells with protected,អនុវិទ្យាល័យមានទឹកអណ្តូងជីកមានការការពារ,schools,សាលា
+79,,,,,# of schools having access to lavatory,ចំនួនអនុវិទ្យាល័យមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,schools,សាលា
+79.1,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+79.2,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+80,# school,ចំនួនសាលា,Public High School,វិទ្យាល័យរដ្ឋ,# of schools,ចំនួនសាលា,locations,កន្លែង
+80.a,# school,ចំនួនសាលា,Private High School,វិទ្យាល័យឯកជន,# of schools,ចំនួនសាលា,locations,កន្លែង
+81,# room,ចំនួនបន្ទប់,Public High School,វិទ្យាល័យរដ្ឋ,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+81.a,# room,ចំនួនបន្ទប់,Private High School,វិទ្យាល័យឯកជន,# of rooms,ចំនួនបន្ទប់,rooms,បន្ទប់
+82,# class,ចំនួនថ្នាក់,Public High School,វិទ្យាល័យរដ្ឋ,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+82.a,# class,ចំនួនថ្នាក់,Private High School,វិទ្យាល័យឯកជន,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+83,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public High School,វិទ្យាល័យរដ្ឋ,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+83.a,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private High School,វិទ្យាល័យឯកជន,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,pers,នាក់
+84,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public High School,វិទ្យាល័យរដ្ឋ,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+84.a,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private High School,វិទ្យាល័យឯកជន,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,pers,នាក់
+85,# teacher,ចំនួនគ្រូបង្រៀន,Public High School,វិទ្យាល័យរដ្ឋ,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+85.a,# teacher,ចំនួនគ្រូបង្រៀន,Private High School,វិទ្យាល័យឯកជន,# of teachers,ចំនួនគ្រូបង្រៀន,pers,នាក់
+86,,,,,# of school having access to clean water,ចំនួនវិទ្យាល័យមានទឹកស្អាតប្រើប្រាស់,schools,សាលា
+86.1,Where,ក្នុងនោះ,,,Tab Water,វិទ្យាល័យមានទឹកម៉ាស៊ីនប្រើប្រាស់,schools,សាលា
+86.2,Where,ក្នុងនោះ,,,Drilled Wells,វិទ្យាល័យមានទឹកអណ្តូងខួងប្រើប្រាស់,schools,សាលា
+86.3,Where,ក្នុងនោះ,,,Dug wells with protected,វិទ្យាល័យមានទឹកអណ្តូងជីកមានការការពារ,schools,សាលា
+87,,,,,# of schools having access to lavatory,ចំនួនវិទ្យាល័យមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,schools,សាលា
+87.1,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+87.2,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,# of rooms,ចំនួនបន្ទប់,,
+88,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+88.a,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,# of literacy teachers,ចំនួនគ្រូអក្ខរកម្ម,pers,នាក់
+88.b,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,# of literacy students,សិស្សអក្ខរកម្ម,pers,នាក់
+89,Completed literacy classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,,,# of classes,ចំនួនថ្នាក់,classes,ថ្នាក់
+89.a,Completed literacy classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,,,# of literacy teachers,ចំនួនគ្រូអក្ខរកម្ម,pers,នាក់
+89,Completed literacy classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,,,# of literacy students,សិស្សអក្ខរកម្ម,pers,នាក់
+90,,,,,# of Forestry communrties,សហគមន៏ការពារព្រៃឈើ,,
+91,,,,,# of Fishery communities,សហគមន៏នេសាទ,,
+92,,,,,# of NREM communities,សហគមន៏ការពារធនធានធម្មជាតិនិងបរិស្ថាន,,
+93,,,,,# of Irrigation Management communities,សហគមន៏គ្រប់គ្រងនិងប្រើប្រាស់ទឹកប្រព័ន្ធធារាសាស្ត្រ,,
+94,,,,,# of Tourism communities,សហគមន៏ទេសចរណ៏,,
+95,,,,,Areas of effected by floods,ចំនួនផ្ទៃដីដែលខូចខាតដោយសារទឹកជំនន់,h.a,ហ.ត
+95.1,Where,ក្នុងនោះ,,,Area of rice land,ផ្ទៃដីស,h.a,ហ.ត
+95.2,Where,ក្នុងនោះ,,,Area of crops land,ផ្ទៃដីដំណាំរួមផ្សំ,h.a,ហ.ត
+96,,,,,Length of affected roads by floods,ប្រវែងផ្លូវដែលខូចខាតដោយសារទឹកជំនន់,meters,ម៉ែត្រ
+97,,,,,Number of Bridges affected by floods,ចំនួនស្ពានដែលខូចខាតដោយសារទឹកជំនន់,locations,កន្លែង
+98,,,,,Area of growing nee affected by drought,ចំនួនផ្ទៃដីស្រែដែលខូចខាតដោយសារគ្រោះរាំងស្ងួត,h.a,ហ.ត
+99,,,,,Area of growing rice affected by pests,ចំនួនផ្ទៃដីស្រែដែលខូចខាតដោយសារសត្វល្អិតបំផ្លាញ,h.a,ហ.ត
+100,,,,,Number of fires happened (bum house and markets),ចំនួនអគ្គីភ័យដែលកើតឡើង (ឆេះផ្ទះ ឆេះផ្សារ),times,លើក
+101,,,,,Number of Safety Hills,ចំនួនទីទួលសុវត្តិភាព,locations,កន្លែង
+102,,,,,Area of re-planting trees,ចំនួនផ្ទៃដីបានដាំដើមឈើឡើងវិញ,h.a,ហ.ត
+103.1,,,,,# of registered new bom within the first 30 days,ចំនួនកុមារចុះបញ្ជីសំបុត្រកំណើត(ក្រោយកើត៣០ថ្ងៃ),pers,នាក់
+103.2,,,,,# of children 0-1 year have birth certificate,ចំនួនកុមារអាយុពី ០-១ ឆ្នាំមានសំបុត្រ ឬលិខិតបញ្ជាក់កំណើត,pers,នាក់
+103.3,,,,,# of children 0-5 year have birth certificate,ចំនួនកុមារអាយុពី ០-៥ ឆ្នាំមានសំបុត្រឬលិខិតបញ្ចាក់កំណើត,pers,នាក់
+104,,,,,# of registered marriages in the current year (included transitional and legal marriages),ចំនួនគូស្រករដែលបានសុំច្បាប់រៀបអាពាហ៏ពិពាហ៏,,
+105,,,,,# of registered marriages,ចំនួនគូស្រករដែលមកចុះលិខិតអាពាហ៏ពិពាហ៏,,
+106,,,,,# of registered deaths in the current year,ចំនួនមនុស្សបានចុះបញ្ជីមរណភាព,,
+107,,,,,# of families having official land titles,ចំនួនគ្រួសារមានប័ណ្ណកម្មសិទ្ធិដីធ្លីជាផ្លូវការ,,
+108,,,,,# of cased of mine and unexploded weapons,ចំនួនករណីផ្ទុះមីនសល់ពីសង្គ្រាម,cases,ករណី
+109,# of cased of mine and unexploded weapons,ចំនួនជនរងគ្រោះដោយសារមីនសល់ពីសង្គម,,,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,pers,នាក់
+109.1,# of cased of mine and unexploded weapons,ចំនួនជនរងគ្រោះដោយសារមីនសល់ពីសង្គម,,,over 18 years old,អាយុ១៨ឆ្នាំឡើង,pers,នាក់
+110,# of cased of mine of UXO explosion,ចំនួនអ្នកស្លាប់មកពីការផ្ទុះ មិនសល់ពីសង្គ្រាម,,,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,pers,នាក់
+110.1,# of cased of mine of UXO explosion,ចំនួនអ្នកស្លាប់មកពីការផ្ទុះ មិនសល់ពីសង្គ្រាម,,,over 18 years old,អាយុ១៨ឆ្នាំឡើង,pers,នាក់
+111,,,,,# of cased of mine of UXO explosion,ចំនួនករណីផ្ទុះសំណល់ជាតិផ្ទុះសល់ពីសង្គម,cases,ករណី
+112,# of victims of explosive remnants of society,ចំនួនជនរងគ្រោះដោយសារផ្ទុះសំណល់ ជាតិផ្ទុះសល់ពីសង្គម,,,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,pers,នាក់
+112.1,# of victims of explosive remnants of society,ចំនួនជនរងគ្រោះដោយសារផ្ទុះសំណល់ ជាតិផ្ទុះសល់ពីសង្គម,,,over 18 years old,អាយុ១៨ឆ្នាំឡើង,pers,នាក់
+113,# of deaths due to the explosion of national remnants of society,ចំនួនអ្នកស្លាប់ដោយសារផ្ទុះសំណល់ជាតិផ្ទះសល់ពីសង្គម,,,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,pers,នាក់
+113.1,# of deaths due to the explosion of national remnants of society,ចំនួនអ្នកស្លាប់ដោយសារផ្ទុះសំណល់ជាតិផ្ទះសល់ពីសង្គម,,,over 18 years old,អាយុ១៨ឆ្នាំឡើង,pers,នាក់
+114,,,,,Suspected area of mines/ERW,ចំនួនផ្ទៃដីសង្ស័យមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,h.a,ហ.ត
+115,,,,,Area of mines/ERW,ចំនួនផ្ទៃដីមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គម,h.a,ហ.ត
+116,,,,,:This year, area of mine clearance and unexploded weapons:,នៅក្នុងឆ្នាំនេះ ចំនួនផ្ទៃដីដែលបានសំអាតមីននិង សំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,h.a,ហ.ត
+117,,,,,:This year, number of families received mine clearance land and unexploded weapons:,ក្នុងនោះ ចំនួនគ្រួសារទទួលបានដីសំអាតមីននិងសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,families,គ្រួសារ
+118,,,,,# of health officer's activities in commune/sangkat,តើបុគ្គលិកសុខាភិបាលបានចុះមកធ្វើសកម្មភាពប៉ុន្មានដងក្នុងរយៈពេល១២ខ កន្លងមកក្នុងឃុំសង្កាត់ ?(អប់រំណែនាំអំពីសុខភាព ចាក់ថ្នាំបង្កា.....។ល។,times,ដង
+119,,,,,# of village health volunteer working in commune/sangkat,តើមានអ្នកស្ម័គ្រចិត្តផ្នែកសុខភាពភូមិប៉ុន្មាននាក់ បំរើការងារនៅក្នុងឃុំសង្កាត់ ?,families,គ្រួសារ
+120,,,,,Does the commune issue a letter to prevent open defecation free?,តើឃុំមានចេញដីការក្នុងការទប់ស្កាត់ការបន្ទោរបង់ពាសវាលពាសកាលដែរឬទេ? សំគាល់ ៖ លេខ ១ = មាន ចំណែកលេខ ០ = គ្មាន,,
+121,,,,,# of village got certificate of no open defecation free,តើមានចំនួនភូមិប៉ុន្មានដែលបានទទួលវិញ្ញាបនប័ត្រ “ ភូមិដែលមិនមានការបន្ទោរ បង់ពាសវាលពាសកាល ” នៅក្នុងឃុំ ?,villages,ភូមិ
+122,,,,,Does the commune have latrine eguipment shop?,តើនៅក្នុងឃុំមានទីកន្លងលក់សម្ភារៈបង្គន់ដែរឬទេ? សំគាល់ ៖ លេខ ១ = មាន ចំណែកលេខ 0 = គ្មាន,,
+123,,,,,# of families got social service assistant from commune,តើមានគ្រួសារងាយរងគ្រោះចំនួនប៉ុន្មាន ដែលបានទទួលជំនួយផ្នែកសង្គមកិច្ច ពីឃុំ ក្នុងរយៈពេល១២ខែកន្លងមក ?,families,គ្រួសារ

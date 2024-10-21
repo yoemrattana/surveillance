@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth'], function () {
             Route::any('/commune-data', [CommuneDataController::class, 'index'])->name('commune-data');
             Route::any('/commune-data/getdata', [CommuneDataController::class, 'getdata']);
             Route::any('/commune-data/getdetail', [CommuneDataController::class, 'getdetail']);
+            Route::get('/commune-data/search', [CommuneDataController::class, 'search'])->name('commune-data.search');
             Route::post('/commune-data/save', [CommuneDataController::class, 'save']);
             Route::post('/commune-data/delete', [CommuneDataController::class, 'delete']);
 
