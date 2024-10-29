@@ -131,7 +131,7 @@ function viewModel() {
 
     self.commune_transportation = ko.pureComputed(() => {
         var nums = [49, 50, 51, "51.a", "51.1", "51.2", "51.3", "51.4", "51.5", "51.6", "51.7"];
-        var answer = ['total'];
+        var answer = ['value'];
         return prepare(nums, answer, 'commune_transportation');
     });
     self.commune_education = ko.pureComputed(() => {
@@ -157,7 +157,7 @@ function viewModel() {
                     "87.2.f", "88", "88.a", "88.a.f", "88.b", 
                     "88.b.f", "89", "89.a", "89.a.f", "89.b", 
                     "89.b.f"];
-        var answer = ['value', 'female'];
+        var answer = ['value'];
         return prepare(nums, answer, 'commune_education');
     });
     self.commune_natural_resource = ko.pureComputed(() => {
