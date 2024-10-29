@@ -113,9 +113,9 @@
             @include('admin.communeData.base_profile')
             <br />
             @include('admin.communeData.agriculture')
-            <br />
+            <br />            
             @include('admin.communeData.production')
-            <br />
+            <br />            
             @include('admin.communeData.transportation')
             <br />
             @include('admin.communeData.education')
@@ -123,6 +123,7 @@
             @include('admin.communeData.natural_resource')
             <br />
             @include('admin.communeData.disaster')
+            <br />
         </form>
     </div>
 </div>

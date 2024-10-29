@@ -1,0 +1,287 @@
+no,short_code,question_en,question_kh,description,unit_en,unit_kh,group_en,group_kh,sub_group_en,sub_group_kh,Table-name
+1,Com_Counci,# of Commune Councilors,ចំនួនសមាជិកក្រុមប្រឹក្សាឃុំសង្កាត់,# of Commune/Sangkat Councillors,pers,នាក់,,,,,commune_base_profile
+1.f,Fcom_Counci,female,ចំនួនសមាជិកក្រុមប្រឹក្សាឃុំសង្កាត់,# of FEMALE Commune/Sangkat Councillors,pers,នាក់,,,,,commune_base_profile
+2,Vill_Chief,# of Village Chiefs,ចំនួនមេភូមិ,# of Village Chiefs,pers,នាក់,,,,,commune_base_profile
+2.f,Fvill_Chief,female,ចំនួនមេភូមិ,# of FEMALE Village Chiefs,pers,នាក់,,,,,commune_base_profile
+3,Micro_Instit,# of Microfinance institutions,ចំនួនទីតាំងមីក្រូហិរញ្ញវត្ថុ,# of microfinance insititutions in the commune,locations,កន្លែង,,,,,commune_base_profile
+4,Banks_Com,# of Banks,ចំនួនធនាគារ,# of banks in the commune,locations,កន្លែង,,,,,commune_base_profile
+5,Loans_Rec,# of loans recorded by the commune register,ចំនួនមនុស្សបានខ្ចីលុយពីមីក្រូហិរញ្ញវត្ថុនិងធនាគារ (កត់ត្រាតឃុំសង្កាត់បានដឹង),# of loans recorded by the commune register,pers,នាក់,,,,,commune_base_profile
+6,TOT_Area_Com,Total area of land of Commune/Sangkat,ទំហំផ្ទៃដីឃុំសង្កាត់សរុប,Total Land Area of Commune/Sangkat,h.a,ហ.ត,,,,,commune_base_profile
+7,Area_Reside,Area of residence land,ផ្ទៃដីលំនៅដ្ឋាន,Area of Residential Land,h.a,ហ.ត,,,,,commune_base_profile
+8,Area_Rice,Area of residence land,ផ្ទៃដីធ្វើស្រែ,Area of Rice Land in the Commune,h.a,ហ.ត,,,,,commune_base_profile
+8.1,Dry_area,Area of dry season rice land,ផ្ទៃដីធ្វើស្រែប្រាំង,Total dry-season rice land in the commune,h.a,ហ.ត,Where,ក្នុងនោះ,,,commune_base_profile
+8.2,Wet_area,Area of wet season rice land,ផ្ទៃដីធ្វើស្រែវស្សា,Total area of wet-season rice land in the commune,h.a,ហ.ត,,,,,commune_base_profile
+9,Area_Chamkar,Area of crops land,ផ្ទៃដីធ្វើចំការ,Area of Chamkar Land in the Commune,h.a,ហ.ត,,,,,commune_base_profile
+9.1,Area_Short_Crop,Area of short term crops land,ផ្ទៃដីធ្វើចំការរយៈពេលខ្លី,Area of short term crop land,h.a,ហ.ត,Where,ក្នុងនោះ,,,commune_base_profile
+9.2,Area_Long_Crop,Area of long term crops land (strategic crops),ផ្ទៃដីធ្វើចំការរយៈពេលវែង(ដំណាំយុទ្ធសាស្ត),Area of long term crop land,h.a,ហ.ត,Where,ក្នុងនោះ,,,commune_base_profile
+10,Area_Other,Area of others land (forestry land pond land. ),ផ្ទៃដីផ្សេងៗ(ដីព្រៃ បឹង ....),Area of Other land (pond etc.),h.a,ហ.ត,,,,,commune_base_profile
+11,Area_Salt,Total area of salt marsh,សរុបផ្ទៃដីសផលិតអំបិល,Area of Salt Land,h.a,ហ.ត,Salt Production,ការងារផលិតអំបិល,,,commune_base_profile
+12,Aver_Salt_T/Ha,Average of salt yield per hectar,ទិន្នផលអំបិលជាមធ្យមក្នុងមួយហិកតា,Average Salt yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,Salt Production,ការងារផលិតអំបិល,,,commune_base_profile
+13,T_Salt_yield,Total of salt yield in current year,បរិមាណផលិតផលអំបិលក្នុងឆ្នាំ,Total of salt yield in current year,ton,តោន,Salt Production,,,,
+14,Dry_cult_ha,Total dry-season rice land in the commune (as line 8.1),សរុបផ្ទៃដីស្រូវប្រាំងក្នុងឃុំ (ដូចបន្ទាត់លេខ 8.1),Cultivated dry-season rice land ,h.a,ហ.ត,Dry Rice,ស្រូវប្រាំង,,,commune_agriculture
+15,DRY_IRRI_full,Area of full-irrigated dry-season rice,ផ្ទៃដីស្រែប្រាំងទទួលបានទឹកពីប្រព័ន្ឋស្រោចស្រព,Area of full-irrigated dry season rice land in Ha,h.a,ហ.ត,Dry Rice,ស្រូវប្រាំង,,,commune_agriculture
+16,Dry_cult_ha,Cultivated dry-season rice land ,ផ្ទៃដីដែលបានដាំដុះស្រូវប្រាំងជាក់ស្តែង,Cultivated dry-season rice land ,h.a,ហ.ត,Dry Rice,ស្រូវប្រាំង,,,commune_agriculture
+17,Dry_yield_annual,Average of rice production per hectare in the dry-season,ទិន្នផលស្រូវប្រាំងជាមធ្យមក្នុងមួយហិកតា,Average dry-season rice yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,Dry Rice,ស្រូវប្រាំង,,,commune_agriculture
+18,DRY_PADDY,Total rice production in dry-season (estimated in a year),សរុបបរិមាណផលិតផលស្រូវប្រាំង (ប៉ាន់ស្មានក្នុងឆ្នាំ),Rice production in dry season (MT),h.a,ហ.ត,Dry Rice,ស្រូវប្រាំង,,,
+19,Wet_cult_ha,Total wet-season rice land in the commune (as line 8.2),សរុបផ្ទៃដីស្រូវវស្សាក្នុងឃុំ (ដូចបន្ទាត់លេខ 8. 2 ),Total wet-season rice land in the commune (as line 8.2),h.a,ហ.ត,,,,,
+20,WET _IRRI_full,Area of irrigated wet-season rice land,ផ្ទៃដីស្រែវស្សាទទួលបានទឹកពីប្រព័ន្ឋស្រោចស្រព,Area of full-irrigated wet season rice land in Ha,h.a,ហ.ត,Wet Rice,ស្រូវវស្សា,,,commune_agriculture
+21,T_Wet_cult_ha,Area of cultivated wet-season nee,ផ្ទៃដីដែលបានដាំដុះស្រូវវស្សាជាក់ស្ដែង,Total area of cultivated wet-season rice ,h.a,ហ.ត,Wet Rice,ស្រូវវស្សា,,,commune_agriculture
+22,Wet_yield_annual,Average wet-season rice yield (metric ton per hectare),ទិន្នផលស្រូវវស្សាជាមធ្យមក្នុងមួយហិកតា,Average wet-season rice yield (metric ton per hectare) ,ton/h.a,តោន/ហ.ត,Wet Rice,ស្រូវវស្សា,,,commune_agriculture
+23,WET_PADDY,Total rice production in wet-season (estimation),សរុបបរិមាណផលិតផលស្រូវវស្សា (ប៉ាន់ស្មានក្នុងឆ្នាំ),"Rice production in wet season, MT",h.a,ហ.ត,Wet Rice,ស្រូវវស្សា,,commune_agriculture
+24,IRS_area_1,Total area of intensive rice cultivation,សរុបផ្ទៃដីដែលបានដាំដុះជាក់ស្ដែង,Total area of intensive rice cultivation at first time,h.a,ហ.ត,Intensive rice crop,ស្រូវបង្កើនរដូវ,First time,លើកទី១,commune_agriculture
+24.a,IRS_area_2,Total area of intensive rice cultivation,សរុបផ្ទៃដីដែលបានដាំដុះជាក់ស្ដែង,Total area of intensive rice cultivation at second time,h.a,ហ.ត,Intensive rice crop,ស្រូវបង្កើនរដូវ,Second time,លើកទី២,commune_agriculture
+25,IRS_yield_1,Average intensive rice yield,ទិន្នផលស្រូវជាមធ្យមក្នុងមួយហិកតា,Average intensive rice yield at first time,ton/h.a,តោន/ហ.ត,Intensive rice crop,ស្រូវបង្កើនរដូវ,First time,លើកទី១,commune_agriculture
+25.a,IRS_yield_2,Average intensive rice yield,ទិន្នផលស្រូវជាមធ្យមក្នុងមួយហិកតា,Average intensive rice yield at second time,ton/h.a,តោន/ហ.ត,Intensive rice crop,ស្រូវបង្កើនរដូវ,Second time,លើកទី២,commune_agriculture
+26,IRS_production_1,Total of rice production (estimation),សរុបបរិមាណផលិតផលស្រូវ (ប៉ាន់ស្មានក្នុងឆ្នាំ),Total of rice production (estimation),ton,តោន,Intensive rice crop,ស្រូវបង្កើនរដូវ,,,
+26.a,IRS_production_2,Total of rice production (estimation),សរុបបរិមាណផលិតផលស្រូវ (ប៉ាន់ស្មានក្នុងឆ្នាំ),Total of rice production (estimation),ton,តោន,Intensive rice crop,ស្រូវបង្កើនរដូវ,,,
+27,Up_rice_ha,Total of actual upland rice crop,សរុបផ្ទៃដីស្រូវចំការដែលបានដាំដុះជាក់ស្តែង,Total of actual upland rice crop,h.a,ហ.ត,Upland Rice,ស្រូវចំការ,,,commune_agriculture
+28,Up_rice_yield,Average upland rice yield,ទិន្នផលស្រូវជាមធ្យមក្នងមួយហិកតា,Average upland rice yield,ton/h.a,តោន/ហ.ត,Upland Rice,ស្រូវចំការ,,,commune_agriculture
+29,Up_rice_production,Total of upland rice production (estimation),សរុបបរិមាណផលិតផលស្រូវចំការ (ប៉ាន់ស្មានក្នុងឆ្នាំ),Total of upland rice production (estimation),ton,តោន,Upland Rice,ស្រូវចំការ,,,
+30,Corn_ha,Corn,ពោត,Corn cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+30.a,Corn_yield,Corn,ពោត,Corn average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+30.b,Corn_production,Corn,ពោត,Corn Production (estimate),ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+31,Soya_ha,Soya bean,សណ្តែកសៀង,Soya bean cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+31.a,Soya_yield,Soya bean,សណ្តែកសៀង,Soya bean average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+31.b,Soya__production,Soya bean,សណ្តែកសៀង,Soya bean production (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+32,Mungb_ha,Mungbean,សណ្តែកបាយ,Mungbean cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+32.a,Mungb_yield,Mungbean,សណ្តែកបាយ,Mungbean average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+32.b,Mungb_production,Mungbean,សណ្តែកបាយ,Mungbean production (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+33,Peanut_ha,Peanut,សណ្តែកដី,Peanut cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+33.a,Peanut_yield,Peanut,សណ្តែកដី,Peanut average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+33.b,Peanut_production,Peanut,សណ្តែកដី,Peanut production (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+34,Cassa_ha,Cassava,ដំឡូងមី,Cassava cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+34.a,Cassa_yield,Cassava,ដំឡូងមី,Cassava average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+34.b,Cassa_production,Cassava,ដំឡូងមី,Cassava production (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+35,SwPot_ha,Sweet potatoes,ដំឡូងជ្វា,Sweet potatoes cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+35.a,SwPot_yield,Sweet potatoes,ដំឡូងជ្វា,Sweet potatoes average yield (estimate),ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+35.b,SwPot_production,Sweet potatoes,ដំឡូងជ្វា,Sweet potatoes production (estimate),ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+36,Sesam_ha,Sesame,ល្ង,Sesame cultivation area (estimate),h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+36.a,Sesam_yield,Sesame,ល្ង,Sesame average yield (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+36.b,Sesam_production,Sesame,ល្ង,Sesame production (estimate) ,ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+37,Culti_Sugar_Cane,Sugarcane,អំពៅ,Area of cultivated Sugarcane,h.a,ហ.ត,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+37.a,Aver_Sugar_T/Ha,Sugarcane,អំពៅ,Average Sugarcane yield (metric ton per hectare),ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+37.b,Sugar_Cane_production,Sugarcane,អំពៅ,Average Sugarcane production (estimate),ton,តោន,Type,ប្រភេទដំណាំ,Cultivation area (estimate),ផ្ទៃដីដាំបានក្នុងឆ្នាំនេះ (ប៉ាន់ស្មាន),commune_production
+38,Area_Cult_Rub,Rubber,កៅស៊ូ,Area of cultivated Rubber,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+38.a,Area_Rub_Har,Rubber,កៅស៊ូ,Area of Rubber Harvested,h.a,ហ.ត,,,,,commune_production
+38.b,Aver_Rub_T/Ha,Rubber,កៅស៊ូ,Average Rubber yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+38.c,Es_Rub_T,Rubber,កៅស៊ូ,Estimate Rubber production,ton,តោន,,,,,commune_production
+39,Area_Cult_Poil,Coconut oil,ដូងប្រេង,Area of cultivated Palm Oil,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+39.a,Area_Poil_Har,Coconut oil,ដូងប្រេង,Area of Palm Oil Harvested,h.a,ហ.ត,,,,,commune_production
+39.b,Aver_Poil_T/Ha,Coconut oil,ដូងប្រេង,Average Palm Oil yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+39.c,Es_Poil_T,Coconut oil,ដូងប្រេង,Estimate Coconut oil production,ton,តោន,,,,,commune_production
+40,Area_Cult_Pep,Pepper,ម្រេច,Area of cultivated Pepper,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+40.a,Area_Pep_Har,Pepper,ម្រេច,Area of Pepper Harvested,h.a,ហ.ត,,,,,commune_production
+40.b,Aver_Pep_T/Ha,Pepper,ម្រេច,Average Pepper yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+40.c,Es_Pep_T,Pepper,ម្រេច,Estimate Pepper production,ton,តោន,,,,,commune_production
+41,Area_Cult_Cashew,Cashew,ស្វាយចន្ទី,Area of cultivated Cashew,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+41.a,Area_Cashew_Har,Cashew,ស្វាយចន្ទី,Area of Cashew Harvested,h.a,ហ.ត,,,,,commune_production
+41.b,Aver_Cashew_T/Ha,Cashew,ស្វាយចន្ទី,Average Cashew yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+41.c,Es_Cashew_T,Cashew,ស្វាយចន្ទី,Estimate Cashew production,ton,តោន,,,,,commune_production
+42,Area_Cult_Mango,Mango,ស្វាយ,Area of cultivated Mango,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+42.a,Area_Mango_Har,Mango,ស្វាយ,Area of Mango Harvested,h.a,ហ.ត,,,,,commune_production
+42.b,Aver_Mango_T/Ha,Mango,ស្វាយ,Average Mango yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+42.c,Es_Mango_T,Mango,ស្វាយ,Estimate Mango production,ton,តោន,,,,,commune_production
+43,Area_Cult_Durian,Durian,ធុរេន,Area of cultivated Durian,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+43.a,Area_Durian_Har,Durian,ធុរេន,Area of Durian Harvested,h.a,ហ.ត,,,,,commune_production
+43.b,Aver_Durian_T/Ha,Durian,ធុរេន,Average Durian yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+43.c,Es_Durain_T,Durian,ធុរេន,Estimate Durain production,ton,តោន,,,,,commune_production
+44,Area_Cult_Rambu,Rambutan,សាម៉ាវ,Area of cultivated Rambutan,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+44.a,Area_Rambu_Har,Rambutan,សាម៉ាវ,Area of Rambutan Harvested,h.a,ហ.ត,,,,,commune_production
+44.b,Aver_Rambu_T/Ha,Rambutan,សាម៉ាវ,Average Rambutan yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+44.c,Es_Rambu_T,Rambutan,សាម៉ាវ,Estimate Rambutan production,ton,តោន,,,,,commune_production
+45,Area_Cult_Msteem,Mangosteen,មង្ឃុត,Area of cultivated Mangosteem,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+45.a,Area_Msteem_Har,Mangosteen,មង្ឃុត,Area of Mangosteem Harvested,h.a,ហ.ត,,,,,commune_production
+45.b,Aver_Msteem_T/Ha,Mangosteen,មង្ឃុត,Average Mangosteem yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_production
+45.c,Es_Msteem_T,Mangosteen,មង្ឃុត,Estimate Mangosteem production,ton,តោន,,,,,commune_production
+46,Area_Cult_Dragon,Dragon fruit,ស្រកានាគ,Area of cultivated Dragon Fruit,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_production
+46.a,Area_Dragon_Har,Dragon fruit,ស្រកានាគ,Area of Dragon Fruit Harvested,h.a,ហ.ត,,,,,commune_transportation
+46.b,Aver_Dragon_T/Ha,Dragon fruit,ស្រកានាគ,Average Dragon Fruit yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_transportation
+46.c,Es_Dragon_T,Dragon fruit,ស្រកានាគ,Estimate Dragon Fruit production,ton,តោន,,,,,commune_transportation
+47,Area_Cult_Plongan,Pailin Lorigan (T aghan),មៀនប៉ៃលិន(តាង៉ែន),Area of cultivated Pailin Longan,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_transportation
+47.a,Area_Plongan_Har,Pailin Lorigan (T aghan),មៀនប៉ៃលិន(តាង៉ែន),Area of Pailin Longan Harvested,h.a,ហ.ត,,,,,commune_transportation
+47.b,Aver_Plongan_T/Ha,Pailin Lorigan (T aghan),មៀនប៉ៃលិន(តាង៉ែន),Average Pailin Longan yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_transportation
+47.c,Es_Plongan_T,Pailin Lorigan (T aghan),មៀនប៉ៃលិន(តាង៉ែន),Estimate Plongan production,ton,តោន,,,,,commune_transportation
+48,Area_Cult_PurO,Pursat Orange,ក្រូចពោធិសាត់,Area of cultivated Pursat Orange,h.a,ហ.ត,Type,ប្រភេទដំណាំចំការ,Cultivation area,ផ្ទៃដីបានដាំ,commune_transportation
+48.a,Area_PurO_Har,Pursat Orange,ក្រូចពោធិសាត់,Area of Pursat Orange Harvested,h.a,ហ.ត,,,,,commune_transportation
+48.b,Aver_PurO_T/Ha,Pursat Orange,ក្រូចពោធិសាត់,Average Pursat Orange yield (metric ton per hectare),ton/h.a,តោន/ហ.ត,,,,,commune_transportation
+48.c,Es_PurO_T,Pursat Orange,ក្រូចពោធិសាត់,Estimate PurO production,ton,តោន,,,,,commune_transportation
+49,R_Mini_Contr,Length of road across the commune (under national control),ប្រវែងផ្លូវជាតិដែលឆ្លងកាត់ឃុំសង្កាត់ (ផ្លូវដែលស្ថិតក្រោមការគ្រប់គ្រងថ្នាក់ជាតិ) ,Length of road in the Commune under Ministry Control,meters,ម៉ែត្រ,,,,,commune_education
+50,R_Prov_Contr,Length of CPDMKs' road across the commune (under CPDMKs control),ប្រវែងផ្លូវខេត្តរាជធានីឬក្រុងស្រុកខណ្ឌដែលឆ្លងកាត់ឃុំសង្កាត់ (ផ្លូវដែលស្ថិតក្រោមការគ្រប់គ្រងថ្នាក់ខេត្តរាជធានី ឬ​ ក្រុងស្រុកខណ្ឌ),Length of road in the Commune under Province or Municipality/District Control,meters,ម៉ែត្រ,,,,,commune_education
+51,Line_Com_Contr,# of line and length of road across the commune (under control by commune/sangkat),ចំនួនខ្សែនិងប្រវែងផ្លូវដែលមាននៅក្នុងឃុំសង្កត់ (ផ្លូវដែលស្ថិតនៅការគ្រប់គ្រង ថែទាំរបស់ឃុំសង្កាត់),# of lines of road in the Commune under the Commune/Sangkat,lines,ខ្សែ,Number of lines and length of roads available in Commune ផ្លូវ (Roads under the maintenance of the commune / sangkat),ចំនួនខ្សែនិងប្រវែងផ្លូវដែលមាននៅក្នុងឃុំសង្កត់ (ផ្លូវដែលស្ថិតនៅការគ្រប់គ្រង ថែទាំរបស់ឃុំសង្កាត់),,,commune_education
+51.a,T_Leng_Com_Contr,Total Length of road in the Commune under the Commune/Sangkat,ចំនួនខ្សែនិងប្រវែងផ្លូវដែលមាននៅក្នុងឃុំសង្កត់ (ផ្លូវដែលស្ថិតនៅការគ្រប់គ្រង ថែទាំរបស់ឃុំសង្កាត់),Total Length of road in the Commune under the Commune/Sangkat,meters,ម៉ែត្រ,,,,,commune_education
+51.1,Rd_Bitum_m,Bituminous Rood,ប្រភេទផ្លូវបេទីមីណឹ,Length of Bituminous roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,Type of Road,ប្រភេទផ្លូវបេទីមីណឹ,commune_education
+51.2,Rd_DBST_m,DBST,ប្រភេទផ្លូវ DBST,Length of DBST roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+51.3,Rd_MAKM_m,MAKADAM,ប្រភេទផ្លូវ MAKADAM,Length of MAKADAM roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+51.4,Rd_Cemt_m,Concrete Road,ប្រភេទផ្លូវចាក់បេតុង,Length of concrete roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+51.5,Rd_latt_m,Laterite road,ប្រភេទផ្លូវ ក្រាលគ្រួសក្រហម ខ្សាច់ភ្នំ,Length of laterite roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+51.6,Rd_earth_m,Constructed earth road,ប្រភេទផ្លូវ ដីសរ(ផ្លូវលើកដីសររួច),Length of constructed earth roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+51.7,Rd_raw_m,Un-constructed earth road,ប្រភេទផ្លូវលំធម្មតា,Length of un-constructed earth roads,meters,ម៉ែត្រ,Where,ក្នុងនោះ,,,commune_education
+52,Playsch_house,# of play-school house in the commune/sangkats,ចំនួនកន្លែងឬទីតាំង,# of playschool house ,locations,កន្លែង,Education,ផ្នែកអប់រំ,,,commune_education
+53,Teacher_playsch_house,# of teacher (mother) tor play-school house,ចំនួនគ្រូ(ម៉ែបង្គោល)បានចូលរួម,# of teacher (mother) in playschool house,pers,នាក់,Education,ផ្នែកអប់រំ,,,commune_education
+54,Child_playsch_house,# of children in the play-school house,ចំនួនក្មេងៗដែលបានចូលរួម,# of children attended playschool house,pers,នាក់,Education,ផ្នែកអប់រំ,,,commune_education
+55,Kid_SCH_comty,# of community pre-schools in the commune/sangkats,ចំនួនកន្លងឬទីតាំង,# of community pre-schools,locations/classes,កន្លែង/ថ្នាក់,Number of location,ចំនួនកន្លងឬទីតាំង,,,commune_education
+56,Kid_PreSCH_comty,# of students attending in pre-schools community,ចំនួនសិស្សរៀន,# of students in COMMUNITY pre-schools,pers,នាក់,Number of student,ចំនួនសិស្សរៀន,,,commune_education
+56.f,FEM_PreSCH_comty,# of female students attending in pre-schools community,ចំនួនសិស្សរៀន ស្រី,# of FEMALE students in COMMUNITY Pre-Schools,pers,នាក់,,,,,commune_education
+57,Kid_tch_comty,# of teachers teaching in the pre-school community,ចំនួនគ្រូបង្រៀន,# of teachers teaching in the community pre-school ,pers,នាក់,Number of teacher,ចំនួនគ្រូបង្រៀន,,,commune_education
+57.f,Kid_Ftch_comty,# of female teachers teaching in the pre-school community,ចំនួនគ្រូបង្រៀន ​ស្រី,# of female teachers teaching in the community pre-school ,pers,នាក់,,,,,commune_education
+58,Kid_SCH_gov,# of schools,ចំនួនសាលា,# of formal pre-schools ,locations,កន្លែង,# school,ចំនួនសាលា,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+59,CROOM_K,# of rooms,ចំនួនបន្ទប់,# kindergarten classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+60,Kid_class,# of classes,ចំនួនថ្នាក់,# Kindergarten classes in commune,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+61,Kid_PreSCH_Pub,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PUBLIC Pre-Schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+61.f,FEM_PreSCH_Pub,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន​ ស្រី,# of female students in PUBLIC Pre-Schools,pers,នាក់,,,,,commune_education
+62,non_ttch_Pub,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of non-teachers teaching in PUBLIC pre-schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+62.f,non_Fttch_Pub,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of female non-teachers teaching in PUBLIC pre-schools,pers,នាក់,,,,,commune_education
+63,TEACH_K,# of teachers,ចំនួនគ្រូបង្រៀន,# kindergarten teachers in the commune,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Public Preschool,សាលាមត្តេយ្យរដ្,commune_education
+63.f,Kid_Ftch_gov,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of female teachers teaching in the formal pre-school ,pers,នាក់,,,,,commune_education
+58.a,Pri_PreSCH,# of schools,ចំនួនសាលា,# of PRIVATE Pre-Schools,locations,កន្លែង,# school,ចំនួនសាលា,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+59.a,Pri_PreSCH_Clsroms,# of rooms,ចំនួនបន្ទប់,# of PRIVATE Pre-School Classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+60.a,Pri_PreSCH_Classes,# of classes,ចំនួនថ្នាក់,# of PRIVATE Pre-School Classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+61.a,Kid_Pri_PreSCH,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PRIVATE pre-schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+61.a.f,Fkid_Pri_PreSCH,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PRIVATE Pre-Schools,pers,នាក់,,,,,commune_education
+62.a,OfSta_Pri_PreSCH,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PRIVATE Pre-Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+62.a.f,FOfSta_Pri_PreSCH,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PRIVATE Pre-Schools,pers,នាក់,,,,,commune_education
+63.a,Tcher_Pri_PreSCH,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers in PRIVATE Pre-Schools,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Private Preschool,សាលាមត្តេយ្យឯកជន,commune_education
+63.a.f,Ftcher_Pri_PreSCH,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of FEMALE teachers in PRIVATE Pre-Schools,pers,នាក់,,,,,commune_education
+64,Pri_SCH,# of schools,ចំនួនសាលា,# of primary schools ,locations,កន្លែង,,,,,commune_education
+65,CROOM_P,# of rooms,ចំនួនបន្ទប់,# primary school classrooms in the commune,rooms,បន្ទប់,,,,,commune_education
+66,Pri_class,# of classes,ចំនួនថ្នាក់,# Primary classes in commune,classes,ថ្នាក់,,,,,commune_education
+67,Kid_PrimSCH_Pub,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PUBLIC primary-schools,pers,នាក់,,,,,commune_education
+67.f,Fkid_PrimSCH-Pub,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន​ ស្រី,# of FEMALE students in PUBLIC primary-Schools,pers,នាក់,,,,,commune_education
+68,OfSta_PrimSCH_Pub,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PUBLIC primary-Schools,pers,នាក់,,,,,commune_education
+68.f,FOfSta_PrimSCH_Pub,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PUBLIC primary-Schools,pers,នាក់,,,,,commune_education
+69,TEACH_P,# of teachers,ចំនួនគ្រូបង្រៀន,# primary school teachers in the commune,pers,នាក់,,,,,commune_education
+69.f,Pri_Ftch,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of female teachers teaching in the primary school ,pers,នាក់,,,,,commune_education
+64.a,Pri_PrimSCH,# of schools,ចំនួនសាលា,# of PRIVATE Primary Schools,locations,កន្លែង,# school,ចំនួនសាលា,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+65.a,Pri_PrimSCH_Clsroms,# of rooms,ចំនួនបន្ទប់,# of PRIVATE Primary School Classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+66.a,Pri_PrimSCH_Classes,# of classes,ចំនួនថ្នាក់,# of PRIVATE Primary School Classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+67.a,ST_Pri_PrimSCH,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PRIVATE Primary schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+67.a.f,Fkid_Pri_PrimSCH,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PRIVATE Primary Schools,pers,នាក់,,,,,commune_education
+68.a,OfSta_Pri_PrimSCH,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PRIVATE Primary Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+68.a.f,FOfSta_Pri_PrimSCH,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PRIVATE Primary Schools,pers,នាក់,,,,,commune_education
+69.a,Tcher_Pri_PrimSCH,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers in PRIVATE Primary Schools,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Private Primary School,សាលាបឋមសិក្សាឯកជន,commune_education
+69.a.f,Ftcher_Pri_PrimSCH,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of FEMALE teachers in PRIVATE Primary Schools,pers,នាក់,,,,,commune_education
+70,PrimSCH_Clean_Wat,# of school having access to clean water,ចំនួនសាលាមានទឹកស្អាតប្រើប្រាស់,# of primary schools with access to clean water,schools,សាលា,,,,,commune_education
+70.1,PrimSCH_Tap_Wat,Tab Water,សាលាមានទឹកម៉ាស៊ីនប្រើប្រាស់,# of Primary schools with clean water from TAPS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+70.2,PrimSCH_DriWel_Wat,Drilled Wells,សាលាមានទឹកអណ្តូងខួងប្រើប្រាស់,# of Primary schools with clean  water from DRILLED WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+70.3,PrimSCH_ProDug_Wwat,Dug wells with protected,សាលាមានទឹកអណ្តូងជីកមានការការពារ,# of Primary schools with clean  water from PROTECTED DUG WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+71,PrimSCH_Toilets,# of schools having access to lavatory,ចំនួនសាលាមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,# of Primary Schools with Toilets,schools,សាលា,,,,,commune_education
+71.1,PrimSCH_Im_Toi,# of rooms,ចំនួនបន្ទប់សរុប,# of IMPROVED toilets in Primary Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,commune_education
+71.1.f,PrimSCH_Im_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of improved toilets for GIRLS in Primary Schools,rooms,បន្ទប់,,,,,commune_education
+71.2,PrimSCH_UnIm_Toilets,# of rooms,ចំនួនបន្ទប់សរុប,# of UNIMPORVED toilets in Primary Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,commune_education
+71.2.f,PrimSCH_UnIm_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of unimproved toilets for GIRLS in Primary Schools,rooms,បន្ទប់,,,,,commune_education
+72,LoSec_SCH,# of schools,ចំនួនសាលា,# of lower secondary schools ,locations,កន្លែង,# school,ចំនួនសាលា,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+73,LoSec_room,# of rooms,ចំនួនបន្ទប់,# of lower secondary school classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+74,LoSec_class,# of classes,ចំនួនថ្នាក់,# of lower secondary classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+75,ST_SecSCH_Pub,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PUBLIC secondary schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+75.f,FSt_SecSCH_Pub,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PUBLIC secondary Schools,pers,នាក់,,,,,commune_education
+76,OfSta_SecSCH_Pub,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PUBLIC secondary Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+76.f,FOfSta_SecSCH_Pub,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PUBLIC secondary Schools,pers,នាក់,,,,,commune_education
+77,LoSec_tch,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers teaching in the lower secondary school ,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Public Secondary School,អនុវិទ្យាល័យរដ្ឋ,commune_education
+77.f,LoSec_Ftch,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of female teachers teaching in the lower secondary school ,pers,នាក់,,,,,commune_education
+72.a,Pri_SecSCH,# of schools,ចំនួនសាលា,# of PRIVATE Secondary Schools,locations,កន្លែង,# school,ចំនួនសាលា,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+73.a,Pri_SecSCH_Clsroms,# of rooms,ចំនួនបន្ទប់,# of PRIVATE Secondary School Classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+74.a,Pri_SecSCH_Classes,# of classes,ចំនួនថ្នាក់,# of PRIVATE Secondary School Classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+75.a,ST_Pri_SecSCH,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PRIVATE secondary schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+75.a.f,FSt_Pri_SecSCH,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PRIVATE secondary Schools,pers,នាក់,,,,,commune_education
+76.a,OfSta_Pri_SecSCH,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PRIVATE secondary Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+76.a.f,FOfSta_Pri_SecSCH,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PRIVATE secondary Schools,pers,នាក់,,,,,commune_education
+77.a,Tcher_Pri_SecSCH,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers in PRIVATE Secondary Schools,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Private Secondary School,អនុវិទ្យាឯកជន,commune_education
+77.a.f,Ftcher_Pri_SecSCH,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of FEMALE teachers in PRIVATE Secondary Schools,pers,នាក់,,,,,commune_education
+78,SecSCH_Clean_Wat,# of school having access to clean water,ចំនួនអនុវិទ្យាល័យមានទឹកស្អាតប្រើប្រាស់,# of Secondary schools with access to clean water,schools,សាលា,,,,,commune_education
+78.1,SecSCH_Tap_Wat,Tab Water,អនុវិទ្យាល័យមានទឹកម៉ាស៊ីនប្រើប្រាស់,# of Secondary schools with clean water from TAPS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+78.2,SecSCH_DriWel_Wat,Drilled Wells,អនុវិទ្យាល័យមានទឹកអណ្តូងខួងប្រើប្រាស់,# of Secondary schools with clean  water from DRILLED WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+78.3,SecSCH_ProDug_Wwat,Dug wells with protected,អនុវិទ្យាល័យមានទឹកអណ្តូងជីកមានការការពារ,# of Secondary schools with clean  water from PROTECTED DUG WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+79,SecSCH_Toilets,# of schools having access to lavatory,ចំនួនអនុវិទ្យាល័យមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,# of Secondary Schools with Toilets,schools,សាលា,,,,,commune_education
+79.1,SecSCH_Im_Toi,# of rooms,ចំនួនបន្ទប់សរុប,# of IMPROVED toilets in Secondary Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,commune_education
+79.1.f,SecSCH_Im_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of improved toilets for GIRLS in Secondary Schools,rooms,បន្ទប់,,,,,commune_education
+79.2,SecSCH_UnIm_Toilets,# of rooms,ចំនួនបន្ទប់សរុប,# of UNIMPORVED toilets in Secondary Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,commune_education
+79.2.f,SecSCH_UnIm_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of unimproved toilets for GIRLS in Secondary Schools,rooms,បន្ទប់,,,,,commune_education
+80,UpSec_SCH,# of schools,ចំនួនសាលា,# of upper secondary schools ,locations,កន្លែង,# school,ចំនួនសាលា,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+81,UpSec_room,# of rooms,ចំនួនបន្ទប់,# of upper secondary school classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+82,UpSeci_class,# of classes,ចំនួនថ្នាក់,# of upper secondary classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+83,ST_HigSCH_Pub,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PUBLIC High schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+83.f,FSt_HigSCH_Pub,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PUBLIC High Schools,pers,នាក់,,,,,commune_education
+84,OfSta_HigSCH_Pub,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PUBLIC High Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+84.f,FOfSta_HigSCH_Pub,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PUBLIC High Schools,pers,នាក់,,,,,commune_education
+85,UpSec_tch,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers teaching in the upper secondary school ,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Public High School,វិទ្យាល័យរដ្ឋ,commune_education
+85.f,UpSec_Ftch,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of female teachers teaching in the upper secondary school ,pers,នាក់,,,,,commune_education
+80.a,Pri_HigSCH,# of schools,ចំនួនសាលា,# of PRIVATE High Schools,locations,កន្លែង,# school,ចំនួនសាលា,Private High School,វិទ្យាល័យឯកជន,commune_education
+81.a,Pri_HigSCH_Clsroms,# of rooms,ចំនួនបន្ទប់,# of PRIVATE High School Classrooms,rooms,បន្ទប់,# room,ចំនួនបន្ទប់,Private High School,វិទ្យាល័យឯកជន,commune_education
+82.a,Pri_HigSCH_Classes,# of classes,ចំនួនថ្នាក់,# of PRIVATE High School Classes,classes,ថ្នាក់,# class,ចំនួនថ្នាក់,Private High School,វិទ្យាល័យឯកជន,commune_education
+83.a,ST_Pri_HigSCH,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,# of students in PRIVATE High schools,pers,នាក់,# of attending students,ចំនួនសិស្សកំពុងនៅរៀន,Private High School,វិទ្យាល័យឯកជន,commune_education
+83.a.f,FSt_Pri_HigSCH,# of attending female students,ចំនួនសិស្សកំពុងនៅរៀន ស្រី,# of FEMALE students in PRIVATE High Schools,pers,នាក់,,,,,commune_education
+84.a,OfSta_Pri_HigSCH,# of non-teaching staffs,ចំនួនបុគ្គលិកមិនបង្រៀន,# of Office Staffs in PRIVATE High Schools,pers,នាក់,# of non-teaching staffs ,ចំនួនបុគ្គលិកមិនបង្រៀន,Private High School,វិទ្យាល័យឯកជន,commune_education
+84.a.f,FOfSta_Pri_HigSCH,# of non-teaching female staffs,ចំនួនបុគ្គលិកមិនបង្រៀន ស្រី,# of FEMALE Office Staffs in PRIVATE High Schools,pers,នាក់,,,,,commune_education
+85.a,Tcher_Pri_HigSCH,# of teachers,ចំនួនគ្រូបង្រៀន,# of teachers in PRIVATE High Schools,pers,នាក់,# teacher,ចំនួនគ្រូបង្រៀន,Private High School,វិទ្យាល័យឯកជន,commune_education
+85.a.f,Ftcher_Pri_HigSCH,# of female teachers,ចំនួនគ្រូបង្រៀន ស្រី,# of FEMALE teachers in PRIVATE High Schools,pers,នាក់,,,,,commune_education
+86,HigSCH_Clean_Wat,# of school having access to clean water,ចំនួនវិទ្យាល័យមានទឹកស្អាតប្រើប្រាស់,# of High schools with access to clean water,schools,សាលា,,,,,commune_education
+86.1,HigSCH_Tap_Wat,Tab Water,វិទ្យាល័យមានទឹកម៉ាស៊ីនប្រើប្រាស់,# of High schools with clean water from TAPS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+86.2,HigSCH_DriWel_Wat,Drilled Wells,វិទ្យាល័យមានទឹកអណ្តូងខួងប្រើប្រាស់,# of High schools with clean  water from DRILLED WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+86.3,HigSCH_ProDug_Wwat,Dug wells with protected,វិទ្យាល័យមានទឹកអណ្តូងជីកមានការការពារ,# of High schools with clean  water from PROTECTED DUG WELLS,schools,សាលា,Where,ក្នុងនោះ,,,commune_education
+87,HigSCH_Toilets,# of schools having access to lavatory,ចំនួនវិទ្យាល័យមានបង្គន់អនាម័យសំរាប់សិស្សប្រើប្រាស់,# of High Schools with Toilets,schools,សាលា,,,,,commune_education
+87.1,HigSCH_Im_Toi,# of rooms,ចំនួនបន្ទប់សរុប,# of IMPROVED toilets in High Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with improved technique,បង្គន់មានលក្ខណៈបច្ចកទេស,commune_education
+87.1.f,HigSCH_Im_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of improved toilets for GIRLS in High Schools,rooms,បន្ទប់,,,,,commune_education
+87.2,HigSCH_UnIm_Toilets,# of rooms,ចំនួនបន្ទប់សរុប,# of UNIMPORVED toilets in High Schools,rooms,បន្ទប់,Where,ក្នុងនោះ,Latrine with non-improved technique,បង្គន់គ្មានលក្ខណៈបច្ចកទេស,commune_education
+87.2.f,HigSCH_UnIm_Ftoilets,# of girl rooms,ចំនួនបន្ទប់ ស្រី,# of unimproved toilets for GIRLS in High Schools,rooms,បន្ទប់,,,,,commune_natural_resource
+88,Ongo_Liter_Class,# of classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,# of Ongoing literacy classes,classes,ថ្នាក់,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,commune_natural_resource
+88.a,Ongo_Liter_Tcher,# of literacy teachers,ចំនួនគ្រូអក្ខរកម្ម,# of ongoing literacy teachers,pers,នាក់,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,commune_natural_resource
+88.a.f,Ongo_Liter_Ftcher,# of literacy female teachers,ចំនួនគ្រូអក្ខរកម្ម ស្រី,# of  ongoing literacy FEMALE teachers,pers,នាក់,,,,,commune_natural_resource
+88.b,Ongo_Liter_Stu,# of literacy students,សិស្សអក្ខរកម្ម,# of ongoing literacy students,pers,នាក់,On-going literacy classes,ថា្នក់អក្ខរកម្មកំពុងដំណើរការ,,,commune_natural_resource
+88.b.f,Ongo_Liter_Fstu,# of literacy female students,សិស្សអក្ខរកម្ម ស្រី,# of ongoing literacy FEMALE students,pers,នាក់,,,,,commune_natural_resource
+89,Comp_Liter_Class,# of classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,# of Completed literacy classes,classes,ថ្នាក់,Completed literacy classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,,,commune_natural_resource
+89.a,Comp_Liter_Tcher,# of literacy teachers,ចំនួនគ្រូអក្ខរកម្ម,# of Completed literacy teachers,pers,នាក់,Completed literacy classes,ថា្នក់អក្ខរកម្មបានបញ្ចប់,,,commune_natural_resource
+89.a.f,Comp_Liter_Ftcher,# of literacy female teachers,ចំនួនគ្រូអក្ខរកម្ម ស្រី,# of  Completed literacy FEMALE teachers,pers,នាក់,,,,,commune_natural_resource
+89.b,Comp_Liter_Stu,# of literacy students,សិស្សអក្ខរកម្ម,# of Completed literacy students,pers,នាក់,,,,,commune_natural_resource
+89.b.f,Comp_Liter_Fstu,# of literacy female students,សិស្សអក្ខរកម្ម ស្រី,# of Completed literacy FEMALE students,pers,នាក់,,,,,commune_natural_resource
+90,Fostr_Comty,# of Forestry communrties,សហគមន៏ការពារព្រៃឈើ,# of Forestry Communities,communities,សហគមន៏,,,,,commune_natural_resource
+90.a,Area_Fostr_ComtyMa,Size of area allocated to Forestry Communities,ទំហំនៃផ្ទៃដីដែលបានបែងចែកទៅសហគមន៍ព្រៃឈើ,Size of area allocated to Forestry Communities,h.a,ហ.ត,,,,,commune_natural_resource
+90.b,Fam_Fostr_comty,# of families participating in Forestry Community,#គ្រួសារដែលចូលរួមក្នុងសហគមន៍ព្រៃឈើ,# of families participating in Forestry Community,families,គ្រួសារ,,,,,commune_natural_resource
+91,No_Fish_Comty,# of Fishery communities,សហគមន៏នេសាទ,# of Fishery Communities,communities,សហគមន៏,,,,,commune_natural_resource
+91.a,Area_Fish_ComtyMa,Size of area allocated to Fishery Communities,ទំហំនៃតំបន់ដែលត្រូវបានបែងចែកទៅជាសហគមន៍នេសាទ,Size of area allocated to Fishery Communities,h.a,ហ.ត,,,,,commune_disaster
+91.b,Fam_Fish_comty,# of families participating in Fishery Community,#គ្រួសារដែលចូលរួមក្នុងសហគមន៍នេសាទ,# of families participating in Fishery Community,families,គ្រួសារ,,,,,commune_disaster
+92,NREM_Comty,# of NREM communities,សហគមន៏ការពារធនធានធម្មជាតិនិងបរិស្ថាន,# of NREM Communities,communities,សហគមន៏,,,,,commune_disaster
+92.a,Area_NREM_ComtyMa,Size of area allocated to NREM Communities,ទំហំនៃផ្ទៃដីដែលបានបែងចែកទៅសហគមន៍ NREM,Size of area allocated to NREM Communities,h.a,ហ.ត,,,,,commune_disaster
+92.b,Fam_NREM_comty,# of families participating in NREM  Community,# គ្រួសារដែលចូលរួមក្នុងសហគមន៍ NREM,# of families participating in NREM  Community,families,គ្រួសារ,,,,,commune_disaster
+93,Irri_ComtyMa,# of Irrigation Management communities,សហគមន៏គ្រប់គ្រងនិងប្រើប្រាស់ទឹកប្រព័ន្ធធារាសាស្ត្រ,# of Irrigation Management Communities,communities,សហគមន៏,,,,,commune_disaster
+93.a,Area_Irri_ComtyMa,Size of area allocated to  Irrigation Management Community,ទំហំនៃផ្ទៃដីដែលត្រូវបានបម្រុងទុកសម្រាប់សហគមន៍គ្រប់គ្រងប្រព័ន្ធធារាសាស្ត្រ,Size of area allocated to  Irrigation Management Community,h.a,ហ.ត,,,,,commune_disaster
+93.b,Fam_Irri_comty,# of families participating in Irrigation Management Community,#គ្រួសារដែលចូលរួមក្នុងសហគមន៍គ្រប់គ្រងប្រព័ន្ធធារាសាស្ត្រ,# of families participating in Irrigation Management Community,families,គ្រួសារ,,,,,commune_disaster
+94,Touri_Comty,# of Tourism communities,សហគមន៏ទេសចរណ៏,# of Tourism communities,communities,សហគមន៏,,,,,commune_disaster
+94.a,Area_Touri_ComtyMa,Size of area allocated to Tourism Communities,ទំហំនៃតំបន់ដែលត្រូវបានបែងចែកទៅជាសហគមន៍ទេសចរណ៍,Size of area allocated to Tourism Communities,h.a,ហ.ត,,,,,commune_disaster
+94.b,Tour_comty,# of families participating in Tourism Community ,#គ្រួសារដែលចូលរួមក្នុងសហគមន៍ទេសចរណ៍,# of families participating in Tourism Community ,families,គ្រួសារ,,,,,commune_disaster
+95,Area_Affec_Floods,Areas of effected by floods,ចំនួនផ្ទៃដីដែលខូចខាតដោយសារទឹកជំនន់,Size of areas affected by Floods,h.a,ហ.ត,,,,,commune_disaster
+95.1,Ric_area_Floods,Area of rice land,ផ្ទៃដីស,Size of rice areas affected by Floods,h.a,ហ.ត,Where,ក្នុងនោះ,,,commune_disaster
+95.2,Area_crops_Flood,Area of crops land,ផ្ទៃដីដំណាំរួមផ្សំ,Size of other crops areas affected by Floods,h.a,ហ.ត,Where,ក្នុងនោះ,,,commune_disaster
+96,LengRod_Flood,Length of affected roads by floods,ប្រវែងផ្លូវដែលខូចខាតដោយសារទឹកជំនន់,Length of roads affected by Floods,meters,ម៉ែត្រ,,,,,commune_disaster
+97,Bridge_Flood,Number of Bridges affected by floods,ចំនួនស្ពានដែលខូចខាតដោយសារទឹកជំនន់,Number of bridges affected by Floods,locations,កន្លែង,,,,,commune_disaster
+98,Ric_Drought,Area of growing nee affected by drought,ចំនួនផ្ទៃដីស្រែដែលខូចខាតដោយសារគ្រោះរាំងស្ងួត,Size of rice areas affected by drought,h.a,ហ.ត,,,,,commune_disaster
+99,Ric_Affect_Pest,Area of growing rice affected by pests,ចំនួនផ្ទៃដីស្រែដែលខូចខាតដោយសារសត្វល្អិតបំផ្លាញ,Size of rice areas affected by pests,h.a,ហ.ត,,,,,commune_disaster
+100,Seri_Fires,Number of fires happened (bum house and markets),ចំនួនអគ្គីភ័យដែលកើតឡើង (ឆេះផ្ទះ ឆេះផ្សារ),Number of cases of serious fires (burn houses and markets),times,លើក,,,,,commune_disaster
+101,Safety_Hill,Number of Safety Hills,ចំនួនទីទួលសុវត្តិភាព,Number of Safety hills,locations,កន្លែង,,,,,commune_disaster
+102,Area_Replan_Tree,Area of re-planting trees,ចំនួនផ្ទៃដីបានដាំដើមឈើឡើងវិញ,Size of trees re-planting area,h.a,ហ.ត,,,,,commune_disaster
+103.1,Nborn_regis_30d,# of registered new bom within the first 30 days,ចំនួនកុមារចុះបញ្ជីសំបុត្រកំណើត(ក្រោយកើត៣០ថ្ងៃ),# of new borns registered in the first 30 days,pers,នាក់,,,,,commune_disaster
+103.2,0-1_birth_cert,# of children 0-1 year have birth certificate,ចំនួនកុមារអាយុពី ០-១ ឆ្នាំមានសំបុត្រ ឬលិខិតបញ្ជាក់កំណើត,# of children 0-1 year have birth certificate,pers,នាក់,,,,,commune_disaster
+103.3,0-5_birth_cert,# of children 0-5 year have birth certificate,ចំនួនកុមារអាយុពី ០-៥ ឆ្នាំមានសំបុត្រឬលិខិតបញ្ចាក់កំណើត,# of children 0-5 year have birth certificate,pers,នាក់,,,,,commune_disaster
+104,Marig_Licen,# of registered marriages in the current year (included transitional and legal marriages),ចំនួនគូស្រករដែលបានសុំច្បាប់រៀបអាពាហ៏ពិពាហ៏,# of marriage licences issued in the year,,,,,,,commune_disaster
+105,Marig_Register,# of registered marriages,ចំនួនគូស្រករដែលមកចុះលិខិតអាពាហ៏ពិពាហ៏,# of marriages registered in the year,,,,,,,commune_disaster
+106,Death_Register,# of registered deaths in the current year,ចំនួនមនុស្សបានចុះបញ្ជីមរណភាព,# of deaths registered in the year,,,,,,,commune_disaster
+107,Fami_Land_Title,# of families having official land titles,ចំនួនគ្រួសារមានប័ណ្ណកម្មសិទ្ធិដីធ្លីជាផ្លូវការ,# of families having official land titles,,,,,,,commune_disaster
+108,Cases_Mine_Explod,# of cased of mine and unexploded weapons,ចំនួនករណីផ្ទុះមីនសល់ពីសង្គ្រាម,# of cases of mines explosions,cases,ករណី,,,,,commune_disaster
+109,Vic_MinExpl_L18,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,# of victims of mines explosions under 18 years,pers,នាក់,# of cased of mine and unexploded weapons,ចំនួនជនរងគ្រោះដោយសារមីនសល់ពីសង្គម,,,commune_disaster
+109.1,Vic_MinExpl_Ov18,over 18 years old,អាយុ១៨ឆ្នាំឡើង,# of victims of mines explosions over 18 years,pers,នាក់,# of cased of mine and unexploded weapons,ចំនួនជនរងគ្រោះដោយសារមីនសល់ពីសង្គម,,,commune_disaster
+110,Death_MinExpl_L18,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,# of deaths from mines explosions under 18,pers,នាក់,# of cased of mine of UXO explosion,ចំនួនអ្នកស្លាប់មកពីការផ្ទុះ មិនសល់ពីសង្គ្រាម,,,commune_disaster
+110.1,Death_MinnExpl_Ov18,over 18 years old,អាយុ១៨ឆ្នាំឡើង,# of deaths from mines explosions over 18,pers,នាក់,# of cased of mine of UXO explosion,ចំនួនអ្នកស្លាប់មកពីការផ្ទុះ មិនសល់ពីសង្គ្រាម,,,commune_disaster
+111,Cases_ERW_Explod,# of cased of mine of UXO explosion,ចំនួនករណីផ្ទុះសំណល់ជាតិផ្ទុះសល់ពីសង្គម,# of cases of ERW explosions,cases,ករណី,,,,,commune_disaster
+112,Vic_ERW_L18,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,# of victims of ERW explosions under 18 years,pers,នាក់,# of victims of explosive remnants of society,ចំនួនជនរងគ្រោះដោយសារផ្ទុះសំណល់ ជាតិផ្ទុះសល់ពីសង្គម,,,commune_disaster
+112.1,Vic_ERW_Ov18,over 18 years old,អាយុ១៨ឆ្នាំឡើង,# of victims of ERW explosions over 18 years,pers,នាក់,# of victims of explosive remnants of society,ចំនួនជនរងគ្រោះដោយសារផ្ទុះសំណល់ ជាតិផ្ទុះសល់ពីសង្គម,,,commune_disaster
+113,Death_ERW_L18,Under 18 years old,អាយុក្រោម១៨ឆ្នាំ,# of deaths from ERW explosions under 18,pers,នាក់,# of deaths due to the explosion of national remnants of society,ចំនួនអ្នកស្លាប់ដោយសារផ្ទុះសំណល់ជាតិផ្ទះសល់ពីសង្គម,,,commune_disaster
+113.1,Death_ERW_Ov18,over 18 years old,អាយុ១៨ឆ្នាំឡើង,# of deaths from ERW explosions over 18,pers,នាក់,# of deaths due to the explosion of national remnants of society,ចំនួនអ្នកស្លាប់ដោយសារផ្ទុះសំណល់ជាតិផ្ទះសល់ពីសង្គម,,,
+114,Susp_Area_Min/ERW,Suspected area of mines/ERW,ចំនួនផ្ទៃដីសង្ស័យមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,Suspected Area of mines/ERW,h.a,ហ.ត,,,,,
+115,Area_Min/ERW,Area of mines/ERW,ចំនួនផ្ទៃដីមានមីនឬសំណល់ជាតិផ្ទុះសល់ពីសង្គម,Area of mines/ERW,h.a,ហ.ត,,,,,
+116,AreaClea_Min/ERW,This year area of mine clearance and unexploded weapons,នៅក្នុងឆ្នាំនេះ ចំនួនផ្ទៃដីដែលបានសំអាតមីននិង សំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,Area cleared of mines/ERW during the year,h.a,ហ.ត,,,,,
+117,Fami_Getland_Min/ERW,This year number of families received mine clearance land and unexploded weapons,ក្នុងនោះ ចំនួនគ្រួសារទទួលបានដីសំអាតមីននិងសំណល់ជាតិផ្ទុះសល់ពីសង្គ្រាម,# of families receiving land cleared from mines/ERW,families,គ្រួសារ,,,,,
+118,Act_Health_Officers,# of health officer's activities in commune/sangkat,តើបុគ្គលិកសុខាភិបាលបានចុះមកធ្វើសកម្មភាពប៉ុន្មានដងក្នុងរយៈពេល១២ខ កន្លងមកក្នុងឃុំសង្កាត់ ?(អប់រំណែនាំអំពីសុខភាព ចាក់ថ្នាំបង្កា.....។ល។,# of health officer's activities in commune/sangkat for current year ,times,ដង,,,,,
+119,VHV_Com,# of village health volunteer working in commune/sangkat,តើមានអ្នកស្ម័គ្រចិត្តផ្នែកសុខភាពភូមិប៉ុន្មាននាក់ បំរើការងារនៅក្នុងឃុំសង្កាត់ ?,# of village health volunteer working in commune,families,គ្រួសារ,,,,,
+120,Issue_Letter_ODF,Does the commune issue a letter to prevent open defecation free?,តើឃុំមានចេញដីការក្នុងការទប់ស្កាត់ការបន្ទោរបង់ពាសវាលពាសកាលដែរឬទេ? សំគាល់ ៖ លេខ ១ = មាន ចំណែកលេខ ០ = គ្មាន,Does the commune issue a letter to prevent open defecation free?,,,,,,,
+121,V_Cert_No_ODF,# of village got certificate of no open defecation free,តើមានចំនួនភូមិប៉ុន្មានដែលបានទទួលវិញ្ញាបនប័ត្រ “ ភូមិដែលមិនមានការបន្ទោរ បង់ពាសវាលពាសកាល ” នៅក្នុងឃុំ ?,# of village got certificate of no open defecation free,villages,ភូមិ,,,,,
+122,Latrine_Shop,Does the commune have latrine eguipment shop?,តើនៅក្នុងឃុំមានទីកន្លងលក់សម្ភារៈបង្គន់ដែរឬទេ? សំគាល់ ៖ លេខ ១ = មាន ចំណែកលេខ 0 = គ្មាន,Does the commune have latrine equipment shop?,,,,,,,
+123,Fa_Social_Assist,# of families got social service assistant from commune,តើមានគ្រួសារងាយរងគ្រោះចំនួនប៉ុន្មាន ដែលបានទទួលជំនួយផ្នែកសង្គមកិច្ច ពីឃុំ ក្នុងរយៈពេល១២ខែកន្លងមក ?,# of families got social service assistant from commune,families,គ្រួសារ,,,,,

@@ -1,3 +1,5 @@
+<h4 class="fw-bold text-primary">{{__('commune.transportation')}}</h4>
+<span class="fs-6">{{__('commune.transportation_note')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_transportation().slice(0, 2) -->
@@ -6,7 +8,7 @@
                 <td data-bind="text: question()"></td>
                 <td colspan="2">
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td> 
@@ -20,13 +22,13 @@
                 <!-- /ko -->
                 <td colspan="2">
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td> 
             </tr>
         <!-- /ko -->
-        <!-- ko foreach: commune_transportation().slice(3, 10) -->
+        <!-- ko foreach: commune_transportation().slice(4, 11) -->
             <tr>
                 <td data-bind="text: no()"></td>
                 <!-- ko if: $index() == 0 -->
@@ -35,7 +37,7 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td> 

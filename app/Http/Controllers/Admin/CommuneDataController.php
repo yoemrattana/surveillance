@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Helper\Reply;
+use Illuminate\Database\Query\JoinClause;
+use Illuminate\Support\Facades\Log;
 
 class CommuneDataController extends Controller
 {
@@ -61,7 +63,7 @@ class CommuneDataController extends Controller
     public function save(Request $request)
     {
         $master = $request->master;
-        $tables = json_decode($request->tables, true);
+        $detail_response = json_decode($request->responses, true);
 
         $id = $master['id'];
 
@@ -71,12 +73,10 @@ class CommuneDataController extends Controller
             DB::table('commune_parent')->where('id', $id)->update($master);
         }
 
-        foreach (array_keys($tables) as $name) {
-            foreach ($tables[$name] as &$value) {
-                $value['commune_parent_id'] = $id;
-            }
-            DB::table($name)->where('commune_parent_id', $id)->delete();
-            DB::table($name)->insert($tables[$name]);
+        DB::table('commune_response')->where('parent_id', $id)->delete();
+        foreach ($detail_response as $detail) {
+            $detail['parent_id'] = $id;
+            DB::table('commune_response')->insert($detail);
         }
 
         return response()->json(['message' => ('general.save_success')]);
@@ -89,15 +89,19 @@ class CommuneDataController extends Controller
                         ->first();
         $detail = [];
         if($commune_parent){
-            $tables = ['commune_base_profile', 'commune_agriculture', 'commune_production',
-                      'commune_transportation', 'commune_education', 'commune_natural_resource',
-                      'commune_disaster'
-                      ];
-            foreach ($tables as $table) {
-                $detail[$table] = DB::table($table)->where('commune_parent_id', $commune_parent->id)->get();
-            }
-            $commune_parent->detail = $detail;
-            $commune_parent->questions = DB::table('commune_question')->get();
+            // $commune_parent->detail = DB::table('commune_response')->where('parent_id', $commune_parent->id)->get();
+            $commune_parent->questions = DB::table('commune_question')
+                                ->leftJoin('commune_response', function (JoinClause $join) use ($commune_parent) {
+                                    $join->on('commune_question.id', '=', 'commune_response.question_id')
+                                         ->where('commune_response.parent_id', '=', $commune_parent->id);
+                                })
+                                ->select('commune_question.*', 'commune_response.value')
+                                ->get();
+
+            // DB::table('commune_question')->join('commune_response', 'commune_question.id', '=', 'commune_response.question_id')
+            //     ->where('commune_response.parent_id', $commune_parent->id)
+            //     ->select('commune_question.*', 'commune_response.value')
+            //     ->get();
         }else{
             $commune_parent = [];
             $commune_parent['detail'] = [];
@@ -112,4 +116,31 @@ class CommuneDataController extends Controller
     {
         DB::table('commune_parent')->where('id', $request->id)->delete();
     }
+
+
+    // public function search(Request $request){
+    //     $commune_parent = DB::table('commune_parent')
+    //                     ->where('cm_code', $request->cm_code)
+    //                     ->where('year', $request->year)
+    //                     ->first();
+    //     $detail = [];
+    //     if($commune_parent){
+    //         $tables = ['commune_base_profile', 'commune_agriculture', 'commune_production',
+    //                   'commune_transportation', 'commune_education', 'commune_natural_resource',
+    //                   'commune_disaster'
+    //                   ];
+    //         foreach ($tables as $table) {
+    //             $detail[$table] = DB::table($table)->where('commune_parent_id', $commune_parent->id)->get();
+    //         }
+    //         $commune_parent->detail = $detail;
+    //         $commune_parent->questions = DB::table('commune_question')->get();
+    //     }else{
+    //         $commune_parent = [];
+    //         $commune_parent['detail'] = [];
+    //         $commune_parent['questions'] = DB::table('commune_question')->get();
+    //     }      
+
+
+    //     return Reply::dataOnly($commune_parent);
+    // }
 }

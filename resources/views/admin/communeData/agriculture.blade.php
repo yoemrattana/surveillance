@@ -1,3 +1,4 @@
+<h4 class="fw-bold text-primary">{{__('commune.agriculture')}}</h4>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_agriculture().slice(0, 5) -->
@@ -12,8 +13,8 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <span class="input-group-text">សរុប</span>
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <span class="input-group-text">{{__('general.total')}}</span>
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
@@ -32,8 +33,8 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <span class="input-group-text">សរុប</span>
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <span class="input-group-text">{{__('general.total')}}</span>
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
@@ -58,7 +59,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-text">{{__('general.total')}}</span>
-                            <input type="number" class="form-control" data-bind="value: total"  />
+                            <input type="number" class="form-control" data-bind="value: value"  />
                             <span class="input-group-text" data-bind="text: unit()"></span>
                         </div>
                     </td>
@@ -66,8 +67,8 @@
                 <!-- ko with: $parent.getQuestionByNo($parent.commune_agriculture(), $data+'.a') -->
                     <td>
                         <div class="input-group">
-                            <span class="input-group-text">សរុប</span>
-                            <input type="number" class="form-control" data-bind="value: total"  />
+                            <span class="input-group-text">{{__('general.total')}}</span>
+                            <input type="number" class="form-control" data-bind="value: value"  />
                             <span class="input-group-text" data-bind="text: unit()"></span>
                         </div>
                     </td>
@@ -76,6 +77,8 @@
         <!-- /ko -->
     </tbody>
 </table>
+<br>
+<span class="fs-6">{{__('commune.intensive_rice_crop_note')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_agriculture().slice(16, 19) -->
@@ -90,8 +93,8 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <span class="input-group-text">សរុប</span>
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <span class="input-group-text">{{__('general.total')}}</span>
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>

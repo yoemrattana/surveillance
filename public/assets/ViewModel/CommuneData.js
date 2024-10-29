@@ -60,10 +60,10 @@ function viewModel() {
             var q = self.questions().find(r => r.no == no);
 
             var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
-            model.commune_question_id = q.id;
+            model.question_id = q.id;
 
             if (self.tableDetails() && self.tableDetails()[tblname]) {
-                var found = self.tableDetails()[tblname]?.find(r => r.commune_question_id == q.id);
+                var found = self.tableDetails()[tblname]?.find(r => r.question_id == q.id);
                 found && answers.forEach(key => model[key] = (found[key] || 0));
             }
 
@@ -72,6 +72,8 @@ function viewModel() {
             model.sub_group = () => self.lang() == 'en' ? q.sub_group_en : q.sub_group_kh;
             model.question = () => self.lang() == 'en' ? q.question_en : q.question_kh;
             model.unit = () => self.lang() == 'en' ? q.unit_en : q.unit_kh;
+            model.short_code = () => q.short_code;
+            model.value = ko.observable(q?.value) ;
             return model;
         });
     }
@@ -98,50 +100,92 @@ function viewModel() {
     });
 
     self.commune_base_profile = ko.pureComputed(() => {
-        var nums = [1, 2, 3, 4, 5, 6, 7, 8, '8.1', '8.2', 9, '9.1', '9.2', 10, 11, 12, 13];
-        var answers = ['total', 'female'];
+        var nums = [1, '1.f', 2, '2.f', 3, 4, 5, 6, 7, 8, '8.1', '8.2', 9, '9.1', '9.2', 10, 11, 12, 13];
+        var answers = ['value'];
         return prepare(nums, answers, 'commune_base_profile');
     });
 
     self.commune_agriculture = ko.pureComputed(() => {
         var nums = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, '24.a', 25, '25.a', 26, '26.a', 27, 28, 29];
-        var answers = ['total'];
+        var answers = ['value'];
         return prepare(nums, answers, 'commune_agriculture');
     });
 
     self.commune_production = ko.pureComputed(() => {
-        var nums = [30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48];
-        var answer = ['es_land_growed', 'land_production', 'avg_production_in_ha', 'es_production'];
+        var nums = ["30", "30.a", "30.b", "31", "31.a", "31.b", "32", "32.a", "32.b",
+                    "33", "33.a", "33.b", "34", "34.a", "34.b", "35", "35.a", "35.b",
+                    "36", "36.a", "36.b", "37", "37.a", "37.b",
+                    "38", "38.a", "38.b", "38.c", "39",
+                    "39.a", "39.b", "39.c", "40", "40.a",
+                    "40.b", "40.c", "41", "41.a", "41.b",
+                    "41.c", "42", "42.a", "42.b", "42.c",
+                    "43", "43.a", "43.b", "43.c", "44",
+                    "44.a", "44.b", "44.c", "45", "45.a",
+                    "45.b", "45.c", "46", "46.a", "46.b",
+                    "46.c", "47", "47.a", "47.b", "47.c",
+                    "48", "48.a", "48.b", "48.c"
+                            ];
+        var answer = ['value'];
         return prepare(nums, answer, 'commune_production');
     });
 
     self.commune_transportation = ko.pureComputed(() => {
-        var nums = [49, 50, 51, "51.1", "51.2", "51.3", "51.4", "51.5", "51.6", "51.7"];
+        var nums = [49, 50, 51, "51.a", "51.1", "51.2", "51.3", "51.4", "51.5", "51.6", "51.7"];
         var answer = ['total'];
         return prepare(nums, answer, 'commune_transportation');
     });
     self.commune_education = ko.pureComputed(() => {
-        var nums = [52, 53, 54, 55, 56, 57, 58, "58.a", 59, "59.a", 60, "60.a", 
-                    61, "61.a", 62, "62.a", 63, "63.a", 64, "64.a", 65, "65.a", 
-                    66, "66.a", 67, "67.a", 68, "68.a", 69, "69.a",
-                    70, '70.1', '70.2', '70.3', 71, '71.1', '71.2',
-                    72, '72.a', 73, '73.a', 74, '74.a', 75, '75.a', 76, '76.a', 77, '77.a',
-                    78, '78.1', '78.2', '78.3', 79, '79.1', '79.2',
-                    80, '80.a', 81, '81.a', 82, '82.a', 83, '83.a', 84, '84.a', 85, '85.a',
-                    86, '86.1', '86.2', '86.3', 87, '87.1', '87.2'];
-        var answer = ['total', 'female'];
+        var nums = ["52", "53", "54", "55", "56", "56.f", "57",
+                    "57.f", "58", "59", "60", "61", "61.f", "62",
+                    "62.f", "63", "63.f", "58.a", "59.a", "60.a",
+                    "61.a", "61.a.f", "62.a", "62.a.f", "63.a", 
+                    "63.a.f", "64", "65", "66", "67", "67.f", 
+                    "68", "68.f", "69", "69.f", "64.a", "65.a", 
+                    "66.a", "67.a", "67.a.f", "68.a", "68.a.f", 
+                    "69.a", "69.a.f", "70", "70.1", "70.2", 
+                    "70.3", "71", "71.1", "71.1.f", "71.2", 
+                    "71.2.f", "72", "73", "74", "75", "75.f", 
+                    "76", "76.f", "77", "77.f", "72.a", "73.a", 
+                    "74.a", "75.a", "75.a.f", "76.a", "76.a.f", 
+                    "77.a", "77.a.f", "78", "78.1", "78.2", 
+                    "78.3", "79", "79.1", "79.1.f", "79.2", 
+                    "79.2.f", "80", "81", "82", "83", "83.f", 
+                    "84", "84.f", "85", "85.f", "80.a", "81.a", 
+                    "82.a", "83.a", "83.a.f", "84.a", "84.a.f", 
+                    "85.a", "85.a.f", "86", "86.1", "86.2", 
+                    "86.3", "87", "87.1", "87.1.f", "87.2", 
+                    "87.2.f", "88", "88.a", "88.a.f", "88.b", 
+                    "88.b.f", "89", "89.a", "89.a.f", "89.b", 
+                    "89.b.f"];
+        var answer = ['value', 'female'];
         return prepare(nums, answer, 'commune_education');
     });
     self.commune_natural_resource = ko.pureComputed(() => {
-        var nums = [90, 91, 92, 93, 94];
-        var answer = ['num_community', 'community_land', 'num_family'];
+        var nums = ["90", "90.a", "90.b", 
+                    "91", "91.a", "91.b", 
+                    "92", "92.a", "92.b", 
+                    "93", "93.a", "93.b", 
+                    "94", "94.a", "94.b"
+                  ];
+        var answer = ['value'];
         return prepare(nums, answer, 'commune_natural_resource');
     });    
     self.commune_disaster = ko.pureComputed(() => {
-        var nums = [95, '95.1', '95.2',96, 97, 98, 99, 100, 101, 102, '103.1', '103.2', '103.3',   
-                    104, 105, 106, 107, 108, 109, '109.1', 110, '110.1', 111, 112, '112.1', 113, '113.1',
-                    114, 115, 116, 117, 118, 119, 120, 121, 122, 123];
-        var answer = ['total'];
+        var nums = ["95", "95.1", "95.2", 
+                    "96", "97", "98", 
+                    "99", "100", "101", 
+                    "102", "103.1", "103.2", 
+                    "103.3", "104", "105", 
+                    "106", "107", "108", 
+                    "109", "109.1", "110", 
+                    "110.1", "111", "112", 
+                    "112.1", "113", "113.1", 
+                    "114", "115", "116", 
+                    "117", "118", "119", 
+                    "120", "121", "122", 
+                    "123"
+                    ];
+        var answer = ['value'];
         return prepare(nums, answer, 'commune_disaster');
     });
 
@@ -152,7 +196,8 @@ function viewModel() {
                 self.recorded_by(response.recorded_by)  ;
                 self.phone(response.phone)  ;
                 self.masterModel(response);
-                self.tableDetails(response.detail);
+                self.questions(response.questions);
+                // self.tableDetails(response.detail);
             });
         }        
     }
@@ -172,22 +217,28 @@ function viewModel() {
         master.recorded_by = self.recorded_by()
         master.phone = self.phone()
 
-        var tables = {'commune_base_profile': self.commune_base_profile(),
-                      'commune_agriculture': self.commune_agriculture(),
-                      'commune_production': self.commune_production(), 
-                      'commune_transportation': self.commune_transportation(),
-                      'commune_education': self.commune_education(), 
-                      'commune_natural_resource': self.commune_natural_resource(),
-                      'commune_disaster': self.commune_disaster()
-                    }
-
+        // var tables = {'commune_base_profile': self.commune_base_profile(),
+        //               'commune_agriculture': self.commune_agriculture(),
+        //               'commune_production': self.commune_production(), 
+        //               'commune_transportation': self.commune_transportation(),
+        //               'commune_education': self.commune_education(), 
+        //               'commune_natural_resource': self.commune_natural_resource(),
+        //               'commune_disaster': self.commune_disaster()
+        //             }
+        var formData = ko.toJSON(self.commune_base_profile().map(item => ({
+                                        question_id: item.question_id,
+                                        value: item.value
+                                    }))
+                         );
         var params = {
             master,
-            tables: JSON.stringify(tables)
+            responses: formData
+            // responses: JSON.stringify(self.commune_base_profile())
         };
+        console.log(params);
         app.ajax('/admin/commune-data/save', params).done(function (response) {
             console.log('++++++++++++ save +++++++++++++');
-            console.log(response);
+            console.log(params);
             self.successMessage(response.message);
             app.showToast();
         });
@@ -280,7 +331,7 @@ function viewModel() {
     $('.changeLang').off().change(function () {
         self.lang(this.value);
         changeLang();
-        ko.refreshView();
+        // ko.refreshView();
     });
 }
 

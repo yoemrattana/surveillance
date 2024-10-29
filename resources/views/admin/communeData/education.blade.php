@@ -1,4 +1,5 @@
-<h5>{{__('commune.home_based_training')}}</h5>
+<h4 class="fw-bold text-primary">{{__('commune.education')}}</h4>
+<span class="fs-6">{{__('commune.home_based_training')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
@@ -10,7 +11,7 @@
             <td data-bind="text: question()"></td>
             <td colspan="2">
                 <div class="input-group">
-                    <input type="number" class="form-control" data-bind="value: total"  />
+                    <input type="number" class="form-control" data-bind="value: value"  />
                     <span class="input-group-text" data-bind="text: unit()"></span>
                 </div>
             </td> 
@@ -18,38 +19,46 @@
     <!-- /ko -->
 </table>
 <br/>
-<h5>{{__('commune.community_preschool_training')}}</h5>
+<span class="fs-6">{{__('commune.community_preschool_training')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
         <th colspan="2">{{__('commune.community_preschool')}}</th>
     </tr>
-    <!-- ko foreach: commune_education().slice(3, 6) -->
-        <tr>
+    <tr>
+        <!-- ko with: getQuestionByNo(commune_education(), 55) -->
             <td data-bind="text: no()"></td>
             <td data-bind="text: question()"></td>
-            <!-- ko if: $index() == 0 -->
-                <td colspan="2">
-                    <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
-                    </div>
-                </td> 
-            <!-- /ko -->
-            <!-- ko ifnot: $index() == 0 -->
+            <td colspan="2">
+                <div class="input-group">
+                    <input type="number" class="form-control" data-bind="value: value"  />
+                    <span class="input-group-text" data-bind="text: unit()"></span>
+                </div>
+            </td>
+        <!-- /ko -->
+    </tr>
+    <!-- ko foreach: new Array(56, 57) -->
+        <tr>
+           <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data) -->
+                <td data-bind="text: no()"></td>
+                <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
-                    </div>
-                </td>            
-                <td>
-                    <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: female"  />
+                        <span class="input-group-text">{{__('general.total')}}</span>
+                        <input type="number" class="form-control" data-bind="value: value" required />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
             <!-- /ko -->
+            <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data+".f") -->      
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-text">{{__('general.female')}}</span>
+                        <input type="number" class="form-control" data-bind="value: value" required />
+                        <span class="input-group-text" data-bind="text: unit()"></span>
+                    </div>
+                </td>
+            <!-- /ko --> 
         </tr>
     <!-- /ko -->
 </table>
@@ -68,4 +77,6 @@
 @include('admin.communeData.high_school')
 <br/>
 @include('admin.communeData.water_sanitation_high_school')
+<br/>
+@include('admin.communeData.literacy')
 <br/>

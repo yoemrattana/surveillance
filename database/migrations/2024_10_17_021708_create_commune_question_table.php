@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('commune_question', function (Blueprint $table) {
             $table->id();
             $table->string('no');
+            $table->string('short_code');
             $table->string('group_en');
             $table->string('group_kh');
             $table->string('sub_group_en');
@@ -22,6 +23,8 @@ return new class extends Migration
             $table->string('question_kh');
             $table->string('unit_en');
             $table->string('unit_kh');
+            $table->string('description')->nullable(true);
+            $table->string('validate_rule')->nullable(true);
             $table->timestamps();
         });
     }

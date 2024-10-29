@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('commune_parent', function (Blueprint $table) {
-            //
+            $table->dropColumn('year');
         });
     }
 };

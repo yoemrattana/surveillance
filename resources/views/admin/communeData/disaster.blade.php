@@ -1,7 +1,7 @@
 <h5>{{__('commune.disaster')}}</h5>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
-        <!-- ko foreach: commune_disaster().slice(0,10) -->
+        <!-- ko foreach: commune_disaster().slice(0, 10) -->
             <tr>
                 
                 <!-- ko if: no() == '95.1' || no() == '95.2' -->
@@ -15,7 +15,7 @@
                 
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
@@ -46,7 +46,7 @@
 
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
@@ -76,7 +76,7 @@
                 <!-- /ko -->
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
@@ -94,7 +94,7 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <!-- ko if: unit() -->
                             <span class="input-group-text" data-bind="text: unit()"></span>
                         <!-- /ko -->
@@ -114,7 +114,7 @@
                 <td data-bind="text: question()"></td>
                 <td>
                     <div class="input-group">
-                        <input type="number" class="form-control" data-bind="value: total"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <!-- ko if: unit() -->
                             <span class="input-group-text" data-bind="text: unit()"></span>
                         <!-- /ko -->
