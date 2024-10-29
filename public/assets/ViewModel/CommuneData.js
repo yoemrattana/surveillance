@@ -203,6 +203,8 @@ function viewModel() {
     }
 
     self.save = function () {
+        if (self.cm() == null) return;
+
         var master = newModel().applyData(app.unko(self.masterModel()));
         if (master.id == 0) {
             master.created_by = 'admin';
