@@ -67,7 +67,7 @@
                 <td>
                     <div class="input-group">
                         <span class="input-group-text">{{__('general.female')}}</span>
-                        <input type="number" class="form-control" data-bind="value: female"  />
+                        <input type="number" class="form-control" data-bind="value: value"  />
                         <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
                 </td>
