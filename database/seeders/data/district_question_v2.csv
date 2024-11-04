@@ -1,0 +1,199 @@
+no,short_code,question_en,question_kh,description,unit_en,unit_kh,group_en,group_kh
+1,Muni_Council,Number of district council members,ចំនួនសមាជិកក្រុមប្រឹក្សាស្រុក,# of Municipality/District/Khan councillors,People,នាក់,NULL,NULL
+1.f,Fmuni_Council,,,# of FEMALE Municipality/District/Khan councillors,People,នាក់,,
+2,TOT_Muni_Council,Number of district staff in the district hall,ចំនួនមន្ត្រីក្របខណ្ឌក្នុងសាលាស្រុក,# of Municipality/District/Khan Officers,People,នាក់,NULL,NULL
+2.f,Fmuni_Officers,,,# of FEMALE Municipality/District/Khan Officers,People,នាក់,,
+2.1,TOT_BoardGov,Number of district governors,ចំនួនសមាជិកគណអភិបាលស្រុក,# of Members of Board of Governors,People,នាក់,In that,ក្នុងនោះ
+2.1.f,Fboard_Gov_Mem,,,# of FEMALE Members of Board of Governors,People,នាក់,,
+2.2,Muni_Direc_DDirec,Number of directors and deputy directors,ចំនួននាយកនិងនាយករង,# of Municipality/District/Khan Director and Deputy-Director Officers,People,នាក់,In that,ក្នុងនោះ
+2.2.f,Muni_Fdirec_FDD,,,# of FEMALE Municipality/District/Khan Director and Deputy-Director Officers,People,នាក់,,
+2.3,Chief_Offic_Officers,Number of office managers,ចំនួនប្រធានការិយាល័យ,# of Municipality/District/Khan Chief Officers,People,នាក់,In that,ក្នុងនោះ
+2.3.f,FeChief_Offic_Officers,,,# of FEMALE Municipality/District/Khan Chief Officers,People,នាក់,,
+2.4,Dchief_Offic_Officers,Deputy Chief of Office,អនុប្រធានការិយាល័យ,# of Municipality/District/Khan Chief-Deputy Officers,People,នាក់,In that,ក្នុងនោះ
+2.4.f,FeDchief_Offic_Officers,,,# of FEMALE Municipality/District/Khan Chief-Deputy Officers,People,នាក់,,
+2.5,T_Offic_Officers,Office Officer,មន្ត្រីការិយាល័យ,Total number of Office Officers,People,នាក់,In that,ក្នុងនោះ
+2.5.f,T_Fe_Offic_Officers,,,Total number of FEMALE Office Officers,People,នាក់,,
+3,Contract_Officer,Contracted Officer,ចំនួនបុគ្គលិកជាប់កិច្ចសន្យា,# of Municipality/District/Khan contract officers,People,នាក់,In that,ក្នុងនោះ
+3.f,Fcontra_Officer,,,# of FEMALE Municipality/District/Khan contract officers,People,នាក់,,
+4,Internal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of Internal Monitoring Office Officers,,,,
+4.f,Finternal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of FEMALE Internal Monitoring Office Officers,,,,
+4.a,Chief_Internal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of Internal Monitoring Office Chief,,,,
+4.a.f,Fchief_Internal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of FEMALE Internal Monitoring Office Chief,,,,
+4.b,Dchief_Internal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of Internal Monitoring Office Deputy-Chief,,,,
+4.b.f,Fdchief_Internal_Officer,Internal Audit Office,ការិយាល័យត្រួតពិនិត្យផ្ទៃក្នុង,# of FEMALE Internal Monitoring Office Deputy-Chief,,,,
+5,Adminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of Admin and Finance Officers,,,,
+5.f,Fadminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of FEMALE Admin and Finance Officers,,,,
+5.a,Chief_adminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of Admin and Finance Office Chief,,,,
+5.a.f,Fchief_adminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of FEMALE Admin and Finance Office Chief,,,,
+5.b,Dchief_adminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of Admin and Finance Office Deputy-Chief,,,,
+5.b.f,Fdchief_adminfinance_Officer,Office of Administration and Finance,ការិយាល័យរដ្ឋបាល និងហិរញ្ញវត្ថុ,# of FEMALE Admin and Finance Office Deputy-Chief,,,,
+6,Procurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of Procurement Officers,,,,
+6.f,FProcurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of FEMALE Procurement Officers,,,,
+6.a,Chief_Procurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of Procurement Office Chief,,,,
+6.a.f,Fchief_Procurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of FEMALE Procurement Office Chief,,,,
+6.b,Dchief_Procurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of Procurement Office Deputy-Chief,,,,
+6.b.f,Fdchief_Procurement_Officer,Procurement Unit,អង្គភាពលទ្ធកម្ម,# of FEMALE Procurement Office Deputy-Chief,,,,
+7,HR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of Human Resource Officers,,,,
+7.f,FHR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of FEMALE Human Resource Officers,,,,
+7.a,Chief_HR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of Human Resource Office Chief,,,,
+7.a.f,Fchief_HR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of FEMALE Human Resource Office Chief,,,,
+7.b,Dchief_HR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of Human Resource Office Deputy-Chief,,,,
+7.b.f,Fdchief_HR_Officer,Office of Human Resource Management,ការិយាល័យគ្រប់គ្រងធនធានមនុស្ស,# of FEMALE Human Resource Office Deputy-Chief,,,,
+8,Plan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of Planning and CS Support Officers,,,,
+8.f,FPlan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of FEMALE Planning and CS Support Officers,,,,
+8.a,Chief_Plan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of Planning and CS Support Office Chief,,,,
+8.a.f,Fchief_Plan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of FEMALE Planning and CS Support Office Chief,,,,
+8.b,Dchief_Plan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of Planning and CS Support Office Deputy-Chief,,,,
+8.b.f,Fdchief_Plan-CS_Officer,Office of Planning and Support,ការិយាល័យផែនការ និងគាំទ្រឃុំសង្កាត់,# of FEMALE Planning and CS Support Office Deputy-Chief,,,,
+9,C-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of Council Secretary Officers,,,,
+9.f,FC-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of FEMALE Council Secretary Officers,,,,
+9.a,Chief_C-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of Council Secretary Office Chief,,,,
+9.a.f,Fchief_C-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of FEMALE Council Secretary Office Chief,,,,
+9.b,Dchief_C-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of Council Secretary Office Deputy-Chief,,,,
+9.b.f,Fdchief_C-Secretary_Officer,Office of the Secretary of the Council,ការិយាល័យលេខាធិការក្រុមប្រឹក្សា,# of FEMALE Council Secretary Office Deputy-Chief,,,,
+10,Education_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of Education Youth and Sport Officers,,,,
+10.f,FEducation_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of FEMALE Education Youth and Sport Officers,,,,
+10.a,Chief_Education_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of Education Youth and Sport Office Chief,,,,
+10.a.f,Fchief_Education_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of FEMALE Education Youth and Sport Office Chief,,,,
+10.b,Dchief_Education_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of Education Youth and Sport Office Deputy-Chief,,,,
+10.b.f,Fdchief_Education_Officer,"Education, Youth and Sports Office",ការិយាល័យអប់រំ យុវជន និងកីឡា,# of FEMALE Education Youth and Sport Office Deputy-Chief,,,,
+10.1,PrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of Public Primary School Officers,,,,
+10.1.f,FPrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of FEMALE Public Primary School Officers,,,,
+10.1.a,Chief_PrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of Public Primary School Office Chief,,,,
+10.1.a.f,Fchief_PrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of FEMALE Public Primary School Office Chief,,,,
+10.1.b,Dchief_PrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of Public Primary School Office Deputy-Chief,,,,
+10.1.b.f,Fdchief_PrimarySchool_Officer,Public Primary School,គ្រឹះស្ថានបឋមសិក្សាសាធារណៈ,# of FEMALE Public Primary School Office Deputy-Chief,,,,
+10.2,KidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of Public Kindergarten School Officers,,,,
+10.2.f,FKidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of FEMALE Public Kindergarten School Officers,,,,
+10.2.a,Chief_KidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of Public Kindergarten School Office Chief,,,,
+10.2.a.f,Fchief_KidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of FEMALE Public Kindergarten School Office Chief,,,,
+10.2.b,Dchief_KidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of Public Kindergarten School Office Deputy-Chief,,,,
+10.2.b.f,Fdchief_KidSchool_Officer,Public Kindergarten,គ្រឹះស្ថានមតេយ្យសិក្សាសាធារណៈ,# of FEMALE Public Kindergarten School Office Deputy-Chief,,,,
+11,LandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of Land Managment Urban Planning  Construction and Land Use Officers,,,,
+11.f,FLandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of FEMALE Land Managment Urban Planning Construction and Land Use Officers,,,,
+11.a,Chief_LandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of Land Managment Urban Planning Construction and Land Use Office Chief,,,,
+11.a.f,Fchief_LandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of FEMALE Land Managment Urban Planning Construction and Land Use Office Chief,,,,
+11.b,Dchief_LandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of Land Managment Urban Planning Construction and Land Use Office Deputy-Chief,,,,
+11.b.f,Fdchief_LandMgt_Officer,Office of Land Management Urban Planning Construction and Land,ការិយាល័យរៀបចំដែនដី នគរូបនីយកម្ម សំណង់ និងភូមិបាល,# of FEMALE Land Managment Urban Planning Construction and Land Use Office Deputy-Chief,,,,
+12,Legal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of Legal and Local Dispute Resolution Officers,,,,
+12.f,FLegal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of FEMALE Legal and Local Dispute Resolution Officers,,,,
+12.a,Chief_Legal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of Legal and Local Dispute Resolution Office Chief,,,,
+12.a.f,Fchief_Legal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of FEMALE Legal and Local Dispute Resolution Office Chief,,,,
+12.b,Dchief_Legal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of Legal and Local Dispute Resolution Office Deputy-Chief,,,,
+12.b.f,Fdchief_Legal_Officer,Legal and Local Dispute Resolution Office,ការិយាល័យនិតិកម្ម និងសម្រុះសម្រួលវិវាទមូលដ្ឋាន,# of FEMALE Legal and Local Dispute Resolution Office Deputy-Chief,,,,
+13,Agriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of Agriculture Natural Resources and Environment Officers,,,,
+13.f,FAgriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of FEMALE Agriculture Natural Resources and Environment Officers,,,,
+13.a,Chief_Agriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of Agriculture Natural Resources and Environment Office Chief,,,,
+13.a.f,Fchief_Agriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of FEMALE Agriculture Natural Resources and Environment Office Chief,,,,
+13.b,Dchief_Agriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of Agriculture Natural Resources and Environment Office Deputy-Chief,,,,
+13.b.f,Fdchief_Agriculture_Officer,"Office of Agriculture, Natural Resources and Environment",ការិយាល័យកសិកម្ម ធនធានធម្មជាតិ និងបរិស្ថាន,# of FEMALE Agriculture Natural Resources and Environment Office Deputy-Chief,,,,
+14,Economy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of Economy and Community Development Officers,,,,
+14.f,FEconomy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of FEMALE Economy and Community Development Officers,,,,
+14.a,Chief_Economy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of Economy and Community Development Office Chief,,,,
+14.a.f,Fchief_Economy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of FEMALE Economy and Community Development Office Chief,,,,
+14.b,Dchief_Economy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of Economy and Community Development Office Deputy-Chief,,,,
+14.b.f,Fdchief_Economy_Officer,Office of Economy and Community Development,ការិយាល័យសេដ្ឋកិច្ច និងអភិវឌ្ឍន៍សហគមន៍,# of FEMALE Economy and Community Development Office Deputy-Chief,,,,
+15,Social_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of Social Affairs and Social Welfare Officers,,,,
+15.f,FSocial_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of FEMALE Social Affairs and Social Welfare Officers,,,,
+15.a,Chief_Social_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of Social Affairs and Social Welfare Office Chief,,,,
+15.a.f,Fchief_Social_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of FEMALE Social Affairs and Social Welfare Office Chief,,,,
+15.b,Dchief_Social_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of Social Affairs and Social Welfare Office Deputy-Chief,,,,
+15.b.f,Fdchief_Social_Officer,Office of Social Affairs and Social Welfare,ការិយាល័យសង្គមកិច្ច និងសុខុមាលភាពសង្គម,# of FEMALE Social Affairs and Social Welfare Office Deputy-Chief,,,,
+16,OWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of One Windows Service Officers,,,,
+16.f,FOWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of FEMALE One Windows Service Officers,,,,
+16.a,Chief_OWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of One Windows Service Office Chief,,,,
+16.a.f,Fchief_OWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of FEMALE One Windows Service Office Chief,,,,
+16.b,Dchief_OWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of One Windows Service Office Deputy-Chief,,,,
+16.b.f,Fdchief_OWSO_Officer,OWSO,ការិយាល័យច្រកចេញចូលតែមួយ,# of FEMALE Planning and Finance Office Deputy-Chief,,,,
+17,Fstry_Stations,Number of nursery stations,ចំនួនស្ថានីយ៍បណ្តុះកូនឈើ,# of foresrty research stations,Station,ស្ថានីយ៍,,
+18,Rice_Stations,Number of rice seed processing stations,ចំនួនស្ថានីយ៍បន្សុតពូជស្រូវ,# of Rice research stations,Station,ស្ថានីយ៍,,
+19,Fish_Stations,Number of lobster hatcheries,ចំនួនស្ថានីយ៍ភា្ញស់កូនត្រី បង្កង,# of Fishes/Lobsters research stations,Station,ស្ថានីយ៍,,
+20,Animal_Stations,Number of animal breeding stations,ចំនួនស្ថានីយ៍ផ្សព្វផ្សាយពូជសត្វ,# of animals research stations,Station,ស្ថានីយ៍,,
+21,Veget_Stations,Number of vegetable promotion stations,ចំនួនស្ថានីយ៍ផ្សព្វផ្សាយដំណាំបន្លែ,# of vegetation research stations,Station,ស្ថានីយ៍,,
+22,Land_Iss_LM,Systematic issuance of title deeds (in the year),ការចេញប័ណ្ណកម្មសិទ្ធចុះជាប្រព័ន្ធ (ក្នុងឆ្នាំ),"# of land titles issued by ministry of land, construct, and land management (current year)",Card,ប័ណ្ណ,,
+23,Land_Iss_Parcel,Issuance of title deeds in bulk (in years),ការចេញប័ណ្ណកម្មសិទ្ធចុះដាច់ដោយដុំ (ក្នុងឆ្នាំ),# of land titles issued by parcel (current year),Card,ប័ណ្ណ,,
+24,Grad_Agri_LM,Agriculture,កសិកម្ម,# of graduates of agriculture training from Line Ministry,People,នាក់,,
+24.f,FGrad_Agri_LM,Agriculture,កសិកម្ម,# of FEMALE graduates of agriculture training from Line Ministry,People,នាក់,,
+24.a,Grad_Agri_NGOs/Pri,Agriculture,កសិកម្ម,# of graduates of agriculture training from NGO/Private Sector,People,នាក់,,
+24.a.f,FGrad_Agri_NGOs/Pri,Agriculture,កសិកម្ម,# of FEMALE graduates of agriculture training from NGO/Private Sector,People,នាក់,,
+25,Grad_Craft_LM,Processing production,ផលិតកម្មកែច្នៃ,# of graduates of Craft production training from Line Ministry,People,នាក់,,
+25.f,Fgrad_Craft_LM,Processing production,ផលិតកម្មកែច្នៃ,# of FEMALE graduates of Craft production training from Line Ministry,People,នាក់,,
+25.a,Grad_Craft_NGOs/Pri,Processing production,ផលិតកម្មកែច្នៃ,# of graduates of Craft production training from NGO/Private Sector,People,នាក់,,
+25.a.f,FGrad_Craft_NGOs/Pri,Processing production,ផលិតកម្មកែច្នៃ,# of FEMALE graduates of Craft production training from NGO/Private Sector,People,នាក់,,
+26,Grad_Touri_LM,Tourism,ទេសចរណ៍,# of graduates of tourism training from Line Ministry,People,នាក់,,
+26.f,Fgrad_Touri_LM,Tourism,ទេសចរណ៍,# of FEMALE graduates of tourism training from Line Ministry,People,នាក់,,
+26.a,Grad_Touri_NGOs/Pri,Tourism,ទេសចរណ៍,# of graduates of tourism training from NGO/Private Sector,People,នាក់,,
+26.a.f,FGrad_Touri_NGOs/Pri,Tourism,ទេសចរណ៍,# of FEMALE graduates of tourism training from NGO/Private Sector,People,នាក់,,
+27,Grad_Admin_LM,Administration,រដ្ឋបាល,# of graduates of administration training from Line Ministry,People,នាក់,,
+27.f,Fgrad_Admin_LM,Administration,រដ្ឋបាល,# of FEMALE graduates of administration training from Line Ministry,People,នាក់,,
+27.a,Grad_Admin_NGOs/Pri,Administration,រដ្ឋបាល,# of graduates of administration training from NGO/Private Sector,People,នាក់,,
+27.a.f,FGrad_Admin_NGOs/Pri,Administration,រដ្ឋបាល,# of FEMALE graduates of administration training from NGO/Private Sector,People,នាក់,,
+28,Grad_Repair_LM,Repairer,ជាងជួសជុល,# of graduates of repairs training from Line Ministry,People,នាក់,,
+28.f,Fgrad_Repair_LM,Repairer,ជាងជួសជុល,# of FEMALE graduates of repairs training from Line Ministry,People,នាក់,,
+28.a,Grad_Repair_NGOs/Pri,Repairer,ជាងជួសជុល,# of graduates of repairs training from NGO/Private Sector,People,នាក់,,
+28.a.f,FGrad_Repair_NGOs/Pri,Repairer,ជាងជួសជុល,# of FEMALE graduates of repairs training from NGO/Private Sector,People,នាក់,,
+29,TOT_Annu_Reven_Agent,Total annual revenue,សរុបប្រាក់ចំណូលប្រចាំឆ្នាំ,Total Annual Revenue,,,,
+29.a,TOT_Annu_Reven,Total annual revenue,សរុបប្រាក់ចំណូលប្រចាំឆ្នាំ,Total Annual Revenue,Riel,រៀល,NULL,NULL
+29.1,Turn_Ov_Tax_Agent,Turnover tax,ពន្ធអាករលើផលរបរ,Turn Over Tax,,,,
+29.1.a,Turn_Ov_Tax,Turnover tax,ពន្ធអាករលើផលរបរ,Turn Over Tax,Riel,រៀល,In that,ក្នុងនោះ
+29.2,Patent_Tax_Agent,Patent tax,ពន្ធប៉ាតង់,Patent Tax,,,In that,ក្នុងនោះ
+29.2.a,Patent_Tax,Patent tax,ពន្ធប៉ាតង់,Patent Tax,Riel,រៀល,In that,ក្នុងនោះ
+29.3,Trans_Tax_Agent,Means tax,ពន្ធលើមធ្យោបាយ,Transportation Tax,,,In that,ក្នុងនោះ
+29.3.a,Trans_Tax,Means tax,ពន្ធលើមធ្យោបាយ,Transportation Tax,Riel,រៀល,In that,ក្នុងនោះ
+29.4,Busi_Tax_Agent,Mortgage tax,ពន្ធឈ្នួលផ្ទះ,Business Tax,,,In that,ក្នុងនោះ
+29.4.a,Busi_Tax,Mortgage tax,ពន្ធឈ្នួលផ្ទះ,Business Tax,Riel,រៀល,In that,ក្នុងនោះ
+29.5,Tax_On_Busi_Agent,Trademark tax,ពន្ធលើស្លាកយីហោ,Tax on business (MIME),,,In that,ក្នុងនោះ
+29.5.a,Tax_On_Busi,Trademark tax,ពន្ធលើស្លាកយីហោ,Tax on business (MIME),Riel,រៀល,In that,ក្នុងនោះ
+29.6,House_Tax_Agent,"Accommodation Tax (Guesthouse, Hotel)",ពន្ធស្នាក់នៅ (ផ្ទះសំណាក់ សណ្ឋាគារ),"Housing  Tax (Residents, Hotels)",,,In that,ក្នុងនោះ
+29.6.a,House_Tax,"Accommodation Tax (Guesthouse, Hotel)",ពន្ធស្នាក់នៅ (ផ្ទះសំណាក់ សណ្ឋាគារ),"Housing  Tax (Residents, Hotels)",Riel,រៀល,In that,ក្នុងនោះ
+29.7,Reven_Tax_Agent,Taxes,ពន្ធអាករ,Revenue Tax,,,In that,ក្នុងនោះ
+29.7.a,Reven_Tax,Taxes,ពន្ធអាករ,Revenue Tax,Riel,រៀល,In that,ក្នុងនោះ
+29.8,Stamp_Tax_Agent,Postal stamp duty,ពន្ធតែមប្រៃសណីយ៍,Stamp tax,,,In that,ក្នុងនោះ
+29.8.a,Stamp_Tax,Postal stamp duty,ពន្ធតែមប្រៃសណីយ៍,Stamp tax,Riel,រៀល,In that,ក្នុងនោះ
+29.9,Slaughter_Hous_Agent,Slaughter tax,ពន្ធទីសត្តឃាត,Slaughter Hosue,,,In that,ក្នុងនោះ
+29.9.a,Slaughter_Hous,Slaughter tax,ពន្ធទីសត្តឃាត,Slaughter Hosue,Riel,រៀល,In that,ក្នុងនោះ
+29.10,Sell_Doc_Agent,Sell documents,លក់ឯកសារ,Selling Documents,,,In that,ក្នុងនោះ
+29.10.a,Sell_Doc,Sell documents,លក់ឯកសារ,Selling Documents,Riel,រៀល,In that,ក្នុងនោះ
+30,Agri_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of Agriculture NGOs,Organization,អង្គការ,Agriculture,វិស័យកសិកម្ម
+30.1,Agri_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of agriculture NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Agriculture,វិស័យកសិកម្ម
+30.2,TOTPer_Agri_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of agriculture NGOs,People,នាក់,Agriculture,វិស័យកសិកម្ម
+30.3,CommuServ_Agri_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by agriculture NGOs,Commune,ឃុំ,Agriculture,វិស័យកសិកម្ម
+31,NRM_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of NRM NGOs,Organization,អង្គការ,Natural resource management,ការគ្រប់គ្រងធនធានធម្មជាតិ
+31.1,NRM_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of NRM NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Natural resource management,ការគ្រប់គ្រងធនធានធម្មជាតិ
+31.2,TOTPer_NRM_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of NRM NGOs,People,នាក់,Natural resource management,ការគ្រប់គ្រងធនធានធម្មជាតិ
+31.3,CommuServ_NRM_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by NRM NGOs,Commune,ឃុំ,Natural resource management,ការគ្រប់គ្រងធនធានធម្មជាតិ
+32,Health_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of health NGOs,Organization,អង្គការ,Health sector,វិស័យសុខាភិបាល
+32.1,Health_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of health NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Health sector,វិស័យសុខាភិបាល
+32.2,TOTPer_Health_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of health NGOs,People,នាក់,Health sector,វិស័យសុខាភិបាល
+32.3,CommuServ_Health_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by health NGOs,Commune,ឃុំ,Health sector,វិស័យសុខាភិបាល
+33,Edu_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of education NGOs,Organization,អង្គការ,Education,វិស័យអប់រំ
+33.1,Edu_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of education NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Education,វិស័យអប់រំ
+33.2,TOTPer_Edu_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of education NGOs,People,នាក់,Education,វិស័យអប់រំ
+33.3,CommuServ_Edu_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by education NGOs,Commune,ឃុំ,Education,វិស័យអប់រំ
+34,Gder_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of gender NGOs,Organization,អង្គការ,Gender,យេនឌ័រ
+34.1,Gder_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of gender NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Gender,យេនឌ័រ
+34.2,TOTPer_Gder_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of gender NGOs,People,នាក់,Gender,យេនឌ័រ
+34.3,CommuServ_Gder_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by gender NGOs,Commune,ឃុំ,Gender,យេនឌ័រ
+35,Other_NGOs,Number of local support organizations,ចំនួនអង្គការកំពុងជួយគាំទ្រនៅក្នុងស្រុក,# of Other NGOs,Organization,អង្គការ,Other sectors,វិស័យផ្សេងៗ
+35.1,Other_NGOs_Muni,Number of NGO offices located in the district,ចំនួនការិយាល័យ NGO មានទីតាំងនៅក្នុងស្រុក,# of Other NGOs with Office in Municipality/District/Khan,Organization,អង្គការ,Other sectors,វិស័យផ្សេងៗ
+35.2,TOTPer_Other_NGOs,Total number of local NGO staff,សរុបចំនួនបុគ្គលិកអង្គការនៅក្នុងស្រុក,Total personnel of Other NGOs,People,នាក់,Other sectors,វិស័យផ្សេងៗ
+35.3,CommuServ_Other_NGOs,Number of communes receiving local services,ចំនួនឃុំទទួលបានសេវាកម្មនៅក្នុងស្រុក,# of communes served by Other NGOs,Commune,ឃុំ,Other sectors,វិស័យផ្សេងៗ
+36,Centre_Orphanages,Number of orphanages,ចំនួនមជ្ឈមណ្ឌលកុមារកំព្រា,# of orphanages centre,Place,កន្លែង,,
+37,TOT_Orphan,Number of orphans staying,ចំនួនកុមារកំព្រាដែលស្នាក់នៅ,# of  orphans in the centre,People,នាក់,,
+37.f,FEM_Orphan,Number of orphans staying female,ចំនួនកុមារកំព្រាដែលស្នាក់នៅស្រី,# of FEMALE orphans,People,នាក់,,
+38,Num_Health_Centre,Number of health centers,ចំនួនមណ្ឌលសុខភាព,# of health centres,Place,កន្លែង,,
+38.a,Health_Centr_Bed,Number of health center beds,ចំនួនគ្រែក្នុងមណ្ឌលសុខភាព,# of health centre beds,Bed,គ្រែ,,
+39,TOT_Staff_Health,Number of staff at health centers,ចំនួនបុគ្គលិកនៅតាមមណ្ឌលសុខភាព,# of health centre staff,People,នាក់,,
+39.a,FeStaff_health,Number of staff at health centers female,ចំនួនបុគ្គលិកនៅតាមមណ្ឌលសុខភាពស្រី,# of FEMALE health centre staff,People,នាក់,,
+40,Referral_Hospi,Number of referral hospitals,ចំនួនមន្ទីរពេទ្យបង្អែក,# of referral hospitals,Place,កន្លែង,,
+40.a,Refer_Hospi_Beds,Number of referral hospital bed,ចំនួនគ្រែក្នុងមន្ទីរពេទ្យបង្អែក,# of referral hospital beds,Bed,គ្រែ,,
+41,Refer_Hospi_Staff,Number of referral medical staff,ចំនួនបុគ្គលិកពេទ្យបង្អែក,# of referral hospital staff,People,នាក់,,
+41.a,Refer_Hospi_Fstaff,Number of referral medical staff female,ចំនួនបុគ្គលិកពេទ្យបង្អែកស្រី,# of FEMALE referral hospital staff,Place,កន្លែង,,
+42,Pri_Hospi,Number of private hospitals,ចំនួនមន្ទីរពេទ្យឯកជន,# of private hospitals ,Bed,គ្រែ,,
+42.a,Pri_Hospi_Bed,Number of private hospital beds,ចំនួនគ្រែមន្ទីរពេទ្យឯកជន,# of private hospital beds,Place,កន្លែង,,
+43,Public_Univ,Number of locations of state universities and branches,ចំនួនទីតាំងសកលវិទ្យាល័យរដ្ឋនិងសាខា,# of public universities (or branches),Place,កន្លែង,,
+44,Stu_Pub_Univ,Number of students enrolled,ចំនួនសិស្សបានចូលរៀន,# of students in public universities,People,នាក់,,
+44.f,Fstu_Pub_Uni,Number of students enrolled female,ចំនួនសិស្សបានចូលរៀន ស្រី,# of FEMALE students in public universities,People,នាក់,,
+45,Pri_Univ,Number of private universities and branches,ចំនួនទីតាំងសកលវិទ្យាល័យឯកជននិងសាខា,# of private universities (or branches),Place,កន្លែង,,
+46,Stu_Pri_Univ,Number of students enrolled,ចំនួនសិស្សបានចូលរៀន,# of students in private universities,People,នាក់,,
+46.f,Fstu_Pri_Univ,Number of students enrolled female,ចំនួនសិស្សបានចូលរៀនស្រី,# of FEMALE students in private universities,People,នាក់,,

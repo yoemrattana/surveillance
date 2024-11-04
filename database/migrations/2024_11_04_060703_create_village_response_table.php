@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commune_response', function (Blueprint $table) {
+        Schema::create('village_response', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('question_id')->constrained('commune_question');
-            $table->foreignId('parent_id')->constrained('commune_parent');
+            $table->foreignId('question_id')->constrained('village_question');
+            $table->foreignId('parent_id')->constrained('village_data')->onDelete('cascade');
             $table->decimal('value')->nullable();
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('commune_response');
+        Schema::dropIfExists('village_response');
     }
 };
