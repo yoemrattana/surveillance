@@ -49,7 +49,6 @@ function viewModel() {
         self.masterModel(rs.master)
         self.questions(rs.questions);
         self.pvList(place.pv);
-        // self.tableDetails({commune_base_profile: rs.questions});
     });
 
 
@@ -193,7 +192,7 @@ function viewModel() {
         if(self.cm() && self.year()){
             let params = `cm_code=${self.cm()}&year=${self.year()}`
             app.ajax('/admin/commune-data/search?'+params).done(function (response) {
-                self.recorded_by(response.recorded_by)  ;
+                self.recorded_by(response.updated_by)  ;
                 self.phone(response.phone)  ;
                 self.masterModel(response);
                 self.questions(response.questions);
@@ -204,46 +203,46 @@ function viewModel() {
 
     self.save = function () {
         if (self.cm() == null) return;
-
         var master = newModel().applyData(app.unko(self.masterModel()));
         if (master.id == 0) {
-            master.created_by = 'admin';
-        } else {
-            master.updated_by = 'admin';
-            master.updated_on = moment().sqlformat();
+            master.recorded_by = self.recorded_by();
         }
-
+        master.updated_by = self.recorded_by();
+        master.updated_at = moment().sqlformat();
         master.ds_code = self.ds()
         master.cm_code = self.cm()
         master.year = self.year()
         master.recorded_by = self.recorded_by()
         master.phone = self.phone()
 
-        // var tables = {'commune_base_profile': self.commune_base_profile(),
-        //               'commune_agriculture': self.commune_agriculture(),
-        //               'commune_production': self.commune_production(), 
-        //               'commune_transportation': self.commune_transportation(),
-        //               'commune_education': self.commune_education(), 
-        //               'commune_natural_resource': self.commune_natural_resource(),
-        //               'commune_disaster': self.commune_disaster()
-        //             }
-        var formData = ko.toJSON(self.commune_base_profile().map(item => ({
-                                        question_id: item.question_id,
-                                        value: item.value
-                                    }))
-                         );
-        var params = {
-            master,
-            responses: formData
-            // responses: JSON.stringify(self.commune_base_profile())
-        };
-        console.log(params);
+        var formData = ko.toJSON(self.question_params());
+        var params = { master, responses: formData };
+
         app.ajax('/admin/commune-data/save', params).done(function (response) {
             console.log('++++++++++++ save +++++++++++++');
             console.log(params);
             self.successMessage(response.message);
             app.showToast();
         });
+    };
+
+    self.question_params = function (model) {
+        const categories = [
+            self.commune_base_profile,
+            self.commune_agriculture,
+            self.commune_production,
+            self.commune_transportation,
+            self.commune_education,
+            self.commune_natural_resource,
+            self.commune_disaster
+        ];
+    
+        const mapCategory = category => category().map(item => ({
+            question_id: item.question_id,
+            value: item.value
+        }));
+    
+        return categories.flatMap(mapCategory);
     };
 
     self.showDelete = function (model) {
@@ -274,71 +273,10 @@ function viewModel() {
         return place.cm.find(r => r.code == code)[self.lang() == 'en' ? 'name' : 'namek'];
     };
 
-    function changeLang() {
-        var words = [
-            ['សរុប', 'Total'],
-            ['នាក់', 'People'],
-            ['ប្រុស', 'Male'],
-            ['ស្រី', 'Female'],
-            ['ចំនួន', 'Amount'],
-            ['ស្ថានីយ៍', 'Station'],
-            ['មាន', 'Have'],
-            ['ចំនួនបុគ្គល', 'Number of staffs'],
-            ['ប្រធាន', 'Chief'],
-            ['អុនប្រធាន', 'Vice chief'],
-            ['រៀល', 'Riel'],
-            ['អង្គការ', 'Organization'],
-            ['ខេត្ត', 'Province'],
-            ['ស្រុក', 'District'],
-            ['ឃុំ', 'Commune'],
-            ['កត់ត្រាដោយ', 'Recorded by'],
-            ['លេខទូរស័ព្ទ', 'Phone number'],
-            ['កន្លែង', 'Place'],
-            ['គ្រែ', 'Bed'],
-            ['ប័ណ្ណ', 'Card'],
-            ['ការិយាល័យជំនាញក្នុងស្រុក', 'Local Specialist Office'],
-            ['វិស័យ', 'Sector'],
-            ['បណ្តុះបណ្ណាលដោយវិស័យជំនាយ', 'Training by specialists'],
-            ['បណ្តុះបណ្ណាលដោយអង្គការ/ឯកជន', 'Training by NGO / Private'],
-            ['ប្រាក់ចំណូល', 'Revenue'],
-            ['ភ្នាក់ងារ', 'Agent'],
-            ['ចំណូលប៉ាន់ស្មានប្រចាំឆ្នាំ(រៀល)', 'Estimated annual income (Riel)'],
-            ['ទិន្នន័យថ្នាក់ស្រុក', 'District Data'],
-            ['១. សមាសភាពរដ្ឋបាលក្នុងស្រុក', '1. Local administrative composition'],
-            ['២. សមាសភាពមន្ត្រីការិយាល័យជំនាញក្នុងស្រុក (មន្ត្រីក្របខណ្ឌ)', '2. Composition of Local Specialist Office Officers (Framework Officers)'],
-            ['៣. ការងារគាំទ្រ', '3. Support work'],
-            ['៤. ការងារបណ្តុះបណ្ណាលវិជ្ជាជីវៈ', '4. Vocational training'],
-            ['៥. ចំណូលបានចុះបញ្ជីនៅស្នាក់ការពន្ធដារស្រុក', '5. Income registered at the district tax office'],
-            ['៦. ចំនួនអង្គការមិនមែនរដ្ឋាភិបាលជាតិ និងអន្តរជាតិ', '6. Number of national and international NGOs'],
-            ['៧. ការងារសុខាភិបាល', '7. Health work'],
-            ['៨. ការងារអប់រំ', '8. Education'],
-            ['បន្ថែម', 'New'],
-            ['រក្សាទុក', 'Save'],
-            ['ត្រលប់', 'Back'],
-            ['កែប្រែ', 'Edit'],
-            ['លុប', 'Delete'],
-            ['ហ.ត', 'ha'],
-            ['តោន/ហ.ត', 'ton/ha']
-        ];
-
-        $('.container-fluid *').each(function () {
-            var a = self.lang() == 'en' ? 0 : 1;
-            var b = self.lang() == 'en' ? 1 : 0;
-            var found = words.find(r => r[a] == this.innerHTML);
-            if (found != null) this.innerHTML = found[b];
-        });
-    }
-    changeLang();
-
-    $('.changeLang').off().change(function () {
-        self.lang(this.value);
-        changeLang();
-        // ko.refreshView();
-    });
 }
 
 $(document).on('keydown', 'input[type=number]', function (event) {
-    var keys = ['e', 'E', '-', '+', '.'];
+    var keys = ['e', 'E', '-', '+', ','];
     if (keys.contain(event.key)) event.preventDefault();
 });
 

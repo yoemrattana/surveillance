@@ -14,7 +14,7 @@ class VillageDataSeeder extends Seeder
      */
     public function run(): void
     {
-        $filePath = base_path('public/data/village_data.csv');
+        $filePath = base_path('public/data/Village/v_kchnang_2023.csv');
         
         // Check if the file exists
         if (!file_exists($filePath) || !is_readable($filePath)) {
@@ -41,6 +41,7 @@ class VillageDataSeeder extends Seeder
                             $year = $value;
                         }else if($key == 'VillGis'){
                             $vl_code = str_pad($value, 8, '0', STR_PAD_LEFT);
+                            $vl_code = str_pad($vl_code, 10, '0', STR_PAD_RIGHT);
                         }else{
                             $q_code = explode('-', $key);
                             $q_id = null;
@@ -49,10 +50,19 @@ class VillageDataSeeder extends Seeder
                                 $ref_q = DB::table('village_question')->where('short_code', $q_code)->first();
                                 if($ref_q){
                                     $q_id = $ref_q->id;
-                                    $q_value = $value == '' ? null : $value ;
+                                    $q_value_txt = '';
+                                    $q_value = null;
+                                    //one question with string value
+                                    if($q_code == 'Nam_Health-Frequ'){
+                                        $q_value_txt = $value;
+                                    }else{
+                                        $q_value = $value == '' ? null : $value ;
+                                    }
+                                    
                                     $response = [];
                                     $response['question_id'] = $q_id;
                                     $response['value'] = $q_value;
+                                    $response['value_txt'] = $q_value_txt;
                                     $village_response[] = $response;
                                 }else{
                                     Log::info('no question '.$q_code.' value '.$value);
@@ -63,16 +73,17 @@ class VillageDataSeeder extends Seeder
                     }
                     if($vl_code && $year){
                         $id = DB::table('village_data')->insertGetId([
-                                                    'code_village' => $vl_code,
+                                                    'vl_code' => $vl_code,
                                                     'year' => $year,
                                                     'commune_leader' => '',
                                                     'phone_commune' => '',
-                                                    'phone_village' => ''
+                                                    'phone' => ''
                                                 ]);
                         $insertData = array_map(function ($item) use ($id) {
                             return [
                                 'question_id' => $item['question_id'],
                                 'value' => $item['value'],
+                                'value_txt' => $item['value_txt'],
                                 'parent_id' => $id,
                                 'created_at' => now(),
                                 'updated_at' => now(),

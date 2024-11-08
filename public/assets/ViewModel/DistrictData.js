@@ -1,212 +1,287 @@
+function newModel() {
+    return {
+        id: 0,
+        ds_code: null,
+        year: '',
+        recorded_by: '',
+        phone: '',
+    };
+}
+
+function setField(model) {
+    return {
+        no: ko.observable(model?.no),
+        group: ko.observable(model?.group),
+        sub_group: ko.observable(model?.sub_group),
+        group: ko.observable(model?.group),
+        id: ko.observable(model?.id),
+        name: ko.observable(local.in('kh', '') ? model?.name_attribute_khmer : model?.name_attribute),
+        value: ko.observable(model?.value),
+    }
+}
+
+
 function viewModel() {
     var self = this;
 
+    self.listModel = ko.observableArray();
+    self.tableDetails = ko.observable();
+    self.masterModel = ko.observable();
+    self.view = ko.observable('detail');
     self.questions = ko.observableArray();
     self.lang = ko.observable($('.changeLang').val());
-    self.tableDetails = ko.observable();
+    self.pvList = ko.observableArray();
+    self.dsList = ko.observableArray();
     self.pv = ko.observable();
     self.ds = ko.observable();
     self.year = ko.observable(moment().year());
-    self.pvList = ko.observableArray();
+    self.recorded_by = ko.observable();
+    self.phone = ko.observable();
+    self.successMessage = ko.observable();
 
     var place = null;
-    var masterId = 0;
 
-    self.year.subscribe(getDetail);
-    self.ds.subscribe(getDetail);
 
     app.ajax('/admin/district-data/getdata').done(function (rs) {
         place = rs.place;
 
-        self.pvList(place.pv);
-        self.pv('03');
-        self.ds('0302');
-
+        self.masterModel(rs.master)
         self.questions(rs.questions);
-        self.tableDetails(rs.attributes);
+        self.pvList(place.pv);
+
     });
 
-    function getDetail () {
-        if(self.ds() == null) return;
-
-        var submit = { 
-            year: self.year(),
-            ds_code: self.ds()
-         };
-        app.ajax('/admin/district-data/getdetail', submit).done(function (rs) {
-            self.tableDetails(rs.detail);
-            masterId = rs.id;
-        });
-    };
-
+   
     function prepare(nums, answers, tblname) {
         if (self.questions().length == 0) return [];
         return nums.map(no => {
             var q = self.questions().find(r => r.no == no);
-
-            var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
-            model.q_id = q.id;
-
-            if (self.tableDetails() && self.tableDetails()[tblname]) {
-                var found = self.tableDetails()[tblname].find(r => r.q_id == q.id);
-                answers.forEach(key => model[key] = found[key]);
+            if (!q) {
+                return null; 
             }
-
+    
+            var model = answers.reduce((obj, key) => (obj[key] = null) ?? obj, {});
+            model.question_id = q.id;
+    
+            if (self.tableDetails() && self.tableDetails()[tblname]) {
+                var found = self.tableDetails()[tblname]?.find(r => r.question_id == q.id);
+                if (found) {
+                    answers.forEach(key => model[key] = (found[key] || 0));
+                }
+            }
+    
             model.no = () => no;
             model.group = () => self.lang() == 'en' ? q.group_en : q.group_kh;
+            model.sub_group = () => self.lang() == 'en' ? q.sub_group_en : q.sub_group_kh;
             model.question = () => self.lang() == 'en' ? q.question_en : q.question_kh;
-
+            model.unit = () => self.lang() == 'en' ? q.unit_en : q.unit_kh;
+            model.short_code = () => q.short_code;
+            model.value = ko.observable(q?.value);
             return model;
-        });
+        }).filter(model => model !== null); 
     }
+    
 
-    self.dsList = function () {
-        var pv = self.pv();
-        return place == null ? [] : place.ds.filter(r => r.pvcode == pv);
-    }
-
-    self.district_1 = ko.pureComputed(() => {
-        var nums = [1, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 3];
-        var answers = ['total', 'female'];
-        return prepare(nums, answers, 'district_1');
+    self.showNew = function () {
+        self.showEdit(newModel());
+    };
+    
+    self.pv.subscribe(function (code) {
+        self.dsList(code == null ? [] : place.ds.filter(r => r.pvcode == code));
+    });
+    
+    self.ds.subscribe(function (code) {
+        if(code != null){
+            self.loadData();
+        }
+    });
+    
+    self.year.subscribe(function (year) {
+        if(year != null){
+            self.loadData();
+        }
+    });
+ 
+    //1. Local administrative composition
+    self.district_admin_composition = ko.pureComputed(() => {
+        var nums = [1, '1.f', 2,'2.f', 2.1, '2.1.f', 2.2, '2.2.f',
+                    2.3, '2.3.f', 2.4, '2.4.f', 2.5, '2.5.f', 3, '3.f'];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_admin_composition');
+    });
+    
+    //2. Composition of Local Specialist Office Officers (Framework Officers
+    self.district_framework_officers = ko.pureComputed(() => {
+        var nums = [4,'4.f','4.a','4.a.f','4.b','4.b.f', 
+                    5, '5.f', '5.a', '5.a.f', '5.b','5.b.f',
+                    6, '6.f', '6.a', '6.a.f', '6.b','6.b.f',
+                    7, '7.f', '7.a', '7.a.f', '7.b','7.b.f',
+                    8, '8.f', '8.a', '8.a.f', '8.b','8.b.f',
+                    9, '9.f', '9.a', '9.a.f', '9.b','9.b.f',
+                    10, '10.f', '10.a', '10.a.f', '10.b','10.b.f',
+                    10.1, '10.1.f', '10.1.a', '10.1.a.f', '10.1.b','10.1.b.f',
+                    10.2, '10.2.f', '10.2.a', '10.2.a.f', '10.2.b','10.2.b.f',
+                    11, '11.f', '11.a', '11.a.f', '11.b','11.b.f',
+                    12, '12.f', '12.a', '12.a.f', '12.b','12.b.f',
+                    13, '13.f', '13.a', '13.a.f', '13.b','13.b.f',
+                    14, '14.f', '14.a', '14.a.f', '14.b','14.b.f',
+                    15, '15.f', '15.a', '15.a.f', '15.b','15.b.f',
+                    16, '16.f', '16.a', '16.a.f', '16.b','16.b.f',
+                    17,18,19,20,21,
+                ];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_framework_officers');
     });
 
-    self.district_2a = ko.pureComputed(() => {
-        var nums = [4, 5, 6, 7, 8, 9, 10, 10.1, 10.2, 11, 12, 13, 14, 15, 16];
-        var answer = ['staff_total', 'staff_female', 'chief_male', 'chief_female', 'vice_male', 'vice_female'];
-        return prepare(nums, answer, 'district_2a');
-    });
-
-    self.district_2b = ko.pureComputed(() => {
-        var nums = Array.range(17, 21);
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_2b');
-    });
-
-    self.district_3 = ko.pureComputed(() => {
+   //3. Support work
+    self.district_support_work = ko.pureComputed(() => {
         var nums = [22, 23];
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_3');
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_support_work');
     });
 
-    self.district_4 = ko.pureComputed(() => {
-        var nums = Array.range(24, 28);
-        var answer = ['a_total', 'a_female', 'b_total', 'b_female'];
-        return prepare(nums, answer, 'district_4');
+    //4. Vocational training
+    self.district_vocational_training = ko.pureComputed(() => {
+        var nums = [24, '24.f', '24.a', '24.a.f',
+                    25, '25.f', '25.a', '25.a.f',
+                    26, '26.f', '26.a', '26.a.f',
+                    27, '27.f', '27.a', '27.a.f',
+                    28, '28.f', '28.a', '28.a.f',
+                ];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_vocational_training');
     });
 
-    self.district_5 = ko.pureComputed(() => {
-        var nums = [29, 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7, 29.8, 29.9, '29.10'];
-        var answer = ['agent', 'income'];
-        return prepare(nums, answer, 'district_5');
+    //5. Income registered at the district tax office
+    self.district_tax_office = ko.pureComputed(() => {
+        var nums = [29, "29.a",
+                    "29.1", "29.1.a",
+                    29.2, "29.2.a",
+                    29.3, "29.3.a",
+                    29.4, "29.4.a",
+                    29.5, "29.5.a",
+                    29.6, "29.6.a",
+                    29.7, "29.7.a",
+                    29.8, "29.8.a",
+                    29.9, "29.9.a",
+                    "29.10","29.10.a",
+                ];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_tax_office');
     });
 
-    self.district_6a = ko.pureComputed(() => {
-        var nums = Array.range(30, 35).reduce((arr, r) => arr.concat(r + 0.1, r + 0.2, r + 0.3, r + 0.4), []);
-        var answer = ['qty'];
-        return prepare(nums, answer, 'district_6a');
+    //6. Number of national and international NGOs
+    self.district_national_and_international_NGOs = ko.pureComputed(() => {
+        var nums = [30,'30.1','30.2','30.3',
+            31,'31.1','31.2','31.3',
+            32,'32.1','32.2','32.3',
+            33,'33.1','33.2','33.3',
+            34,'34.1','34.2','34.3',
+            35,'35.1','35.2','35.3',
+            36,37,'37.f'];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_national_and_international_NGOs');
     });
 
-    self.district_6b = ko.pureComputed(() => {
-        var nums = [36, 37];
-        var answer = ['qty', 'total', 'female'];
-        return prepare(nums, answer, 'district_6b');
+    //7. Health work
+    self.district_health_work = ko.pureComputed(() => {
+        var nums = [38,'38.a',
+                    39,'39.a',
+                    40,'40.a',
+                    41,'41.a',
+                    42,'42.a'];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_health_work');
     });
 
-    self.district_7 = ko.pureComputed(() => {
-        var nums = Array.range(38, 42);
-        var answer = ['qty1', 'qty2'];
-        return prepare(nums, answer, 'district_7');
+    //8. Education
+    self.district_education = ko.pureComputed(() => {
+        var nums = [43, 44, '44.f', 45, 46, '46.f'];
+        var answers = ['value'];
+        return prepare(nums, answers, 'district_education');
     });
 
-    self.district_8 = ko.pureComputed(() => {
-        var nums = Array.range(43, 46);
-        var answer = ['qty', 'total', 'female'];
-        return prepare(nums, answer, 'district_8');
-    });
+
+    self.loadData = () => {
+        if(self.ds() && self.year()){
+            let params = `ds_code=${self.ds()}&year=${self.year()}`
+            app.ajax('/admin/district-data/search?'+params).done(function (response) {
+                self.recorded_by(response.updated_by)  ;
+                self.phone(response.phone)  ;
+                self.masterModel(response);
+                self.questions(response.questions);
+            });
+        } 
+          
+    }
 
     self.save = function () {
-        var master = {
-            id: masterId,
-            year: self.year(),
-            ds_code: self.ds()
-        };
-
-        if (masterId == 0) {
-            master.created_by = 'admin';
-        } else {
-            master.updated_by = 'admin';
-            master.updated_on = moment().sqlformat();
+        if (self.ds() == null) return;
+        var master = newModel().applyData(app.unko(self.masterModel()));
+        if (master.id == 0) {
+            master.recorded_by = self.recorded_by();
         }
+        master.updated_by = self.recorded_by();
+        master.updated_at = moment().sqlformat();
 
-        var arr = [1, '2a', '2b', 3, 4, 5, '6a', '6b', 7, 8];
-        var tables = arr.reduce((obj, k) => (obj['district_' + k] = self['district_' + k]()) && obj, {});
+        master.ds_code = self.ds();
+        master.year = self.year();
+        master.recorded_by = self.recorded_by();
+        master.phone = self.phone();        
+        var formData = ko.toJSON(self.question_params());
+        var params = { master, responses: formData };
 
-        var submit = {
-            master,
-            tables: JSON.stringify(tables)
-        };
-        console.log(submit)
-        app.ajax('/admin/district-data/save', submit).done(function (response) {
+        app.ajax('/admin/district-data/save', params).done(function (response) {
+            console.log('++++++++++++ save +++++++++++++');
+            console.log(params);
             self.successMessage(response.message);
             app.showToast();
         });
     };
 
-    function changeLang() {
-        var words = [
-            ['សរុប', 'Total'],
-            ['នាក់', 'People'],
-            ['ប្រុស', 'Male'],
-            ['ស្រី', 'Female'],
-            ['ចំនួន', 'Amount'],
-            ['ស្ថានីយ៍', 'Station'],
-            ['មាន', 'Have'],
-            ['ចំនួនបុគ្គល', 'Number of staffs'],
-            ['ប្រធាន', 'Chief'],
-            ['អុនប្រធាន', 'Vice chief'],
-            ['រៀល', 'Riel'],
-            ['អង្គការ', 'Organization'],
-            ['ខេត្ត', 'Province'],
-            ['ស្រុក', 'District'],
-            ['ឃុំ', 'Commune'],
-            ['កត់ត្រាដោយ', 'Recorded by'],
-            ['លេខទូរស័ព្ទ', 'Phone number'],
-            ['កន្លែង', 'Place'],
-            ['គ្រែ', 'Bed'],
-            ['ប័ណ្ណ', 'Card'],
-            ['ការិយាល័យជំនាញក្នុងស្រុក', 'Local Specialist Office'],
-            ['វិស័យ', 'Sector'],
-            ['បណ្តុះបណ្ណាលដោយវិស័យជំនាយ', 'Training by specialists'],
-            ['បណ្តុះបណ្ណាលដោយអង្គការ/ឯកជន', 'Training by NGO / Private'],
-            ['ប្រាក់ចំណូល', 'Revenue'],
-            ['ភ្នាក់ងារ', 'Agent'],
-            ['ចំណូលប៉ាន់ស្មានប្រចាំឆ្នាំ(រៀល)', 'Estimated annual income (Riel)'],
-            ['ទិន្នន័យថ្នាក់ស្រុក', 'District Data'],
-            ['១. សមាសភាពរដ្ឋបាលក្នុងស្រុក', '1. Local administrative composition'],
-            ['២. សមាសភាពមន្ត្រីការិយាល័យជំនាញក្នុងស្រុក (មន្ត្រីក្របខណ្ឌ)', '2. Composition of Local Specialist Office Officers (Framework Officers)'],
-            ['៣. ការងារគាំទ្រ', '3. Support work'],
-            ['៤. ការងារបណ្តុះបណ្ណាលវិជ្ជាជីវៈ', '4. Vocational training'],
-            ['៥. ចំណូលបានចុះបញ្ជីនៅស្នាក់ការពន្ធដារស្រុក', '5. Income registered at the district tax office'],
-            ['៦. ចំនួនអង្គការមិនមែនរដ្ឋាភិបាលជាតិ និងអន្តរជាតិ', '6. Number of national and international NGOs'],
-            ['៧. ការងារសុខាភិបាល', '7. Health work'],
-            ['៨. ការងារអប់រំ', '8. Education'],
-            ['បន្ថែម', 'New'],
-            ['រក្សាទុក', 'Save'],
-            ['ត្រលប់', 'Back'],
-            ['កែប្រែ', 'Edit'],
-            ['លុប', 'Delete'],
-            ['ឆ្នាំ', 'Year'],
+    self.question_params = function (model) {
+        const categories = [
+            self.district_admin_composition,
+            self.district_framework_officers,
+            self.district_support_work,
+            self.district_vocational_training,
+            self.district_national_and_international_NGOs,
+            self.district_tax_office,
+            self.district_health_work,
+            self.district_education
         ];
+    
+        const mapCategory = category => category().map(item => ({
+            question_id: item.question_id,
+            value: item.value
+        }));
+    
+        return categories.flatMap(mapCategory);
+    };
 
-        $('.container-fluid *').each(function () {
-            var a = self.lang() == 'en' ? 0 : 1;
-            var b = self.lang() == 'en' ? 1 : 0;
-            var found = words.find(r => r[a] == this.innerHTML);
-            if (found != null) this.innerHTML = found[b];
+    self.showDelete = function (model) {
+        var submit = { id: model.id };
+        app.ajax('/admin/district-data/delete', submit).done(function () {
+            self.listModel.remove(model);
         });
-    }
-    changeLang();
+    };
+
+    self.back = function () {
+        self.view('list');
+    };
+
+    self.getQuestionByNo = function(questions, no){
+        return questions.filter(function(i){return i.no() == no})[0]
+    };
+
+    self.getPvName = function (code) {
+        var pvcode = place.ds.find(r => r.code == code).pvcode;
+        return place.pv.find(r => r.code == pvcode)[self.lang() == 'en' ? 'name' : 'namek'];
+    };
+
+    self.getDsName = function (code) {
+        return place.ds.find(r => r.code == code)[self.lang() == 'en' ? 'name' : 'namek'];
+    };
 }
 
 $(document).on('keydown', 'input[type=number]', function (event) {

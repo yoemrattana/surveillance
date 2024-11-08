@@ -1,5 +1,5 @@
 <h4 class="fw-bold text-primary">{{__('commune.education')}}</h4>
-<span class="fs-6">{{__('commune.home_based_training')}}</span>
+<span class="fs-5">{{__('commune.home_based_training')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
@@ -19,7 +19,7 @@
     <!-- /ko -->
 </table>
 <br/>
-<span class="fs-6">{{__('commune.community_preschool_training')}}</span>
+<span class="fs-5">{{__('commune.community_preschool_training')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tr class="table-primary">
         <th colspan="2">{{__('general.description')}}</th>
@@ -66,15 +66,21 @@
 <br/>
 @include('admin.communeData.preschool')
 <br/>
+<br/>
 @include('admin.communeData.primary_school')
+<br/>
 <br/>
 @include('admin.communeData.water_sanitation_primary_school')
 <br/>
+<br/>
 @include('admin.communeData.secondary_school')
+<br/>
 <br/>
 @include('admin.communeData.water_sanitation_secondary_school')
 <br/>
+<br/>
 @include('admin.communeData.high_school')
+<br/>
 <br/>
 @include('admin.communeData.water_sanitation_high_school')
 <br/>

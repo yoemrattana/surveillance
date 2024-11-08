@@ -26,100 +26,110 @@ class VillageDataController extends Controller
         return view('admin/villageData/index');
     }
 
-    public function search(Request $request){
-        $village_data = DB::table('village_data')
-                        ->where('code_village', $request->vl_code)
-                        ->where('year', $request->year)
-                        ->first();
-        if($village_data){
-            $village_data->attributes = DB::table('attributes')
-                                ->leftJoin('village_value', function (JoinClause $join) use ($village_data) {
-                                    $join->on('attributes.id', '=', 'village_value.attribute_id')
-                                         ->where('village_value.parent_id', '=', $village_data->id);
-                                })
-                                ->select('attributes.*', 'village_value.value')
-                                ->get();
-        }else{
-            $village_data = [];
-            $village_data['attributes'] = DB::table('attributes')->get();
-        }
-
-        return Reply::dataOnly($village_data);
-    }
-
-    public function getAttributes()
+    public function getdata($id = 0)
     {
-        $data['attributes'] = Attribute::all();
+        $where = $id == 0 ? [] : ['id' => $id];
+        $list = DB::table('village_data')->where($where)->get()->toArray();
+        
+        $master = [
+            'id'             => 0,
+            'year'           => '',
+            'vl_code'   => '',
+            'phone'  => '',
+            'commune_leader' => '',
+            'phone_commune'  => '',
+            
 
-        //$data['main'] = Attribute::with('villageData')->get();
-        $data['main'] = Attribute::with('values')->get();
-        $data['place'] = [
-            'pv' => DB::table('provinces')->get(),
-            'ds' => DB::table('districts')->get(),
-            'cm' => DB::table('communes')->get(),
-            'vl' => DB::table('villages')->get(),
         ];
 
-        return Reply::dataOnly($data);
+        if($id == 0) {
+            return [
+                'master' => $master,
+                'list' => $list,
+                'questions' => DB::table('village_question')->get(),
+                'place' => [
+                    'pv' => DB::table('provinces')->get(),
+                    'ds' => DB::table('districts')->get(),
+                    'cm' => DB::table('communes')->get(),
+                    'vl' => DB::table('villages')->get(),
+                ]
+            ];           
+        } 
+
+        return $list[0];
     }
 
-    public function getData($id)
-    {
-        $data = [];
-        if( empty( $id ) ) {
-            $data['master'] = [
-                'id'             => 0,
-                'year'           => '',
-                'code_village'   => '',
-                'phone_village'  => '',
-                'commune_leader' => '',
-                'phone_commune'  => '',
-            ];
 
-            $data['attributes'] = Attribute::all();
-        } else {
-            $data['attributes'] = DB::table('attributes')->where('id', $id)
-                ->join('village_value', 'attributes.id', '=', 'village_value.attribute_id')
-                ->select('attributes.*', 'village_value.village_id')
-                ->get();
+    public function getdetail(Request $request)
+    {
+        $tables = [1];
+
+        foreach ($tables as $num) {
+            $name = 'village_' . $num;
+            $rs[$name] = DB:: table($name)->where('parent_id', $request->id)->get();
         }
 
-        $data['place'] = [
-            'pv' => DB::table('provinces')->get(),
-            'ds' => DB::table('districts')->get(),
-            'cm' => DB::table('communes')->get(),
-            'vl' => DB::table('villages')->get(),
-        ];
-
-        return Reply::dataOnly($data);
+        return $rs;
     }
+
     public function save(Request $request)
     {
         $master = $request->master;
-        $village_attributes = json_decode($request->village_attributes, true);
-        $data['attributes'] = Attribute::all();
-
+        $detail_response = json_decode($request->responses, true);
         $id = $master['id'];
-
         if ($id == 0) {
             $id = DB::table('village_data')->insertGetId($master);
         } else {
             DB::table('village_data')->where('id', $id)->update($master);
         }
 
-        Log::info('******************* This is an info log message.'.$master['id']);
+        DB::table('village_response')->where('parent_id', $id)->delete();
+        DB::table('village_response')->insert($this->build_params($detail_response, $id));
 
-        DB::table('village_value')->where('parent_id', $id)->delete();
-        foreach ($village_attributes as $attribute) {
-            if(isset($attribute['value'])){
-                $attribute['parent_id'] = $id;
-                Log::info($attribute);     
-                DB::table('village_value')->insert($attribute);
-            }
-
-            // Log::info('Attribute '.$attribute['attribute_id']);
-            // echo "value: " . $attribute['value'] . ", attribute: " . $attribute['code_attribute'] . "\n";
-        }
-        return response()->json(['message' => ('general.save_success')]);
+        return response()->json(['message' => __('general.save_success')]);
     }
+
+    
+    public function search(Request $request){
+        $village_data = DB::table('village_data')
+                        ->where('vl_code', $request->vl_code)
+                        ->where('year', $request->year)
+                        ->first();
+
+        if($village_data){
+            $village_data->questions = DB::table('village_question')
+                                ->leftJoin('village_response', function (JoinClause $join) use ($village_data) {
+                                    $join->on('village_question.id', '=', 'village_response.question_id')
+                                         ->where('village_response.parent_id', '=', $village_data->id);
+                                })
+                                ->select('village_question.*', 'village_response.value', 'village_response.value_txt')
+                                ->get();
+        }else{
+            $village_data = [];
+            $village_data['detail'] = [];
+            $village_data['questions'] = DB::table('village_question')->get();
+        }
+
+        return Reply::dataOnly($village_data);
+    }
+
+    public function build_params($params, $id){
+        return array_map(function ($item) use ($id) {
+                        return [
+                            'question_id' => $item['question_id'],
+                            'value' => isset($item['value']) ? $item['value'] : null,
+                            'value_txt' => isset($item['value_txt']) ? $item['value_txt'] : '',
+                            'parent_id' => $id,
+                            'created_at' => now(),
+                            'updated_at' => now(),
+                        ];
+                    }, $params);
+    }
+
+    public function delete(Request $request)
+    {
+        DB::table('village_data')->where('id', $request->id)->delete();
+    }
+  
+    
 }

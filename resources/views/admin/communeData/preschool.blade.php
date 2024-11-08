@@ -1,5 +1,5 @@
 <!-- preschool -->
-<span class="fs-6">{{__('commune.preschool')}}</fs>
+<span class="fs-5">{{__('commune.preschool')}}</fs>
 <table class="table table-bordered border border-1 mt-3">
     <tr class="table-primary">
         <th></th>
@@ -32,7 +32,7 @@
     <!-- /ko -->
 
     <!-- ko foreach: new Array(61, 62, 63) -->
-        <tr>
+        <tr class="text-center">
             <td data-bind="text: $data"></td>
             
             <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data) -->
@@ -41,8 +41,8 @@
                     <div class="input-group">
                         <span class="input-group-text">{{__('general.total')}}</span>
                         <input type="number" class="form-control" data-bind="value: value"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
+                    <span class="fs-6" data-bind="text: unit()"></span>
                 </td>
             <!-- /ko -->
             <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data+".f") -->
@@ -50,8 +50,8 @@
                     <div class="input-group">
                         <span class="input-group-text">{{__('general.female')}}</span>
                         <input type="number" class="form-control" data-bind="value: value"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
+                    <span class="fs-6" data-bind="text: unit()"></span>
                 </td>
             <!-- /ko -->
             <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data+".a") -->
@@ -59,8 +59,8 @@
                     <div class="input-group">
                         <span class="input-group-text">{{__('general.total')}}</span>
                         <input type="number" class="form-control" data-bind="value: value"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
+                    <span class="fs-6" data-bind="text: unit()"></span>
                 </td>
             <!-- /ko -->
             <!-- ko with: $parent.getQuestionByNo($parent.commune_education(), $data+".a.f") -->
@@ -68,11 +68,11 @@
                     <div class="input-group">
                         <span class="input-group-text">{{__('general.female')}}</span>
                         <input type="number" class="form-control" data-bind="value: value"  />
-                        <span class="input-group-text" data-bind="text: unit()"></span>
                     </div>
+                    <span class="fs-6" data-bind="text: unit()"></span>
                 </td>
             <!-- /ko -->
         </tr>
     <!-- /ko -->
 </table>
-<small>{{__('commune.preschool_note')}}</small>
+<span class="fs-6">{{__('commune.preschool_note')}}</span>

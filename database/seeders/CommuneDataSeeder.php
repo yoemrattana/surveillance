@@ -15,7 +15,7 @@ class CommuneDataSeeder extends Seeder
      */
     public function run(): void
     {
-        $filePath = base_path('public/data/commune_data.csv');
+        $filePath = base_path('public/data/Commune/c_kchnang_2023.csv');
         // $questions = DB::table('commune_question');
         
         // Check if the file exists
@@ -71,7 +71,8 @@ class CommuneDataSeeder extends Seeder
                         $id = DB::table('commune_parent')->insertGetId([
                                                     'ds_code' => $ds_code,
                                                     'cm_code' => $cm_code,
-                                                    'year' => $year
+                                                    'year' => $year,
+                                                    'recorded_by' => 'Admin'
                                                 ]);
                  
                         $insertData = array_map(function ($item) use ($id) {

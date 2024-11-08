@@ -17,79 +17,160 @@
             <th>{{ __('general.high_school')}}</th>
         </tr>
     </thead>
-    <tbody data-bind="foreach: $root.groupLevel1($data.filter( r => r.section() == 3))">
-    <tr>
-        <td data-bind="text: sort" class="col-num"></td>
-        <td data-bind="text: label"></td>
-        <td>
-            <div class="input-group">
-                <input data-bind="value: fields[0].value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
-        </td>
+    <tbody>
+        
+        <!-- ko foreach: new Array(16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27) -->
+        
+        <tr>
+            <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data) -->
+            <td data-bind="text: no()" class="col-num"></td>
+            <td data-bind="text: question()"></td>
+            <td>
+                <div class="input-group">
+                    <input type="number" class="form-control" data-bind="value: value" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+            </td>
+            <!-- /ko -->
+            <!-- ko if: $data == 17 || $data == 18 || $data == 19 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.a') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
 
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'kindergarden')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'kindergarden')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'kindergarden').value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+            <!-- ko if: $data !== 17 && $data !== 18 && $data !== 19 -->
+            <td data-bind="css: { cellx: true }"></td>
             <!-- /ko -->
-        </td>
 
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'primary')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'primary')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'primary').value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+            <!-- ko if:  $data == 19 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.b') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
             <!-- /ko -->
-        </td>
 
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'secondary')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'secondary')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'secondary').value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+            <!-- ko if:  $data == 20 || $data == 21 || $data == 22 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.a') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
             <!-- /ko -->
-        </td>
 
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'highschool')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'highschool')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'highschool').value" type="number" class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+            <!-- ko if:  $data !== 19 && $data !== 20 && $data !== 21 && $data !== 22 -->
+            <td data-bind="css: { cellx: true }"></td>
             <!-- /ko -->
-        </td>
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'university')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'university')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'university').value" type="number"
-                       class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+
+            <!-- ko if:  $data == 21 || $data == 22 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.b') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
             <!-- /ko -->
-        </td>
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'speciality')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'speciality')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'speciality').value" type="number"
-                       class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+
+            <!-- ko if:  $data !== 21 && $data !== 22 -->
+            <td data-bind="css: { cellx: true }"></td>
             <!-- /ko -->
-        </td>
-        <td data-bind="css: {cellx : !$root.getField3($index() ,fields, 'illiterature')}">
-            <!-- ko if:  $root.getField3($index() ,fields, 'illiterature')-->
-            <div class="input-group">
-                <input data-bind="value: $root.getField3($index() ,fields, 'illiterature').value" type="number"
-                       class="form-control" placeholder="......">
-                <span class="input-group-text">{{__('general.person')}}</span>
-            </div>
+
+            <!-- ko if:  $data == 22 || $data == 23 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.c') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
             <!-- /ko -->
-        </td>
-    </tr>
+
+            <!-- ko if:  $data !== 22 && $data !== 23 -->
+            <td data-bind="css: { cellx: true }"></td>
+            <!-- /ko -->
+
+            <!-- ko if:  $data == 23 || $data == 24 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.a') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if:  $data !== 23 && $data !== 24 -->
+            <td data-bind="css: { cellx: true }"></td>
+            <!-- /ko -->
+           
+            <!-- ko if:  $data == 23 || $data == 24 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data + '.b') -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if:  $data !== 23 && $data !== 24 -->
+            <td data-bind="css: { cellx: true }"></td>
+            <!-- /ko -->
+          
+            <!-- ko if:  $data == 22 || $data == 23 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data+".d") -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if:  $data == 24 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data+".c") -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
+
+            <!-- ko if:  $data == 25 -->
+            <td>
+                <!-- ko with: $parent.getQuestionByNo($parent.village_female_education(), $data+".a") -->
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control" placeholder="......">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+                <!-- /ko -->
+            </td>
+            <!-- /ko -->
+            
+             <!-- ko if:  $data !== 22 && $data !== 23 && $data !== 24  && $data !== 25 -->
+             <td data-bind="css: { cellx: true }"></td>
+            <!-- /ko -->
+               
+       </tr>
+       <!-- /ko -->
     </tbody>
 </table>

@@ -15,8 +15,7 @@ class DistrictDataSeeder extends Seeder
      */
     public function run(): void
     {
-        $filePath = base_path('public/data/district_data.csv');
-        // $questions = DB::table('commune_question');
+        $filePath = base_path('public/data/District/d_1.csv');
         
         // Check if the file exists
         if (!file_exists($filePath) || !is_readable($filePath)) {
@@ -67,10 +66,22 @@ class DistrictDataSeeder extends Seeder
 
                     }
                     if($ds_code && $year){
-                        $id = DB::table('district_parent')->insertGetId([
-                                                    'ds_code' => $ds_code,
-                                                    'year' => $year
-                                                ]);
+                        $district_parent = DB::table('district_parent')->where('ds_code', $ds_code)
+                                                    ->where('year', $year)->first();
+                        $id = null;
+                        // if data already exist
+                        if($district_parent){
+                            $id = $district_parent->id;
+                            DB::table('district_response')->where('parent_id', $id)->delete();
+                        }else{
+                            $id = DB::table('district_parent')->insertGetId([
+                                'ds_code' => $ds_code,
+                                'year' => $year,
+                                'recorded_by' => 'Admin',                                                    
+                            ]);
+                        }
+
+                        
                         $insertData = array_map(function ($item) use ($id) {
                             return [
                                 'question_id' => $item['question_id'],
@@ -82,8 +93,6 @@ class DistrictDataSeeder extends Seeder
                         }, $district_response);
                         
                         if($id){
-
-                            Log::info($district_response);
                             DB::table('district_response')->insert($insertData);                      
                         }
                     }

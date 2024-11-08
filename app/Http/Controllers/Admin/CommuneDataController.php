@@ -64,22 +64,16 @@ class CommuneDataController extends Controller
     {
         $master = $request->master;
         $detail_response = json_decode($request->responses, true);
-
         $id = $master['id'];
-
         if ($id == 0) {
             $id = DB::table('commune_parent')->insertGetId($master);
         } else {
             DB::table('commune_parent')->where('id', $id)->update($master);
         }
-
         DB::table('commune_response')->where('parent_id', $id)->delete();
-        foreach ($detail_response as $detail) {
-            $detail['parent_id'] = $id;
-            DB::table('commune_response')->insert($detail);
-        }
+        DB::table('commune_response')->insert($this->build_params($detail_response, $id));
 
-        return response()->json(['message' => ('general.save_success')]);
+        return response()->json(['message' => __('general.save_success')]);
     }
 
     public function search(Request $request){
@@ -89,7 +83,6 @@ class CommuneDataController extends Controller
                         ->first();
         $detail = [];
         if($commune_parent){
-            // $commune_parent->detail = DB::table('commune_response')->where('parent_id', $commune_parent->id)->get();
             $commune_parent->questions = DB::table('commune_question')
                                 ->leftJoin('commune_response', function (JoinClause $join) use ($commune_parent) {
                                     $join->on('commune_question.id', '=', 'commune_response.question_id')
@@ -97,11 +90,6 @@ class CommuneDataController extends Controller
                                 })
                                 ->select('commune_question.*', 'commune_response.value')
                                 ->get();
-
-            // DB::table('commune_question')->join('commune_response', 'commune_question.id', '=', 'commune_response.question_id')
-            //     ->where('commune_response.parent_id', $commune_parent->id)
-            //     ->select('commune_question.*', 'commune_response.value')
-            //     ->get();
         }else{
             $commune_parent = [];
             $commune_parent['detail'] = [];
@@ -111,36 +99,21 @@ class CommuneDataController extends Controller
 
         return Reply::dataOnly($commune_parent);
     }
+    
+    public function build_params($params, $id){
+        return array_map(function ($item) use ($id) {
+                        return [
+                            'question_id' => $item['question_id'],
+                            'value' => $item['value'],
+                            'parent_id' => $id,
+                            'created_at' => now(),
+                            'updated_at' => now(),
+                        ];
+                    }, $params);
+    }
 
     public function delete(Request $request)
     {
         DB::table('commune_parent')->where('id', $request->id)->delete();
     }
-
-
-    // public function search(Request $request){
-    //     $commune_parent = DB::table('commune_parent')
-    //                     ->where('cm_code', $request->cm_code)
-    //                     ->where('year', $request->year)
-    //                     ->first();
-    //     $detail = [];
-    //     if($commune_parent){
-    //         $tables = ['commune_base_profile', 'commune_agriculture', 'commune_production',
-    //                   'commune_transportation', 'commune_education', 'commune_natural_resource',
-    //                   'commune_disaster'
-    //                   ];
-    //         foreach ($tables as $table) {
-    //             $detail[$table] = DB::table($table)->where('commune_parent_id', $commune_parent->id)->get();
-    //         }
-    //         $commune_parent->detail = $detail;
-    //         $commune_parent->questions = DB::table('commune_question')->get();
-    //     }else{
-    //         $commune_parent = [];
-    //         $commune_parent['detail'] = [];
-    //         $commune_parent['questions'] = DB::table('commune_question')->get();
-    //     }      
-
-
-    //     return Reply::dataOnly($commune_parent);
-    // }
 }

@@ -18,26 +18,26 @@
        </li>
        <li class="menu-item {{ request()->is('admin/dashboard*') ? 'active' : '' }}">
           <a href="{{ route('admin.dashboard') }}" class="menu-link">
-             <i class="menu-icon tf-icons bx bx-home-circle"></i>
-             <div class="text-truncate" data-i18n="Email">Dashboard</div>
+             <i class="menu-icon tf-icons bx bx-line-chart"></i>
+             <div class="text-truncatate" data-i18n="Email">{{__('general.dashboard')}}</div>
           </a>
        </li>
        <li class="menu-item {{ request()->is('admin/district-data') ? 'active' : '' }}">
           <a href="{{ route('admin.district-data') }}" class="menu-link">
-             <i class="menu-icon tf-icons bx bx-chat"></i>
-             <div class="text-truncate" data-i18n="Chat">District</div>
+             <i class="menu-icon tf-icons bx bx-book-content"></i>
+             <div class="text-truncate" data-i18n="Chat">{{__('general.district_form')}}</div>
           </a>
        </li>
        <li class="menu-item {{ request()->is('admin/commune-data') ? 'active' : '' }}">
           <a href="{{ route('admin.commune-data') }}" class="menu-link">
-             <i class="menu-icon tf-icons bx bx-chat"></i>
-             <div class="text-truncate" data-i18n="Chat">Commune</div>
+             <i class="menu-icon tf-icons bx bx-map-alt"></i>
+             <div class="text-truncate" data-i18n="Chat">{{__('general.commune_form')}}</div>
           </a>
        </li>
        <li class="menu-item {{ request()->is('admin/village-data') ? 'active' : '' }}">
           <a href="{{ route('admin.village-data') }}" class="menu-link">
-             <i class="menu-icon tf-icons bx bx-chat"></i>
-             <div class="text-truncate" data-i18n="Chat">Village</div>
+             <i class="menu-icon tf-icons bx bx-building-house"></i>
+             <div class="text-truncate" data-i18n="Chat">{{__('general.village_form')}}</div>
           </a>
        </li>
       

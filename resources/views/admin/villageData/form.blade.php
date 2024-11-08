@@ -76,6 +76,7 @@
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
+                        <option value="2019">2019</option>
                     </select>
                 </div>
             </div>
@@ -92,56 +93,77 @@
             {{__('general.save')}}
         </button>
     </div>
-    <div class="card-body" data-bind="with:detailModel">
+
+    <div class="card-body">
         <form id="villageForm">
-            <table class="table table-bordered border border-1 mt-3">
-                <tbody data-bind="foreach: $data.filter(x => x.section() == 1 )">
-                <tr>
-                    <td data-bind="text: $index() + 1" class="col-num"></td>
-                    <td data-bind="text: name_attribute"></td>
-                    <td>
-                        <div class="row">
-                            <label class="col-sm-2 col-form-label" for="">{{__('village.has')}}</label>
-                            <div class="col-sm-6"><input data-bind="value: value" type="number" min="0" class="form-control"></div>
-                            <label class="col-sm-3 col-form-label" for="">{{__('village.family')}}</label>
-                        </div>
-                    </td>
-                </tr>
-
-                </tbody>
-            </table>
-
-            <br>
-
+            <div class="row">
+                <div class="col-auto">
+                    <div class="input-group">
+                        <span class="input-group-text">{{__('general.recorded_by')}}</span>
+                        <input type="text" class="form-control" data-bind="value: recorded_by"  />
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="input-group">
+                        <span class="input-group-text">{{__('general.phone')}}</span>
+                        <input type="number" class="form-control" data-bind="value: phone"  />
+                    </div>
+                </div>
+            </div>            
+            <br />
+            @include('admin.villageData.base_profile')  
+            <br />
             @include('admin.villageData.male_education')
-            <br>
+            <br />
             @include('admin.villageData.female_education')
-            <br>
-            @include('admin.villageData.school')
-            <br>
+            <br />
+            @include('admin.villageData.school_location')
+            <br />
             @include('admin.villageData.occupation')
-            <br>
+            <br />
             @include('admin.villageData.production')
-            <br>
+            <br />
             @include('admin.villageData.store')
-            <br>
+            <br />
             @include('admin.villageData.agriculture')
-            <br>
-            @include('admin.villageData.agricultureMachinery')
-            <br>
+            <br/>
+            @include('admin.villageData.agriculture_machinery')
+            <br/>
+            @include('admin.villageData.truck_transportation')
+            <br/>
+            @include('admin.villageData.moto_bycicle')
+            <br/>
+            @include('admin.villageData.boat')  
+            <br/>
+            @include('admin.villageData.motor_boat')                 
+            <br/>
+            @include('admin.villageData.distance_village_province')   
+            <br/>
+            @include('admin.villageData.livestock') 
+            <br/>
             @include('admin.villageData.home')
-            <br>
-            @include('admin.villageData.health')
-            <br>
-            @include('admin.villageData.vunerability')
-            <br>
-            @include('admin.villageData.naturalResource')
-            <br>
-            @include('admin.villageData.security')
-            <br>
-            @include('admin.villageData.dead')
-            <br>
-            @include('admin.villageData.minority')
+            <br/>
+            @include('admin.villageData.health') 
+            <br/>
+            @include('admin.villageData.water_status')  
+            <br/>
+            @include('admin.villageData.toilet')   
+            <br/>
+            @include('admin.villageData.vunerability') 
+            <br/> 
+            @include('admin.villageData.vunerability_hiv') 
+            <br/> 
+            @include('admin.villageData.disability') 
+            <br/> 
+            @include('admin.villageData.natural_resource')   
+            <br/> 
+            @include('admin.villageData.security')  
+            <br/> 
+            @include('admin.villageData.violence')  
+            <br/> 
+            @include('admin.villageData.dead') 
+            <br/> 
+            @include('admin.villageData.minority')          
         </form>
     </div>
 </div>

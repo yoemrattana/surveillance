@@ -1,4 +1,4 @@
-<h5>{{__('commune.disaster')}}</h5>
+<span class="fs-5">{{__('commune.disaster')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(0, 10) -->
@@ -55,7 +55,7 @@
     </tbody>
 </table>
 <br/>
-<h5>{{__('commune.mine_disaster')}}</h5>
+<span class="fs-5">{{__('commune.mine_disaster')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(17,29) -->
@@ -85,7 +85,7 @@
     </tbody>
 </table>
 <br/>
-{{__('commune.mine_land_note_1')}}
+<span class="fs-6">{{__('commune.mine_land_note_1')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(30,34) -->
@@ -105,7 +105,7 @@
     </tbody>
 </table>
 <br/>
-{{__('commune.mine_land_note_2')}}
+<span class="fs-6">{{__('commune.mine_land_note_2')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <!-- ko foreach: commune_disaster().slice(35,41) -->

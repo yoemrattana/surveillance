@@ -30,8 +30,16 @@
 <table class="table table-bordered border border-1 mt-3">
     <tbody data-bind="foreach: commune_base_profile().slice(4, 16)">
         <tr>
-            <td data-bind="text: no()"></td>
-            <td data-bind="text: question()"></td>
+            <!-- ko if: no() == '8.1' ||  no() == '9.1' -->
+                <td rowspan="2"></td>
+            <!-- /ko -->
+            <!-- ko if: no() == '8.1' || no() == '8.2' ||  no() == '9.1' || no() == '9.2'-->
+                <td data-bind="text: no()+' '+question()"></td>
+            <!-- /ko -->
+            <!-- ko ifnot: no() == '8.1' || no() == '8.2' ||  no() == '9.1' || no() == '9.2'-->
+                <td data-bind="text: no()"></td>
+                <td data-bind="text: question()"></td>
+            <!-- /ko -->          
             <td>
                 <div class="input-group">
                     <span class="input-group-text">{{__('general.total')}}</span>

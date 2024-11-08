@@ -1,4 +1,4 @@
-<span class="fs-6">{{__('commune.production_note')}}</span>
+<span class="fs-5">{{__('commune.production_note')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
         <tr class="table-primary">
@@ -42,7 +42,7 @@
 </table>
 
 <br/>
-<span class="fs-6">{{__('commune.long_crop_note')}}</span>
+<span class="fs-5">{{__('commune.long_crop_note')}}</span>
 
 <table class="table table-bordered border border-1 mt-3">
     <tbody>

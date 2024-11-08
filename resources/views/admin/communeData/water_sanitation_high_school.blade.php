@@ -1,4 +1,4 @@
-<span class="fs-6">{{__('commune.water_sanitation_high_school')}}</span>
+<span class="fs-5">{{__('commune.water_sanitation_high_school')}}</span>
 <table class="table table-bordered border border-1 mt-3">
     <tbody>
     <!-- ko foreach: new Array(86, 87) -->

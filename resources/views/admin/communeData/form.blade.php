@@ -67,6 +67,7 @@
                         <option value="2022">2022</option>
                         <option value="2021">2021</option>
                         <option value="2020">2020</option>
+                        <option value="2019">2019</option>
                     </select>
                 </div>
             </div>
@@ -86,13 +87,13 @@
             <div class="row">
                 <div class="col-auto">
                     <div class="input-group">
-                        <span class="input-group-text">កត់ត្រាដោយ</span>
+                        <span class="input-group-text">{{__('general.recorded_by')}}</span>
                         <input type="text" class="form-control" data-bind="value: recorded_by"  />
                     </div>
                 </div>
                 <div class="col-auto">
                     <div class="input-group">
-                        <span class="input-group-text">លេខទូរស័ព្ទ</span>
+                        <span class="input-group-text">{{__('general.phone')}}</span>
                         <input type="number" class="form-control" data-bind="value: phone"  />
                     </div>
                 </div>
@@ -103,7 +104,7 @@
                 ដោយទិន្នន័យមួយចំនួនមានការពាក់ព័ន្ធជាមួយភូមិជាច្រើនក្នុងឃុំសង្កាត់ បើសិនអោយភូមិនីមួយៗស្រង់ ទិន្នន័យនោះនឹងមានភាពស្ទួន 
                 ហេតុនេះនាំឱ្យមានការកត់ត្រាស្ថិតិទាំងនោះនៅថ្នាក់ឃុំ-សង្កាត់វិញ ទិន្នន័យទាំងនោះមាន ៖
             </div>
-            <div class="fs-5" data-bind="visible: lang() == 'en'">
+            <div class="mt-3 fs-5" data-bind="visible: lang() == 'en'">
                 Since some of the data is relevant to many communes in the district, if each commune has to extract that
                 data
                 There will be duplication, so it is necessary to record those statistics at the district level. Those
