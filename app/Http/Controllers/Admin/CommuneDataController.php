@@ -104,7 +104,7 @@ class CommuneDataController extends Controller
         return array_map(function ($item) use ($id) {
                         return [
                             'question_id' => $item['question_id'],
-                            'value' => $item['value'],
+                            'value' => isset($item['value']) ? $item['value'] : null,
                             'parent_id' => $id,
                             'created_at' => now(),
                             'updated_at' => now(),

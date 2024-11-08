@@ -196,7 +196,6 @@ function viewModel() {
                 self.phone(response.phone)  ;
                 self.masterModel(response);
                 self.questions(response.questions);
-                // self.tableDetails(response.detail);
             });
         }        
     }
@@ -217,6 +216,7 @@ function viewModel() {
 
         var formData = ko.toJSON(self.question_params());
         var params = { master, responses: formData };
+        console.log(formData);
 
         app.ajax('/admin/commune-data/save', params).done(function (response) {
             console.log('++++++++++++ save +++++++++++++');
