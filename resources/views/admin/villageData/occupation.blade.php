@@ -20,6 +20,8 @@
     <tbody>
         <!-- ko foreach: new Array( 32,33,34,35,36, 37, 38, 39, 40, 41,
                                     42,43, 44,45, 46, 47, 48, 49,50, 51, 52) -->
+
+        <!-- ko if: $data !== 52 -->
         <tr data-bind="visible: $index()==0">
             <td colspan="5"><h4>{{__('village.rice_farming')}}</h4></td>
         </tr>
@@ -78,26 +80,131 @@
             <!-- /ko -->
         </tr>
         <!-- /ko -->
+
+        <!-- ko if: $data == 52 -->
+        <tr>
+           <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), "52") -->
+            <td rowspan="2" data-bind="text: no()"></td>
+            <td rowspan="2" data-bind="text: question()"></td>
+            <td class="text-center">{{__('general.male')}}</td>
+           
+            <td>
+                <div class="input-group">
+                    <input data-bind="value: value" type="number" class="form-control">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+            </td>
+            <!-- /ko -->
+
+            <td data-bind="css: { cellx: true }"></td>
+
+        </tr>
+
+        <tr>
+            <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(),"52.f") -->
+            <td class="text-center">{{__('general.female')}}</td>
+            <td>
+                <div class="input-group">
+                    <input data-bind="value: value" type="text"
+                        class="form-control">
+                    <span class="input-group-text">{{__('general.person')}}</span>
+                </div>
+            </td>
+            <!-- /ko -->
+
+            <td data-bind="css: { cellx: true }"></td>
+           
+        </tr>
+        <!-- /ko -->
+        <!-- /ko -->
     </tbody>
 </table>
 
 <br>
+<!-- add new 11/08/2024 -->
 <table class="tbl-data table table-bordered border border-1">
-<thead class="table-primary">
-    <tr class="text-center align-middle">
-        <th class="col-num">{{__('general.num')}}</th>
-        <th>{{__('general.description')}}</th>
-        <th>{{__('general.gender')}}</th>
-        <th class="col-2">{{__('general.total')}}</th>
-    </tr>
-</thead>
-<tbody>
-    <!-- 53 , 54-->
-    
+    <thead class="table-primary">
+        <tr class="text-center align-middle">
+            <th class="col-num">{{__('general.num')}}</th>
+            <th>{{__('general.description')}}</th>
+            <th>{{__('general.gender')}}</th>
+            <th class="col-2">{{__('general.total')}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <!-- ko foreach: new Array(53, 54) -->
+           
+                <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), $data) -->
+                 <tr>
+                    <tr>
+                        <td rowspan="8" data-bind="text: no()"></td>
+                    </tr>
+                    <!-- /ko -->
+                    
+                    <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), $data + ".a.f") -->
+                    <tr>
+                        <td rowspan="4" data-bind="text: question()"></td>
+                    </tr>
+                    <!-- /ko -->
 
-         
-</tbody>
+                    <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), $data + ".a") -->
+                    <tr>
+                        <td>{{__('general.male')}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input data-bind="value: value" type="text" class="form-control">
+                                <span class="input-group-text">{{__('general.person')}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+                    
+                    <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(),  $data + ".a.f") -->
+                    <tr>
+                        <td>{{__('general.female')}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input data-bind="value: value" type="text" class="form-control">
+                                <span class="input-group-text">{{__('general.person')}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+
+                    <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), $data) -->
+                    <tr> </tr>
+                    <tr>
+                        <td rowspan="4" data-bind="text: question()"></td>
+                        <td>{{__('general.male')}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input data-bind="value: value" type="text" class="form-control">
+                                <span class="input-group-text">{{__('general.person')}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+
+                    <!-- ko with: $parent.getQuestionByNo($parent.village_occupation(), $data+ ".f") -->
+                    <tr>
+                        <td>{{__('general.female')}}</td>
+                        <td>
+                            <div class="input-group">
+                                <input data-bind="value: value" type="text" class="form-control">
+                                <span class="input-group-text">{{__('general.person')}}</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+                 </tr>
+                <!-- /ko -->
+           
+        <!-- /ko -->
+        
+    </tbody>
 </table>
+
 
 
 
